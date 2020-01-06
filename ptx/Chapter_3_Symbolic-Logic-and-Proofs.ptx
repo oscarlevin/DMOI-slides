@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<pretext xmlns:xi="http://www.w3.org/2001/XInclude">
+  <xi:include href="slidesinfo.ptx"/>
+  <slideshow>
+    <title>Symbolic Logic and Proofs</title>
+    <slide>
+      <assemblage>
+        <title>Arguments</title>
+        <p permid="tzL">
+        An <term>argument</term>
+            <idx><h>argument</h></idx>
+        is a set of statements, one of which is called the <term>conclusion</term>
+            <idx><h>conclusion</h></idx>
+        and the rest of which are called <term>premises</term>.
+            <idx><h>premises</h></idx>
+        An argument is said to be <term>valid</term>
+            <idx><h>valid</h></idx>
+        if the conclusion must be true whenever the premises are all true.
+        An argument is <term>invalid</term> if it is not valid;
+        it is possible for all the premises to be true and the conclusion to be false.
+      </p>
+      </assemblage>
+    </slide>
+  </slideshow>
+</pretext>

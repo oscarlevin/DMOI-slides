@@ -1,0 +1,238 @@
+<?xml version="1.0"?>
+<pretext xmlns:xi="http://www.w3.org/2001/XInclude">
+  <xi:include href="slidesinfo.ptx"/>
+  <slideshow>
+    <title>Introduction to Number Theory</title>
+    <subsection>
+      <title>Divisibility</title>
+      <slide>
+        <assemblage>
+          <title>The Divisibility Relation</title>
+          <p permid="xzX">
+            <idx><h>divisibility relation</h></idx>
+	Given integers <m>m</m> and <m>n</m>, we say <q><m>m</m> divides <m>n</m></q> and write
+        <me permid="AIY">
+          m \mid n
+        </me>
+        provided <m>n \div m</m> is an integer.
+        Thus the following assertions mean the same thing:
+
+        <ol permid="HKH"><li permid="gnr"><m>m \mid n</m></li><li permid="MuA"><m>n = mk</m> for some integer <m>k</m></li><li permid="sBJ">
+            <m>m</m> is a factor
+            (or divisor)
+            of <m>n</m>
+          </li><li permid="YIS"><m>n</m> is a multiple of <m>m</m>.</li></ol>
+      </p>
+        </assemblage>
+      </slide>
+      <slide>
+        <example source-number="5.2.1">
+          <statement>
+            <p permid="PDB">
+          Decide whether each of the statements below are true or false.
+
+          <ol cols="3" permid="vwp"><li permid="EQb"><m>4 \mid 20</m></li><li permid="kXk"><m>20 \mid 4</m></li><li permid="Ret"><m>0 \mid 5</m></li><li permid="xlC"><m>5 \mid 0</m></li><li permid="dsL"><m>7 \mid 7</m></li><li permid="JzU"><m>1 \mid 37</m></li><li permid="pHd"><m>-3 \mid 12</m></li><li permid="VOm"><m>8 \mid 12</m></li><li permid="BVv"><m>1642 \mid 136299</m></li></ol>
+        </p>
+          </statement>
+        </example>
+      </slide>
+      <slide>
+        <assemblage>
+          <title>The Division Algorithm</title>
+          <p permid="dHg">
+            <idx><h>Division algorithm</h></idx>
+	Given any two integers <m>a</m> and <m>b</m>, we can always find an integer <m>q</m> such that
+        <me permid="FsR">
+          a = qb + r
+        </me>
+        where <m>r</m> is an integer satisfying <m>0 \le r \lt  |b|</m>
+      </p>
+        </assemblage>
+      </slide>
+    </subsection>
+    <subsection>
+      <title>Remainder Classes</title>
+      <slide>
+        <example source-number="5.2.2">
+          <statement>
+            <p permid="vKK">
+          Describe the remainder classes modulo <m>5</m>.
+        </p>
+          </statement>
+        </example>
+      </slide>
+      <slide>
+        <assemblage>
+          <title>Congruence Modulo <m>n</m></title>
+          <p permid="JOp">
+        We say <term><m>a</m> is congruent to <m>b</m> modulo <m>n</m></term>,
+            <idx><h>congruence</h></idx>
+            <idx><h>modulo <m>n</m></h></idx>
+        and write,
+        <me permid="Cyl">
+          a \equiv b \pmod{n}
+        </me>
+        provided <m>a</m> and <m>b</m> have the same remainder when divided by <m>n</m>.
+        In other words,
+        provided <m>a</m> and <m>b</m> belong to the same remainder class modulo <m>n</m>.
+      </p>
+        </assemblage>
+      </slide>
+      <slide>
+        <assemblage>
+          <title>Congruence and Divisibility</title>
+          <p permid="pVy">
+        For any integers <m>a</m>, <m>b</m>, and <m>n</m>, we have
+        <me permid="uTM">
+          a \equiv b \pmod{n} \qquad \mbox{ if and only if }  \qquad n \mid a-b
+        </me>.
+      </p>
+        </assemblage>
+      </slide>
+      <slide>
+        <assemblage>
+          <title>Congruence and Equality</title>
+          <p permid="WcH">
+        For any integers <m>a</m>, <m>b</m>, and <m>n</m>, we have
+        <me permid="baV">
+          a \equiv b \pmod{n} \qquad \mbox{ if and only if }  \qquad a = b + kn \mbox{ for some integer } k 
+        </me>.
+      </p>
+        </assemblage>
+      </slide>
+    </subsection>
+    <subsection>
+      <title>Properties of Congruence</title>
+      <slide>
+        <assemblage>
+          <title>Congruence Modulo <m>n</m> is an Equivalence Relation</title>
+          <p permid="CjQ">
+        Given any integers <m>a</m>, <m>b</m>, and <m>c</m>,
+        and any positive integer <m>n</m>, the following hold:
+      </p>
+          <p permid="iqZ">
+        <ol permid="nRQ"><li permid="Lph"><m>a \equiv a \pmod{n}</m>.</li><li permid="rwq">
+            <p permid="OTH">
+              If <m>a \equiv b \pmod{n}</m> then <m>b \equiv a \pmod{n}</m>.
+            </p>
+          </li><li permid="XDz">
+            <p permid="vaQ">
+              If <m>a \equiv b \pmod{n}</m> and <m>b \equiv c \pmod{n}</m>,
+              then <m>a \equiv c \pmod{n}</m>.
+            </p>
+          </li></ol>
+      </p>
+          <p permid="Oyi">
+        In other words, congruence modulo <m>n</m> is reflexive,
+        symmetric, and transitive, so is an equivalence relation.
+      </p>
+        </assemblage>
+      </slide>
+      <slide>
+        <assemblage>
+          <title>Congruence and Arithmetic</title>
+          <p permid="uFr">
+            <idx><h>modular arithmetic</h></idx>
+	Suppose <m>a \equiv b \pmod{n}</m> and <m>c \equiv d \pmod{n}</m>. Then the following hold:
+      </p>
+          <p permid="aMA">
+        <ol permid="TYZ"><li permid="DKI"><m>a+c \equiv b+d \pmod{n}</m>.</li><li permid="jRR"><m>a-c \equiv b-d \pmod{n}</m>.</li><li permid="PZa"><m>ac \equiv bd \pmod{n}</m>.</li></ol>
+      </p>
+        </assemblage>
+      </slide>
+      <slide>
+        <example source-number="5.2.3">
+          <statement>
+            <p permid="bRT">
+          Find the remainder of <m>3491</m> divided by <m>9</m>.
+        </p>
+          </statement>
+        </example>
+      </slide>
+      <slide>
+        <example source-number="5.2.4">
+          <statement>
+            <p permid="HZc">
+          Find the remainder when <m>3^{123}</m> is divided by 7.
+        </p>
+          </statement>
+        </example>
+      </slide>
+      <slide>
+        <assemblage>
+          <title>Congruence and Division</title>
+          <p permid="GTJ">
+        Suppose <m>ad \equiv bd \pmod n</m>.
+        Then <m>a \equiv b \pmod{\frac{n}{\gcd(d,n)}}</m>.
+      </p>
+          <p permid="naS">
+        If <m>d</m> and <m>n</m> have no common factors then <m>\gcd(d,n) = 1</m>,
+        so <m>a \equiv b \pmod n</m>.
+      </p>
+        </assemblage>
+      </slide>
+      <slide>
+        <example source-number="5.2.5">
+          <statement>
+            <p permid="ogl">
+          Simplify the following congruences using division: (a)
+          <m>24 \equiv 39 \pmod 5</m> and (b) <m>24 \equiv 39 \pmod{15}</m>.
+        </p>
+          </statement>
+        </example>
+      </slide>
+    </subsection>
+    <subsection>
+      <title>Solving Congruences</title>
+      <slide>
+        <example source-number="5.2.6">
+          <statement>
+            <p permid="Unu">
+          Solve the following congruences for <m>x</m>.
+        </p>
+            <p permid="AuD">
+          <ol permid="bDy"><li permid="wgj"><m>7x \equiv 12 \pmod{13}</m>.</li><li permid="cns"><m>84x - 38 \equiv 79 \pmod{15}</m>.</li><li permid="IuB"><m>20x \equiv 23 \pmod{14}</m>.</li></ol>
+        </p>
+          </statement>
+        </example>
+      </slide>
+      <slide>
+        <assemblage>
+          <title>Congruences with no solutions</title>
+          <p permid="Tib">
+        If <m>\gcd(a,n) \nmid b</m>, then <m>ax \equiv b \pmod{n}</m> has no solutions.
+      </p>
+        </assemblage>
+      </slide>
+    </subsection>
+    <subsection>
+      <title>Solving Linear Diophantine Equations</title>
+      <slide>
+        <assemblage>
+          <title>Diophantine Equations</title>
+          <p permid="zpk">
+        An equation in two or more variables is called a
+        <term>Diophantine equation</term>
+        if only integers solutions are of interest.
+        A <term>linear</term> Diophantine equation takes the form
+        <m>a_1x_1 + a_2x_x + \cdots + a_nx_n = b</m> for constants <m>a_1,\ldots,
+        a_n, b</m>.
+      </p>
+          <p permid="fwt">
+        A <term>solution</term> to a Diophantine equation is a solution to the equation consisting only of integers.
+      </p>
+        </assemblage>
+      </slide>
+      <slide>
+        <example source-number="5.2.7">
+          <statement>
+            <p permid="gBM">
+          How can you make $6.37 using just 5-cent and 8-cent stamps?
+          What is the smallest and largest number of stamps you could use?
+        </p>
+          </statement>
+        </example>
+      </slide>
+    </subsection>
+  </slideshow>
+</pretext>

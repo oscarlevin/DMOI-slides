@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<pretext xmlns:xi="http://www.w3.org/2001/XInclude">
+  <xi:include href="slidesinfo.ptx"/>
+  <slideshow>
+    <title>Matching in Bipartite Graphs</title>
+    <slide>
+      <investigation>
+        <p permid="Txj">
+      Given a bipartite graph,
+      a <term>matching</term> is a subset of the edges for which every vertex belongs to exactly one of the edges.
+      Our goal in this activity is to discover some criterion for when a bipartite graph has a matching.
+    </p>
+        <p permid="zEs">
+      Does the graph below contain a matching?
+      If so, find one.
+    </p>
+        <sidebyside width="50%" permid="CyY">
+          <image permid="NHX">
+            <latex-image>\begin{tikzpicture}
+  \foreach \x in {0,...,5} {
+   \coordinate (a\x) at (\x,0);
+   \coordinate (b\x) at (\x,2);
+   \draw (a\x) \v (b\x) \v;
+   }
+  \draw (a0) -- (b0) (a0) -- (b1) (a0) -- (b5);
+  \draw (a1) -- (b0) (a1) -- (b3);
+  \draw (a2) -- (b1) (a2) -- (b2) (a2) -- (b3);
+  \draw (a3) -- (b0) (a3) -- (b5);
+  \draw (a4) -- (b2) (a4) -- (b3) (a4) -- (b4) (a4) -- (b5);
+  \draw (a5) -- (b4);
+  \end{tikzpicture}</latex-image>
+          </image>
+        </sidebyside>
+        <p permid="fLB">
+      Not all bipartite graphs have matchings.
+      Draw as many fundamentally different examples of bipartite graphs which do NOT have matchings.
+      Your goal is to find all the possible obstructions to a graph having a perfect matching.
+      Write down the <em>necessary</em>
+      conditions for a graph to have a matching
+      (that is, fill in the blank: If a graph has a matching,
+      then <fillin/>).
+      Then ask yourself whether these conditions are sufficient
+      (is it true that if <fillin/>, then the graph has a matching?).
+    </p>
+      </investigation>
+    </slide>
+    <slide>
+      <assemblage>
+        <title>Matching Condition</title>
+        <p permid="LSK">
+      If a bipartite graph <m>G = \{A, B\}</m> has a matching of <m>A</m>, then
+      <me permid="BtF">
+        |N(S)| \ge |S|
+      </me>
+      for all <m>S \subseteq A</m>.
+    </p>
+      </assemblage>
+    </slide>
+    <slide>
+      <theorem source-number="4.6.1">
+        <title>Hall's Marriage Theorem</title>
+        <statement>
+          <p permid="HiR">
+        Let <m>G</m> be a bipartite graph with sets <m>A</m> and <m>B</m>.
+        Then <m>G</m> has a matching of <m>A</m> if and only if
+        <me permid="hAO">
+          |N(S)| \ge |S|
+        </me>
+        for all <m>S \subseteq A</m>.
+      </p>
+        </statement>
+      </theorem>
+    </slide>
+    <slide>
+      <example source-number="4.6.2">
+        <statement>
+          <p permid="nqa">
+        Suppose you deal 52 regular playing cards into 13 piles of 4 cards each.
+        Prove that you can always select one card from each pile to get one of each of the 13 card values Ace, 2, 3, <ellipsis/>, 10, Jack, Queen,
+        and King.
+      </p>
+        </statement>
+      </example>
+    </slide>
+  </slideshow>
+</pretext>

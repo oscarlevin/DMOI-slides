@@ -1,0 +1,289 @@
+<?xml version="1.0"?>
+<pretext xmlns:xi="http://www.w3.org/2001/XInclude">
+  <xi:include href="slidesinfo.ptx"/>
+  <slideshow>
+    <title>Propositional Logic</title>
+    <slide>
+      <investigation>
+        <p permid="YaL">
+        You stumble upon two trolls playing Stratego<registered/>.
+        They tell you:
+      </p>
+        <p permid="EhU">
+        Could both trolls be knights?
+        Recall that all trolls are either always-truth-telling knights or always-lying knaves.
+      </p>
+      </investigation>
+    </slide>
+    <subsection>
+      <title>Truth Tables</title>
+      <slide>
+        <example source-number="3.1.1">
+          <statement>
+            <p permid="CsH">
+          Make a truth table for the statement <m>\neg P \vee Q</m>.
+        </p>
+          </statement>
+        </example>
+      </slide>
+      <slide>
+        <example source-number="3.1.2">
+          <statement>
+            <p permid="izQ">
+          Analyze the statement,
+          <q>if you get more doubles than any other player you will lose,
+          or that if you lose you must have bought the most properties,</q> using truth tables.
+        </p>
+          </statement>
+        </example>
+      </slide>
+    </subsection>
+    <subsection>
+      <title>Logical Equivalence</title>
+      <slide>
+        <assemblage>
+          <title>Logical Equivalence</title>
+          <p permid="wDv">
+        Two (molecular) statements <m>P</m> and <m>Q</m> are
+        <term>logically equivalent</term> 
+            <idx><h>logical equivalence</h></idx>
+        provided <m>P</m> is true precisely when <m>Q</m> is true.
+        That is, <m>P</m> and <m>Q</m> have the same truth value under any assignment of truth values to their atomic parts.
+      </p>
+          <p permid="cKE">
+        To verify that two statements are logically equivalent,
+        you can make a truth table for each and check whether the columns for the two statements are identical.
+      </p>
+        </assemblage>
+      </slide>
+      <slide>
+        <example source-number="3.1.3">
+          <statement>
+            <p permid="OGZ">
+          Are the statements, <q>it will not rain or snow</q>
+          and <q>it will not rain and it will not snow</q> logically equivalent?
+        </p>
+          </statement>
+        </example>
+      </slide>
+      <slide>
+        <assemblage>
+          <title>De Morgan's Laws</title>
+          <p permid="IRN">
+            <idx><h>De Morgan's laws</h></idx>
+        <me permid="duy">
+          \neg(P \wedge Q) \text{ is logically equivalent to } \neg P \vee \neg Q
+        </me>.
+        <me permid="JBH">
+          \neg(P \vee Q) \text{ is logically equivalent to } \neg P \wedge \neg Q
+        </me>.
+      </p>
+        </assemblage>
+      </slide>
+      <slide>
+        <assemblage>
+          <title>Implications are Disjuctions</title>
+          <p permid="oYW">
+        <me permid="pIQ">
+          P \imp Q \text{ is logically equivalent to } \neg P \vee Q
+        </me>.
+      </p>
+          <p permid="Vgf">
+        Example: <q>If a number is a multiple of 4, then it is even</q> is equivalent to, <q>a number is not a multiple of 4 or (else) it is even.</q>
+      </p>
+        </assemblage>
+      </slide>
+      <slide>
+        <assemblage>
+          <title>Double Negation</title>
+          <p permid="Bno">
+            <idx><h>double negation</h></idx>
+        <me permid="VPZ">
+          \neg \neg P \text{ is logically equivalent to } P
+        </me>.
+      </p>
+          <p permid="hux">
+        Example: <q>It is not the case that <m>c</m> is not odd</q>
+        means <q><m>c</m> is odd.</q>
+      </p>
+        </assemblage>
+      </slide>
+      <slide>
+        <example source-number="3.1.4">
+          <statement>
+            <p permid="uOi">
+          Prove that the statements <m>\neg(P \imp Q)</m> and
+          <m>P\wedge \neg Q</m> are logically equivalent without using truth tables.
+        </p>
+          </statement>
+        </example>
+      </slide>
+      <slide>
+        <assemblage>
+          <title>Negation of an Implication</title>
+          <p permid="NBG">
+        The negation of an implication is a conjuction:
+        <me permid="OlA">
+          \neg(P \imp Q) \text{ is logically equivalent to } P \wedge \neg Q
+        </me>.
+        That is, the only way for an implication to be false is for the hypothesis to be true <em>AND</em> the conclusion to be false.
+      </p>
+        </assemblage>
+      </slide>
+      <slide>
+        <example source-number="3.1.5">
+          <statement>
+            <p permid="aVr">
+          Are the statements
+          <m>(P \vee Q) \imp R</m>
+          and
+          <m>(P \imp R) \vee (Q \imp R)</m>
+          logically equivalent?
+        </p>
+          </statement>
+        </example>
+      </slide>
+    </subsection>
+    <subsection>
+      <title>Deductions</title>
+      <slide>
+        <investigation>
+          <p permid="Qwm">
+        Holmes owns two suits: one black and one tweed.
+        He always wears either a tweed suit or sandals.
+        Whenever he wears his tweed suit and a purple shirt,
+        he chooses to not wear a tie.
+        He never wears the tweed suit unless he is also wearing either a purple shirt or sandals.
+        Whenever he wears sandals, he also wears a purple shirt.
+        Yesterday, Holmes wore a bow tie.
+        What else did he wear?
+      </p>
+        </investigation>
+      </slide>
+      <slide>
+        <example source-number="3.1.6">
+          <statement>
+            <p permid="HcA">
+          Show that
+        </p>
+            <sidebyside permid="bqQ">
+              <tabular halign="center" permid="UKG">
+                <row>
+                  <cell/>
+                  <cell>
+                    <m>P \imp Q</m>
+                  </cell>
+                </row>
+                <row bottom="minor">
+                  <cell/>
+                  <cell>
+                    <m>\neg P \imp Q</m>
+                  </cell>
+                </row>
+                <row>
+                  <cell>
+                    <m>\therefore</m>
+                  </cell>
+                  <cell>
+                    <m>Q</m>
+                  </cell>
+                </row>
+              </tabular>
+            </sidebyside>
+            <p permid="njJ">
+          is a valid deduction rule.
+        </p>
+          </statement>
+        </example>
+      </slide>
+      <slide>
+        <example source-number="3.1.7">
+          <statement>
+            <p permid="TqS">
+          Decide whether
+        </p>
+            <sidebyside permid="nFi">
+              <tabular halign="center" permid="gYY">
+                <row>
+                  <cell/>
+                  <cell>
+                    <m>P \imp R</m>
+                  </cell>
+                </row>
+                <row>
+                  <cell/>
+                  <cell>
+                    <m>Q \imp R</m>
+                  </cell>
+                </row>
+                <row bottom="minor">
+                  <cell/>
+                  <cell>
+                    <m>R</m>
+                  </cell>
+                </row>
+                <row>
+                  <cell>
+                    <m>\therefore</m>
+                  </cell>
+                  <cell>
+                    <m>P \vee Q</m>
+                  </cell>
+                </row>
+              </tabular>
+            </sidebyside>
+            <p permid="zyb">
+          is a valid deduction rule.
+        </p>
+          </statement>
+        </example>
+      </slide>
+    </subsection>
+    <subsection>
+      <title>Beyond Propositions</title>
+      <slide>
+        <example source-number="3.1.8">
+          <statement>
+            <p permid="fFk">
+          Suppose we claim that there is no smallest number.
+          We can translate this into symbols as
+          <me permid="azS">
+            \neg \exists x \forall y (x \le y)
+          </me>
+          (literally, <q>it is not true that there is a number <m>x</m> such that for all numbers <m>y</m>,
+          <m>x</m> is less than or equal to <m>y</m></q>).
+        </p>
+            <p permid="LMt">
+          However, we know how negation interacts with quantifiers:
+          we can pass a negation over a quantifier by switching the quantifier type
+          (between universal and existential).
+          So the statement above should be
+          <em>logically equivalent</em> to
+          <me permid="GHb">
+            \forall x \exists y (y \lt x)
+          </me>.
+          Notice that <m>y \lt x</m> is the negation of <m>x \le y</m>.
+          This literally says,
+          <q>for every number <m>x</m> there is a number <m>y</m> which is smaller than <m>x</m>.</q>
+          We see that this is another way to make our original claim.
+        </p>
+          </statement>
+        </example>
+      </slide>
+      <slide>
+        <example source-number="3.1.9">
+          <statement>
+            <p permid="rTC">
+          Can you switch the order of quantifiers?
+          For example, consider the two statements:
+          <me permid="mOk">
+            \forall x \exists y P(x,y) \qquad \mathrm{ and } \qquad \exists y \forall x P(x,y)
+          </me>.
+          Are these logically equivalent?
+        </p>
+          </statement>
+        </example>
+      </slide>
+    </subsection>
+  </slideshow>
+</pretext>

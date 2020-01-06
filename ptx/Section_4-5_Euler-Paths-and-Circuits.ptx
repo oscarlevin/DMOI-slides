@@ -1,0 +1,130 @@
+<?xml version="1.0"?>
+<pretext xmlns:xi="http://www.w3.org/2001/XInclude">
+  <xi:include href="slidesinfo.ptx"/>
+  <slideshow>
+    <title>Euler Paths and Circuits</title>
+    <slide>
+      <investigation>
+        <p permid="ikI">
+        An <term>Euler path</term>, in a graph or multigraph,
+        is a walk through the graph which uses every edge exactly once.
+        An <term>Euler circuit</term> is an Euler path which starts and stops at the same vertex.
+        Our goal is to find a quick way to check whether a graph
+        (or multigraph)
+        has an Euler path or circuit.
+
+        <ol permid="bLC"><li permid="Uhd">
+            <p permid="YQW">
+              Which of the graphs below have Euler paths?
+              Which have Euler circuits?
+            </p>
+
+            <sidebyside widths="18% 18% 36% 22%" margins="auto" valign="middle" permid="eGi"><image permid="jZV"><latex-image>\begin{tikzpicture}[scale=0.9]
+    \draw (-1,0) \v -- (1,0)\v -- (1,2) \v -- (-1, 2) \v -- (-1,0) -- (1,2) (-1,2) -- (1,0) (0,1) \v;
+    \draw (-1,2) -- (0,3) \v -- (1,2);
+  \end{tikzpicture}</latex-image></image><image permid="Qhe"><latex-image>\begin{tikzpicture}[scale=0.9]
+    \draw (-1,0) \v -- (1,0)\v -- (1,2) \v -- (-1, 2) \v -- (-1,0) -- (1,2) (-1,2) -- (1,0) (0,1) \v;
+  \end{tikzpicture}</latex-image></image><image permid="won"><latex-image>\begin{tikzpicture}[scale=0.9]
+    \draw (-1,0) \v -- (1,0)\v -- (1,2) \v -- (-1, 2) \v -- (-1,0) -- (1,2) (-1,2) -- (1,0) (0,1) \v;
+    \draw (-1,0) -- (-2,1) \v -- (-1,2) (1,2) -- (2,1) \v -- (1,0);
+  \end{tikzpicture}</latex-image></image><image permid="cvw"><latex-image>\begin{tikzpicture}[yscale=.45]
+   \draw (-1,-2) \v to [out=120, in=240] (-1,0) \v to [out=120, in=240] (-1,2) \v to [out=300, in=60] (-1,0) to [out=300, in=60] (-1,-2);
+    \draw (1,0) \v -- (-1,2) (-1,0) -- (1,0) -- (-1,-2);
+    \end{tikzpicture}</latex-image></image></sidebyside>
+
+          </li><li permid="Aom">
+            <p permid="EYf">
+              List the degrees of each vertex of the graphs above.
+              Is there a connection between degrees and the existence of Euler paths and circuits?
+            </p>
+          </li><li permid="gvv">
+            <p permid="lfo">
+              Is it possible for a graph with a degree 1 vertex to have an Euler circuit?
+              If so, draw one.
+              If not, explain why not.
+              What about an Euler path?
+            </p>
+          </li><li permid="MCE">
+            <p permid="Rmx">
+              What if every vertex of the graph has degree 2.
+              Is there an Euler path?
+              An Euler circuit?
+              Draw some graphs.
+            </p>
+          </li><li permid="sJN">
+            <p permid="xtG">
+              Below is <em>part</em> of a graph.
+              Even though you can only see some of the vertices,
+              can you deduce whether the graph will have an Euler path or circuit?
+            </p>
+
+            <sidebyside width="54%" permid="KNr"><image permid="ICF"><latex-image>\begin{tikzpicture}[scale=0.9]
+    \draw (-2,0) \v -- (0,1) \v -- (2,0) \v;
+    \draw (-2,0) -- (-2.5, -.5) (-2,0) -- (-2, -.5) (-2,0) -- (-1.5,-.5);
+    \draw[dashed] (-2.5, -.5) -- (-3, -1) (-2,-.5) -- (-2,-1) (-1.5,-.5) -- (-1,-1);
+      \draw (2,0) -- (2.5, -.5) (2,0) -- (2, -.5) (2,0) -- (1.5,-.5);
+    \draw[dashed] (2.5, -.5) -- (3, -1) (2,-.5) -- (2,-1) (1.5,-.5) -- (1,-1);
+      \draw (0,1) -- (-.25, 0) (0,1) -- (0, 0) (0,1) -- (.25,0);
+    \draw[dashed] (-.25, 0) -- (-.5, -1) (0,0) -- (0,-1) (.25,0) -- (.5,-1);
+   \end{tikzpicture}</latex-image></image></sidebyside>
+
+          </li></ol>
+      </p>
+      </investigation>
+    </slide>
+    <slide>
+      <assemblage>
+        <title>Euler Paths and Circuits</title>
+        <p permid="Lxl">
+        <ul permid="vEt"><li permid="HSL">
+            <p permid="dAP">
+              A graph has an Euler circuit if and only if the degree of every vertex is even.
+            </p>
+          </li><li permid="nZU">
+            <p permid="JHY">
+              A graph has an Euler path if and only if there are at most two vertices with odd degree.
+            </p>
+          </li></ul>
+      </p>
+      </assemblage>
+    </slide>
+    <subsection>
+      <title>Hamilton Paths</title>
+      <slide>
+        <example source-number="4.5.1">
+          <statement>
+            <p permid="Cdz">
+          Determine whether the graphs below have a Hamilton path.
+        </p>
+            <sidebyside widths="20% 20%" margins="auto" permid="SrQ">
+              <image permid="AYg">
+                <latex-image>
+
+          \begin{tikzpicture}[scale=.5]
+          \draw  (18:2) -- (90:2) -- (162:2)  -- (234:2) -- (306:2) -- cycle;
+          \draw  (18:1) --  (162:1)  -- (306:1) -- (90:1) -- (234:1) --cycle;
+          \foreach \x in {18, 90, 162, 234, 306}
+          \draw  (\x:1) \v -- (\x:2) \v;
+          \end{tikzpicture}
+
+        </latex-image>
+              </image>
+              <image permid="hfp">
+                <latex-image>
+
+          \begin{tikzpicture}{scale=.5}
+          \draw  (18:1) -- (90:1) -- (162:1)  -- (234:1) -- (306:1) -- cycle;
+          \draw  (18:1) --  (162:1)  -- (306:1) -- (90:1) -- (234:1) --cycle;
+          \foreach \x in {18, 90, 162, 234, 306}
+          \draw  (\x:1) \v -- (\x:2) \v;
+          \end{tikzpicture}
+
+        </latex-image>
+              </image>
+            </sidebyside>
+          </statement>
+        </example>
+      </slide>
+    </subsection>
+  </slideshow>
+</pretext>

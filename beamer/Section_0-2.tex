@@ -1,0 +1,318 @@
+\documentclass[11pt, compress]{beamer}
+\usepackage{amsmath}
+\usetheme{Boadilla}
+\usepackage[xparse, raster]{tcolorbox}
+\tcbset{colback=white, colframe=white}
+\NewTColorBox{image}{mmm}{boxrule=0.25pt, colframe=gray, left skip=#1\linewidth,width=#2\linewidth}
+\RenewTColorBox{definition}{m}{colback=teal!30!white, colbacktitle=teal!30!white, coltitle=black, colframe=gray, boxrule=0.5pt, sharp corners=downhill, titlerule = 0.25pt, title={#1}}
+\RenewTColorBox{theorem}{m}{colback=pink!30!white, colbacktitle=pink!30!white, coltitle=black, colframe=gray, boxrule=0.5pt, sharp corners=downhill, titlerule = 0.25pt, title={#1}}
+\RenewTColorBox{proof}{}{boxrule=0.25pt, colframe=gray, colback=white, before upper={Proof:}, after upper={\qed}}
+\newcommand{\terminology}[1]{\textbf{#1}}\newcommand{\lt}{<}
+\newcommand{\gt}{>}
+\newcommand{\amp}{&}
+
+\renewcommand{\d}{\displaystyle}
+\newcommand{\N}{\mathbb N}
+\newcommand{\B}{\mathbf B}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\U}{\mathcal U}
+\newcommand{\pow}{\mathcal P}
+\newcommand{\inv}{^{-1}}
+\newcommand{\st}{:}
+\renewcommand{\iff}{\leftrightarrow}
+\newcommand{\Iff}{\Leftrightarrow}
+\newcommand{\imp}{\rightarrow}
+\newcommand{\Imp}{\Rightarrow}
+\newcommand{\isom}{\cong}
+
+\renewcommand{\bar}{\overline}
+\newcommand{\card}[1]{\left| #1 \right|}
+\newcommand{\twoline}[2]{\begin{pmatrix}#1 \\ #2 \end{pmatrix}}
+
+\newcommand{\vtx}[2]{node[fill,circle,inner sep=0pt, minimum size=4pt,label=#1:#2]{}}
+\newcommand{\va}[1]{\vtx{above}{#1}}
+\newcommand{\vb}[1]{\vtx{below}{#1}}
+\newcommand{\vr}[1]{\vtx{right}{#1}}
+\newcommand{\vl}[1]{\vtx{left}{#1}}
+\renewcommand{\v}{\vtx{above}{}}
+\title{Mathematical Statements}
+\subtitle{}
+\begin{document}
+\begin{frame}
+\maketitle 
+\end{frame}
+ 
+\begin{frame}
+\frametitle{Overview}
+\tableofcontents 
+\end{frame}
+ 
+
+\section{Atomic and Molecular Statements}
+\begin{frame}
+\frametitle{}
+\begin{example}{}{g:example:idm22}%
+
+These are statements (in fact, \emph{atomic} statements):\begin{itemize}
+\item{}
+Telephone numbers in the USA have 10 digits.
+
+\item{}
+The moon is made of cheese.
+
+\item{}
+42 is a perfect square.
+
+\item{}
+Every even number greater than 2 can be expressed as the sum of two primes.
+
+\item{}
+\(3+7 = 12\)
+\end{itemize}And these are not statements:\begin{itemize}
+\item{}
+Would you like some cake?
+
+\item{}
+The sum of two squares.
+
+\item{}\(1+3+5+7+\cdots+2n+1\).
+
+\item{}
+Go to your room!
+
+\item{}
+\(3+x = 12\)
+\end{itemize}\end{example}
+\end{frame}
+ 
+\begin{frame}
+\frametitle{}
+\begin{assemblage}{Logical Connectives.}{g:assemblage:idm51}%
+
+\begin{itemize}
+\item{}\(P \wedge Q\) is read ``\(P\) and \(Q\),'' and called a \terminology{conjunction}. \index{conjunction}\index{connectives!and}\label{g:notation:idm66}
+
+\item{}\(P \vee Q\) is read ``\(P\) or \(Q\),'' and called a \terminology{disjunction}. \index{disjunction}\index{connectives!or}\label{g:notation:idm81}
+
+\item{}\(P \imp Q\) is read ``if \(P\) then \(Q\),'' and called an \terminology{implication} or \terminology{conditional}. \index{implication}\index{conditional}\index{connectives!implies}\index{if\textellipsis{}, then\textellipsis{}}
+
+\item{}\(P \iff Q\) is read ``\(P\) if and only if \(Q\),'' and called a \terminology{biconditional}. \index{biconditional}\index{connectives!if and only if}\index{if and only if}
+
+\item{}\(\neg P\) is read ``not \(P\),'' and called a \terminology{negation}. \index{negation}\index{connectives!not}\label{g:notation:idm126}
+\end{itemize}\end{assemblage}
+\end{frame}
+ 
+\begin{frame}
+\frametitle{}
+\begin{assemblage}{Truth Conditions for Connectives.}{g:assemblage:idm130}%
+
+\begin{itemize}
+\item{}\(P \wedge Q\) is true when both \(P\) and \(Q\) are true
+
+\item{}\(P \vee Q\) is true when \(P\) or \(Q\) or both are true.
+
+\item{}\(P \imp Q\) is true when \(P\) is false or \(Q\) is true or both.
+
+\item{}\(P \iff Q\) is true when \(P\) and \(Q\) are both true, or both false.
+
+\item{}\(\neg P\) is true when \(P\) is false.
+\end{itemize}\end{assemblage}
+\end{frame}
+ 
+
+
+\section{Implications}
+\begin{frame}
+\frametitle{}
+\begin{assemblage}{Implications.}{g:assemblage:idm156}%
+
+An \terminology{implication} or \terminology{conditional} is a molecular statement of the form%
+\begin{equation*}
+P \imp Q
+\end{equation*}
+where \(P\) and \(Q\) are statements. We say that\begin{itemize}
+\item{}\(P\) is the \terminology{hypothesis} (or \terminology{antecedent}).
+
+\item{}\(Q\) is the \terminology{conclusion} (or \terminology{consequent}).
+\end{itemize}
+An implication is \emph{true} provided \(P\) is false or \(Q\) is true (or both), and \emph{false} otherwise. In particular, the only way for \(P \imp Q\) to be false is for \(P\) to be true \emph{and} \(Q\) to be false.\end{assemblage}
+\end{frame}
+ 
+\begin{frame}
+\frametitle{}
+\begin{example}{}{g:example:idm183}%
+
+Consider the statement:\begin{quote}%
+
+If Bob gets a 90 on the final, then Bob will pass the class.\end{quote}
+
+This is definitely an implication: \(P\) is the statement ``Bob gets a 90 on the final,'' and \(Q\) is the statement ``Bob will pass the class.''
+Suppose I made that statement to Bob. In what circumstances would it be fair to call me a liar? What if Bob really did get a 90 on the final, and he did pass the class? Then I have not lied; my statement is true. However, if Bob did get a 90 on the final and did not pass the class, then I lied, making the statement false. The tricky case is this: what if Bob did not get a 90 on the final? Maybe he passes the class, maybe he doesn't. Did I lie in either case? I think not. In these last two cases, \(P\) was false, and the statement \(P \imp Q\) was true. In the first case, \(Q\) was true, and so was \(P \imp Q\). So \(P \imp Q\) is true when either \(P\) is false or \(Q\) is true.\end{example}
+\end{frame}
+ 
+\begin{frame}
+\frametitle{}
+\begin{example}{}{g:example:idm202}%
+
+Decide which of the following statements are true and which are false. Briefly explain.\begin{enumerate}
+\item{}
+If \(1=1\), then most horses have 4 legs.
+
+\item{}
+If \(0=1\), then \(1=1\).
+
+\item{}
+If 8 is a prime number, then the 7624th digit of \(\pi\) is an 8.
+
+\item{}
+If the 7624th digit of \(\pi\) is an 8, then \(2+2 = 4\).
+\end{enumerate}\end{example}
+\end{frame}
+ 
+\begin{frame}
+\frametitle{}
+\begin{assemblage}{Direct Proofs of Implications.}{g:assemblage:idm221}%
+
+To prove an implication \(P \imp Q\), it is enough to assume \(P\), and from it, deduce \(Q\).\end{assemblage}
+\end{frame}
+ 
+\begin{frame}
+\frametitle{}
+\begin{example}{}{g:example:idm228}%
+
+Prove: If two numbers \(a\) and \(b\) are even, then their sum \(a+b\) is even.\end{example}
+\end{frame}
+ 
+\begin{frame}
+\frametitle{}
+\begin{assemblage}{Converse and Contrapositive.}{g:assemblage:idm235}%
+
+\begin{itemize}
+\item{}
+The \terminology{converse} \index{converse} of an implication \(P \imp Q\) is the implication \(Q \imp P\). The converse is NOT logically equivalent to the original implication. That is, whether the converse of an implication is true is independent of the truth of the implication.
+
+\item{}
+The \terminology{contrapositive} \index{contrapositive} of an implication \(P \imp Q\) is the statement \(\neg Q \imp \neg P\). An implication and its contrapositive are logically equivalent (they are either both true or both false).
+\end{itemize}\end{assemblage}
+\end{frame}
+ 
+\begin{frame}
+\frametitle{}
+\begin{example}{}{g:example:idm254}%
+
+True or false: If you draw any nine playing cards from a regular deck, then you will have at least three cards all of the same suit. Is the converse true?\end{example}
+\end{frame}
+ 
+\begin{frame}
+\frametitle{}
+\begin{example}{}{g:example:idm258}%
+
+Suppose I tell Sue that if she gets a 93\% on her final, then she will get an A in the class. Assuming that what I said is true, what can you conclude in the following cases:
+\begin{enumerate}
+\item{}
+Sue gets a 93\% on her final.
+
+\item{}
+Sue gets an A in the class.
+
+\item{}
+Sue does not get a 93\% on her final.
+
+\item{}
+Sue does not get an A in the class.
+\end{enumerate}\end{example}
+\end{frame}
+ 
+\begin{frame}
+\frametitle{}
+\begin{assemblage}{If and only if.}{g:assemblage:idm272}%
+
+Example: Given an integer \(n\), it is true that \(n\) is even if and only if \(n^2\) is even. That is, if \(n\) is even, then \(n^2\) is even, as well as the converse: if \(n^2\) is even, then \(n\) is even.\end{assemblage}
+\end{frame}
+ 
+\begin{frame}
+\frametitle{}
+\begin{example}{}{g:example:idm283}%
+
+Suppose it is true that I sing if and only if I'm in the shower. We know this means both that if I sing, then I'm in the shower, and also the converse, that if I'm in the shower, then I sing. Let \(P\) be the statement, ``I sing,'' and \(Q\) be, ``I'm in the shower.'' So \(P \imp Q\) is the statement ``if I sing, then I'm in the shower.'' Which part of the if and only if statement is this?
+What we are really asking for is the meaning of ``I sing \emph{if} I'm in the shower'' and ``I sing \emph{only if} I'm in the shower.'' When is the first one (the ``if'' part) \emph{false}? When I am in the shower but not singing. That is the same condition on being false as the statement ``if I'm in the shower, then I sing.'' So the ``if'' part is \(Q \imp P\). On the other hand, to say, ``I sing only if I'm in the shower'' is equivalent to saying ``if I sing, then I'm in the shower,'' so the ``only if'' part is \(P \imp Q\).\end{example}
+\end{frame}
+ 
+\begin{frame}
+\frametitle{}
+\begin{example}{}{g:example:idm307}%
+
+Rephrase the implication, ``if I dream, then I am asleep'' in as many different ways as possible. Then do the same for the converse.\end{example}
+\end{frame}
+ 
+\begin{frame}
+\frametitle{}
+\begin{assemblage}{Necessary and Sufficient.}{g:assemblage:idm312}%
+
+\begin{itemize}
+\item{}``\(P\) is necessary for \(Q\)'' means \(Q \imp P\).
+
+\item{}``\(P\) is sufficient for \(Q\)'' means \(P \imp Q\).
+
+\item{}
+If \(P\) is necessary and sufficient for \(Q\), then \(P \iff Q\).
+\end{itemize}\end{assemblage}
+\end{frame}
+ 
+\begin{frame}
+\frametitle{}
+\begin{example}{}{g:example:idm332}%
+
+Recall from calculus, if a function is differentiable at a point \(c\), then it is continuous at \(c\), but that the converse of this statement is not true (for example, \(f(x) = |x|\) at the point 0). Restate this fact using ``necessary and sufficient'' language.\end{example}
+\end{frame}
+ 
+
+
+\section{Predicates and Quantifiers}
+\begin{frame}
+\frametitle{}
+\begin{investigation}{}{g:investigation:idm342}%
+
+Consider the statements below. Decide whether any are equivalent to each other, or whether any imply any others.
+\begin{enumerate}
+\item{}
+You can fool some people all of the time.
+
+\item{}
+You can fool everyone some of the time.
+
+\item{}
+You can always fool some people.
+
+\item{}
+Sometimes you can fool everyone.
+\end{enumerate}\end{investigation}
+\end{frame}
+ 
+\begin{frame}
+\frametitle{}
+\begin{assemblage}{Universal and Existential Quantifiers.}{g:assemblage:idm355}%
+
+The existential quantifier is \(\exists\) and is read ``there exists'' or ``there is.'' For example, \index{existential quantifier}\index{quantifiers!exists}\label{g:notation:idm366}%
+\begin{equation*}
+\exists x (x \lt 0)
+\end{equation*}
+asserts that there is a number less than 0.
+The universal quantifier is \(\forall\) and is read ``for all'' or ``every.'' For example, \index{universal quantifier}\index{quantifiers!for all}\label{g:notation:idm379}%
+\begin{equation*}
+\forall x (x \ge 0)
+\end{equation*}
+asserts that every number is greater than or equal to 0.\end{assemblage}
+\end{frame}
+ 
+\begin{frame}
+\frametitle{}
+\begin{assemblage}{Quantifiers and Negation.}{g:assemblage:idm384}%
+\end{assemblage}
+\end{frame}
+ 
+
+\end{document}

@@ -1,0 +1,153 @@
+<?xml version="1.0"?>
+<pretext xmlns:xi="http://www.w3.org/2001/XInclude">
+  <xi:include href="slidesinfo.ptx"/>
+  <slideshow>
+    <title>Induction</title>
+    <subsection>
+      <title>Stamps</title>
+      <slide>
+        <investigation>
+          <p permid="Xka">
+        You need to mail a package, but don't yet know how much postage you will need.
+        You have a large supply of 8-cent stamps and 5-cent stamps.
+        Which amounts of postage can you make exactly using these stamps?
+        Which amounts are impossible to make?
+      </p>
+        </investigation>
+      </slide>
+    </subsection>
+    <subsection>
+      <title>Formalizing Proofs</title>
+      <slide>
+        <assemblage>
+          <title>Induction Proof Structure</title>
+          <p permid="bTT">
+            <idx><h>induction</h></idx>
+        Start by saying what the statement is that you want to prove: <q>Let <m>P(n)</m> be the statement<ellipsis/></q> To prove that <m>P(n)</m> is true for all <m>n \ge 0</m>, you must prove two facts:
+
+        <ol permid="zcP"><li permid="DMI">
+            <p permid="oDK">
+              Base case: Prove that <m>P(0)</m> is true.
+              You do this directly.
+              This is often easy.
+            </p>
+          </li><li permid="jTR">
+            <p permid="UKT">
+              Inductive case: Prove that
+              <m>P(k) \imp P(k+1)</m> for all <m>k \ge 0</m>.
+              That is, prove that for any <m>k \ge 0</m> if <m>P(k)</m> is true,
+              then <m>P(k+1)</m> is true as well.
+              This is the proof of an if
+              <ellipsis/> then
+              <ellipsis/> statement,
+              so you can assume <m>P(k)</m> is true (<m>P(k)</m> is called the
+              <em>inductive hypothesis</em>).
+                <idx><h>inductive hypothesis</h></idx>
+            You must then explain why <m>P(k+1)</m> is also true, given that assumption.
+            </p>
+          </li></ol>
+      </p>
+          <p permid="Ibc">
+        Assuming you are successful on both parts above,
+        you can conclude,
+        <q>Therefore by the principle of mathematical induction,
+        the statement <m>P(n)</m> is true for all <m>n \ge 0</m>.</q>
+      </p>
+        </assemblage>
+      </slide>
+    </subsection>
+    <subsection>
+      <title>Examples</title>
+      <slide>
+        <example source-number="2.5.1">
+          <statement>
+            <p permid="SAh">
+          Prove for each natural number <m>n \ge 1</m> that <m>1 + 2 + 3 + \cdots + n = \frac{n(n+1)}{2}</m>.
+        </p>
+          </statement>
+        </example>
+      </slide>
+      <slide>
+        <example source-number="2.5.2">
+          <statement>
+            <p permid="yHq">
+          Prove that for all <m>n \in \N</m>,
+          <m>6^n - 1</m> is a multiple of 5.
+        </p>
+          </statement>
+        </example>
+      </slide>
+      <slide>
+        <example source-number="2.5.3">
+          <statement>
+            <p permid="eOz">
+          Prove that <m>n^2 \lt 2^n</m> for all integers <m>n \ge 5</m>.
+        </p>
+          </statement>
+        </example>
+      </slide>
+    </subsection>
+    <subsection>
+      <title>Strong Induction</title>
+      <slide>
+        <investigation>
+          <p permid="Drj">
+        Start with a square piece of paper.
+        You want to cut this square into smaller squares, leaving no waste
+        (every piece of paper you end up with must be a square).
+        Obviously it is possible to cut the square into 4 squares.
+        You can also cut it into 9 squares.
+        It turns out you can cut the square into 7 squares
+        (although not all the same size).
+        What other numbers of squares could you end up with?
+      </p>
+        </investigation>
+      </slide>
+      <slide>
+        <conjecture>
+          <statement>
+            <p permid="msY">
+          Given a <m>n</m>-square rectangular chocolate bar,
+          it always takes <m>n-1</m> breaks to reduce the bar to single squares.
+        </p>
+          </statement>
+        </conjecture>
+      </slide>
+      <slide>
+        <assemblage>
+          <title>Strong Induction Proof Structure</title>
+          <p permid="oil">
+        Again, start by saying what you want to prove:
+        <q>Let <m>P(n)</m> be the statement<ellipsis/></q>
+        Then establish two facts:
+
+        <ol permid="fjY"><li permid="Qba">
+            <p permid="ASc">
+              Base case: Prove that <m>P(0)</m> is true.
+            </p>
+          </li><li permid="wij">
+            <p permid="gZl">
+              Inductive case: Assume <m>P(k)</m> is true for all <m>k \lt n</m>.
+              Prove that <m>P(n)</m> is true.
+            </p>
+          </li></ol>
+
+        Conclude, <q>therefore, by strong induction,
+        <m>P(n)</m> is true for all <m>n \gt 0</m>.</q>
+      </p>
+        </assemblage>
+      </slide>
+      <slide>
+        <example source-number="2.5.5">
+          <statement>
+            <p permid="KVI">
+          Prove that any natural number greater than 1 is either prime
+              <idx><h>prime numbers</h></idx>
+          or can be written as the product of primes.
+        </p>
+          </statement>
+        </example>
+      </slide>
+    </subsection>
+  </slideshow>
+</pretext>

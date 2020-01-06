@@ -1,0 +1,137 @@
+<?xml version="1.0"?>
+<pretext xmlns:xi="http://www.w3.org/2001/XInclude">
+  <xi:include href="slidesinfo.ptx"/>
+  <slideshow>
+    <title>Combinations and Permutations</title>
+    <slide>
+      <investigation>
+        <p permid="ltj">
+        You have a bunch of chips which come in five different colors:
+        red, blue, green, purple and yellow.
+
+        <ol permid="YuX"><li permid="ECg">
+            <p permid="BHA">
+              How many different two-chip stacks can you make if the bottom chip must be red or blue?
+              Explain your answer using both the additive and multiplicative principles.
+            </p>
+          </li><li permid="kJp">
+            <p permid="hOJ">
+              How many different three-chip stacks can you make if the bottom chip must be red or blue and the top chip must be green,
+              purple or yellow?
+              How does this problem relate to the previous one?
+            </p>
+          </li><li permid="QQy">
+            <p permid="NVS">
+              How many different three-chip stacks are there in which no color is repeated?
+              What about four-chip stacks?
+            </p>
+          </li><li permid="wXH">
+            <p permid="udb">
+              Suppose you wanted to take three different colored chips and put them in your pocket.
+              How many different choices do you have?
+              What if you wanted four different colored chips?
+              How do these problems relate to the previous one?
+            </p>
+          </li></ol>
+      </p>
+      </investigation>
+    </slide>
+    <slide>
+      <example source-number="1.3.1">
+        <statement>
+          <p permid="ACh">
+          How many permutations are there of the letters
+          <em>a, b, c, d, e, f</em>?
+        </p>
+        </statement>
+      </example>
+    </slide>
+    <slide>
+      <assemblage>
+        <title>Permutations of <m>n</m> elements</title>
+        <p permid="RAs">
+        There are <m>n! = n\cdot (n-1)\cdot (n-2)\cdot \cdots \cdot 2\cdot 1</m> permutations of <m>n</m> (distinct) elements.
+      </p>
+      </assemblage>
+    </slide>
+    <slide>
+      <example source-number="1.3.2">
+        <title>Counting Bijective Functions</title>
+        <statement>
+          <p permid="gJq">
+          How many functions <m>f:\{1,2,\ldots,8\} \to \{1,2,\ldots, 8\}</m> are <em>bijective</em>?
+        </p>
+        </statement>
+      </example>
+    </slide>
+    <slide>
+      <example source-number="1.3.3">
+        <statement>
+          <p permid="MQz">
+          How many 4 letter <q>words</q>
+          can you make from the letters <em>a</em>
+          through <em>f</em>, with no repeated letters?
+        </p>
+        </statement>
+      </example>
+    </slide>
+    <slide>
+      <assemblage>
+        <title><m>k</m>-permutations of <m>n</m> elements</title>
+        <p permid="xHB">
+            <idx><h><em>k</em>-permutation</h></idx>
+            <idx><h>permutation</h></idx>
+        <m>P(n,k)</m> is the number of <term><m>k</m>-permutations of <m>n</m> elements</term>,
+        the number of ways to <em>arrange</em>
+        <m>k</m> objects chosen from <m>n</m> distinct objects.
+        <me permid="knQ">
+          P(n,k) = \frac{n!}{(n-k)!} = n(n-1)(n-2)\cdots (n-(k-1))
+        </me>.
+      </p>
+      </assemblage>
+    </slide>
+    <slide>
+      <example source-number="1.3.4">
+        <title>Counting injective functions</title>
+        <statement>
+          <p permid="sXI">
+          How many functions <m>f:\{1,2,3\} \to \{1,2,3,4,5,6,7,8\}</m> are <em>injective</em>?
+        </p>
+        </statement>
+      </example>
+    </slide>
+    <slide>
+      <assemblage>
+        <title>Closed formula for <m>{n \choose k}</m></title>
+        <p permid="dOK">
+        <me permid="cJr">
+          {n \choose k} = \frac{n!}{(n-k)!k!} = \frac{n(n-1)(n-2)\cdots(n-(k-1))}{k(k-1)(k-2)\cdots 1}
+        </me>.
+      </p>
+      </assemblage>
+    </slide>
+    <slide>
+      <example source-number="1.3.5">
+        <statement>
+          <p permid="ZeR">
+          You decide to have a dinner party.
+          Even though you are incredibly popular and have 14 different friends,
+          you only have enough chairs to invite 6 of them.
+        </p>
+          <p permid="Fma">
+          <ol permid="snO"><li permid="deQ">
+              <p permid="akk">
+                How many choices do you have for which 6 friends to invite?
+              </p>
+            </li><li permid="JlZ">
+              <p permid="Grt">
+                What if you need to decide not only which friends to invite but also where to seat them along your long table?
+                How many choices do you have then?
+              </p>
+            </li></ol>
+        </p>
+        </statement>
+      </example>
+    </slide>
+  </slideshow>
+</pretext>

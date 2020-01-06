@@ -1,0 +1,135 @@
+<?xml version="1.0"?>
+<pretext xmlns:xi="http://www.w3.org/2001/XInclude">
+  <xi:include href="slidesinfo.ptx"/>
+  <slideshow>
+    <title>What is Discrete Mathematics?</title>
+    <slide>
+      <title>What is Discrete Mathematics?</title>
+            
+      <blockquote permid="akX">
+        <p permid="PLS">
+            dis<midpoint/>
+      crete / dis'krët.
+        </p>
+
+        <p permid="vTb">
+          <em>Adjective</em>: Individually separate and distinct.
+        </p>
+
+        <p permid="cak">
+          <em>Synonyms</em>: separate - detached - distinct - abstract.
+        </p>
+      </blockquote>
+      <p pause="yes">
+        Whatever your conception of what mathematics is,
+        try applying the concept of <q>discrete</q> to it, as defined above.
+        Some math fundamentally deals with <em>stuff</em>
+        that is individually separate and distinct.
+      </p>
+    </slide>
+    <slide>
+      <title>Example problem 1</title>
+      <example>
+        <statement>
+          <p>
+            The most popular mathematician in the world is throwing a party for all of his friends.
+            As a way to kick things off, they decide that everyone should shake hands.
+            Assuming all 10 people at the party each shake hands with every other person
+            (but not themselves,
+            obviously)
+            exactly once, how many handshakes take place?
+          </p>
+        </statement>
+      </example>
+    </slide>
+    <slide>
+      <title>Example problem 2</title>
+      <example>
+        <statement>
+          <p>
+            At the warm-up event for Oscar's All Star Hot Dog Eating Contest, Al ate one hot dog.
+            Bob then showed him up by eating three hot dogs.
+            Not to be outdone, Carl ate five.
+            This continued with each contestant eating two more hot dogs than the previous contestant.
+            How many hot dogs did Zeno (the 26th and final contestant) eat?
+            How many hot dogs were eaten all together?
+          </p>
+        </statement>
+      </example>
+    </slide>
+    <slide>
+      <title>Example problem 3</title>
+      <example>
+        <statement>
+          <p permid="Xqr">
+            After excavating for weeks, you finally arrive at the burial chamber.
+            The room is empty except for two large chests.
+            On each is carved a message (strangely in English):
+          </p>
+
+        <sidebyside width="80%" permid="NWF">
+          <image xml:id="two-chests" permid="FmN">
+            <latex-image>\begin{tikzpicture} \node[shape=rectangle, draw=brown, thick, fill=brown!20!white, inner sep=5mm, minimum height=3cm, minimum width=3.5cm, text width=3.5cm, align=center] (a) { If this chest is empty, then the other chest's message is true.}; \node[shape=rectangle, draw=brown, thick, fill=brown!20!white, inner sep=5mm, minimum height=3cm, minimum width=3.5cm, text width=3.5cm, align=center, right=of a] {
+                      This chest is filled with treasure or the other chest contains deadly scorpions.
+                      };
+              \end{tikzpicture}</latex-image>
+          </image>
+        </sidebyside>
+
+        <p permid="DxA">
+          You know exactly one of these messages is true.
+          What should you do?
+        </p>
+        </statement>
+      </example>
+    </slide>
+    <slide>
+      <title>Example problem 4</title>
+      <example>
+        <statement>
+          <p>
+            Back in the days of yore,
+            five small towns decided they wanted to build roads directly connecting each pair of towns.
+            While the towns had plenty of money to build roads as long and as winding as they wished,
+            it was very important that the roads not intersect
+            with each other
+            (as stop signs had not yet been invented).
+            Also, tunnels and bridges were not allowed.
+            Is it possible for each of these towns to build a road to each of the four other towns without creating any intersections?
+          </p>
+        </statement>
+      </example>
+    </slide>
+    <slide>
+      <title>Summary</title>
+      <p>
+        Each of the problems above illustrate one of the main topics we will discuss in this course. 
+        <ul pause="yes">
+          <li>
+            <p>
+              Discrete mathematics deals with counting <em>how many</em> ways something can happen.  We will learn how to count in chapter 1.
+            </p>
+          </li>
+          <li>
+            <p>
+              Discrete mathematics deals with manipulating sequences of numbers.  We will investigate this in chapter 2.
+            </p>
+          </li>
+          <li>
+            <p>
+              Discrete mathematics deals with logic, which also helps us understand how to prove our solutions to problems are correct.  We will do both of these in chapter 3.
+            </p>
+          </li>
+          <li>
+            <p>
+              Discrete mathematics deals with the ways things can be <em>related</em>.  These relationships can be modeled using <em>graphs</em>, which we will study in chapter 4.
+            </p>
+          </li>
+        </ul>
+      </p>
+      <p pause="yes">
+        But first, we will review some basic mathematical tools that will help us study these questions.
+      </p>
+    </slide>
+  </slideshow>
+</pretext>

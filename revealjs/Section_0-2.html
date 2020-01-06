@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Mathematical Statements</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/css/reset.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/css/reveal.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/css/theme/simple.min.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/js/reveal.min.js"></script><style>
+ul {
+  display: block !important;
+}
+.reveal img {
+  border: 0.5px !important;
+  border-radius: 2px 10px 2px;
+  padding: 4px;
+}
+.definition,.theorem,.activity {
+  border-width: 0.5px;
+  border-style: solid;
+  border-radius: 2px 10px 2px;
+  padding: 1%;
+  margin-bottom: 2em;
+}
+.definition {
+  background: #00608010;
+}
+.theorem {
+  background: #ff000010;
+}
+.proof {
+  background: #ffffff90;
+}
+.activity {
+  background: #60800010;
+}
+          </style>
+</head>
+<body>
+<div style="display: none;">\(
+\renewcommand{\d}{\displaystyle}
+\newcommand{\N}{\mathbb N}
+\newcommand{\B}{\mathbf B}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\U}{\mathcal U}
+\newcommand{\pow}{\mathcal P}
+\newcommand{\inv}{^{-1}}
+\newcommand{\st}{:}
+\renewcommand{\iff}{\leftrightarrow}
+\newcommand{\Iff}{\Leftrightarrow}
+\newcommand{\imp}{\rightarrow}
+\newcommand{\Imp}{\Rightarrow}
+\newcommand{\isom}{\cong}
+
+\renewcommand{\bar}{\overline}
+\newcommand{\card}[1]{\left| #1 \right|}
+\newcommand{\twoline}[2]{\begin{pmatrix}#1 \\ #2 \end{pmatrix}}
+
+\newcommand{\vtx}[2]{node[fill,circle,inner sep=0pt, minimum size=4pt,label=#1:#2]{}}
+\newcommand{\va}[1]{\vtx{above}{#1}}
+\newcommand{\vb}[1]{\vtx{below}{#1}}
+\newcommand{\vr}[1]{\vtx{right}{#1}}
+\newcommand{\vl}[1]{\vtx{left}{#1}}
+\renewcommand{\v}{\vtx{above}{}}
+\)</div>
+<div class="reveal"><div class="slides">
+<section><h3>Warm-up</h3>
+<div align="left"> <article class="investigation project-like" id="investigation-1"><h6 class="heading">
+<span class="type">Investigate!</span><span class="period">.</span>
+</h6>
+<p>While walking through a fictional forest, you encounter three trolls guarding a bridge. Each is either a <em class="emphasis">knight</em>, who always tells the truth, or a <em class="emphasis">knave</em>, who always lies. The trolls will not let you pass until you correctly identify each as either a knight or a knave. Each troll makes a single statement:</p>
+<p>Which troll is which?</p></article>
+</div></section><section><section><h1>Atomic and Molecular Statements</h1></section><section><h3></h3>
+<div align="left"><div class="activity">
+<h3>Example (0.2.1):
+      </h3>
+<p>These are statements (in fact, <em class="emphasis">atomic</em> statements):<ul>
+<li><p>Telephone numbers in the USA have 10 digits.</p></li>
+<li><p>The moon is made of cheese.</p></li>
+<li><p>42 is a perfect square.</p></li>
+<li><p>Every even number greater than 2 can be expressed as the sum of two primes.</p></li>
+<li><p>\(3+7 = 12\)</p></li>
+</ul>And these are not statements:<ul>
+<li><p>Would you like some cake?</p></li>
+<li><p>The sum of two squares.</p></li>
+<li>\(1+3+5+7+\cdots+2n+1\text{.}\)</li>
+<li><p>Go to your room!</p></li>
+<li><p>\(3+x = 12\)</p></li>
+</ul></p>
+</div></div></section><section><h3></h3>
+<div align="left"><article class="assemblage assemblage-like" id="assemblage-1"><h6 class="heading"><span class="title">Logical Connectives.</span></h6>
+<p><ul>
+<li>\(P \wedge Q\) is read “\(P\) and \(Q\text{,}\)” and called a <dfn class="terminology">conjunction</dfn>. </li>
+<li>\(P \vee Q\) is read “\(P\) or \(Q\text{,}\)” and called a <dfn class="terminology">disjunction</dfn>. </li>
+<li>\(P \imp Q\) is read “if \(P\) then \(Q\text{,}\)” and called an <dfn class="terminology">implication</dfn> or <dfn class="terminology">conditional</dfn>. </li>
+<li>\(P \iff Q\) is read “\(P\) if and only if \(Q\text{,}\)” and called a <dfn class="terminology">biconditional</dfn>. </li>
+<li>\(\neg P\) is read “not \(P\text{,}\)” and called a <dfn class="terminology">negation</dfn>. </li>
+</ul></p></article></div></section><section><h3></h3>
+<div align="left"><article class="assemblage assemblage-like" id="assemblage-2"><h6 class="heading"><span class="title">Truth Conditions for Connectives.</span></h6>
+<p><ul>
+<li>\(P \wedge Q\) is true when both \(P\) and \(Q\) are true</li>
+<li>\(P \vee Q\) is true when \(P\) or \(Q\) or both are true.</li>
+<li>\(P \imp Q\) is true when \(P\) is false or \(Q\) is true or both.</li>
+<li>\(P \iff Q\) is true when \(P\) and \(Q\) are both true, or both false.</li>
+<li>\(\neg P\) is true when \(P\) is false.</li>
+</ul></p></article></div></section></section><section><section><h1>Implications</h1></section><section><h3></h3>
+<div align="left"><article class="assemblage assemblage-like" id="assemblage-3"><h6 class="heading"><span class="title">Implications.</span></h6>
+<p>An <dfn class="terminology">implication</dfn> or <dfn class="terminology">conditional</dfn> is a molecular statement of the form<div class="displaymath">
+\begin{equation*}
+P \imp Q
+\end{equation*}
+</div>where \(P\) and \(Q\) are statements. We say that<ul>
+<li>\(P\) is the <dfn class="terminology">hypothesis</dfn> (or <dfn class="terminology">antecedent</dfn>).</li>
+<li>\(Q\) is the <dfn class="terminology">conclusion</dfn> (or <dfn class="terminology">consequent</dfn>).</li>
+</ul></p>
+<p>An implication is <em class="emphasis">true</em> provided \(P\) is false or \(Q\) is true (or both), and <em class="emphasis">false</em> otherwise. In particular, the only way for \(P \imp Q\) to be false is for \(P\) to be true <em class="emphasis">and</em> \(Q\) to be false.</p></article></div></section><section><h3></h3>
+<div align="left"><div class="activity">
+<h3>Example (0.2.2):
+      </h3>
+<p>Consider the statement:</p>
+<blockquote class="blockquote" id="UhD"><p>If Bob gets a 90 on the final, then Bob will pass the class.</p></blockquote>
+<p>This is definitely an implication: \(P\) is the statement “Bob gets a 90 on the final,” and \(Q\) is the statement “Bob will pass the class.”</p>
+<p>Suppose I made that statement to Bob. In what circumstances would it be fair to call me a liar? What if Bob really did get a 90 on the final, and he did pass the class? Then I have not lied; my statement is true. However, if Bob did get a 90 on the final and did not pass the class, then I lied, making the statement false. The tricky case is this: what if Bob did not get a 90 on the final? Maybe he passes the class, maybe he doesn't. Did I lie in either case? I think not. In these last two cases, \(P\) was false, and the statement \(P \imp Q\) was true. In the first case, \(Q\) was true, and so was \(P \imp Q\text{.}\) So \(P \imp Q\) is true when either \(P\) is false or \(Q\) is true.</p>
+</div></div></section><section><h3></h3>
+<div align="left"><div class="activity">
+<h3>Example (0.2.3):
+      </h3>
+<p>Decide which of the following statements are true and which are false. Briefly explain.<ol>
+<li><p>If \(1=1\text{,}\) then most horses have 4 legs.</p></li>
+<li><p>If \(0=1\text{,}\) then \(1=1\text{.}\)</p></li>
+<li><p>If 8 is a prime number, then the 7624th digit of \(\pi\) is an 8.</p></li>
+<li><p>If the 7624th digit of \(\pi\) is an 8, then \(2+2 = 4\text{.}\)</p></li>
+</ol></p>
+</div></div></section><section><h3></h3>
+<div align="left"><article class="assemblage assemblage-like" id="assemblage-4"><h6 class="heading"><span class="title">Direct Proofs of Implications.</span></h6>
+<p>To prove an implication \(P \imp Q\text{,}\) it is enough to assume \(P\text{,}\) and from it, deduce \(Q\text{.}\)</p></article></div></section><section><h3></h3>
+<div align="left"><div class="activity">
+<h3>Example (0.2.4):
+      </h3>
+<p>Prove: If two numbers \(a\) and \(b\) are even, then their sum \(a+b\) is even.</p>
+</div></div></section><section><h3></h3>
+<div align="left"><article class="assemblage assemblage-like" id="assemblage-5"><h6 class="heading"><span class="title">Converse and Contrapositive.</span></h6>
+<p><ul>
+<li><p>The <dfn class="terminology">converse</dfn>  of an implication \(P \imp Q\) is the implication \(Q \imp P\text{.}\) The converse is NOT logically equivalent to the original implication. That is, whether the converse of an implication is true is independent of the truth of the implication.</p></li>
+<li><p>The <dfn class="terminology">contrapositive</dfn>  of an implication \(P \imp Q\) is the statement \(\neg Q \imp \neg P\text{.}\) An implication and its contrapositive are logically equivalent (they are either both true or both false).</p></li>
+</ul></p></article></div></section><section><h3></h3>
+<div align="left"><div class="activity">
+<h3>Example (0.2.5):
+      </h3>
+<p>True or false: If you draw any nine playing cards from a regular deck, then you will have at least three cards all of the same suit. Is the converse true?</p>
+</div></div></section><section><h3></h3>
+<div align="left"><div class="activity">
+<h3>Example (0.2.6):
+      </h3>
+<p>Suppose I tell Sue that if she gets a 93% on her final, then she will get an A in the class. Assuming that what I said is true, what can you conclude in the following cases:</p>
+<p><ol>
+<li><p>Sue gets a 93% on her final.</p></li>
+<li><p>Sue gets an A in the class.</p></li>
+<li><p>Sue does not get a 93% on her final.</p></li>
+<li><p>Sue does not get an A in the class.</p></li>
+</ol></p>
+</div></div></section><section><h3></h3>
+<div align="left"><article class="assemblage assemblage-like" id="assemblage-6"><h6 class="heading"><span class="title">If and only if.</span></h6>
+<p>Example: Given an integer \(n\text{,}\) it is true that \(n\) is even if and only if \(n^2\) is even. That is, if \(n\) is even, then \(n^2\) is even, as well as the converse: if \(n^2\) is even, then \(n\) is even.</p></article></div></section><section><h3></h3>
+<div align="left"><div class="activity">
+<h3>Example (0.2.7):
+      </h3>
+<p>Suppose it is true that I sing if and only if I'm in the shower. We know this means both that if I sing, then I'm in the shower, and also the converse, that if I'm in the shower, then I sing. Let \(P\) be the statement, “I sing,” and \(Q\) be, “I'm in the shower.” So \(P \imp Q\) is the statement “if I sing, then I'm in the shower.” Which part of the if and only if statement is this?</p>
+<p>What we are really asking for is the meaning of “I sing <em class="emphasis">if</em> I'm in the shower” and “I sing <em class="emphasis">only if</em> I'm in the shower.” When is the first one (the “if” part) <em class="emphasis">false</em>? When I am in the shower but not singing. That is the same condition on being false as the statement “if I'm in the shower, then I sing.” So the “if” part is \(Q \imp P\text{.}\) On the other hand, to say, “I sing only if I'm in the shower” is equivalent to saying “if I sing, then I'm in the shower,” so the “only if” part is \(P \imp Q\text{.}\)</p>
+</div></div></section><section><h3></h3>
+<div align="left"><div class="activity">
+<h3>Example (0.2.8):
+      </h3>
+<p>Rephrase the implication, “if I dream, then I am asleep” in as many different ways as possible. Then do the same for the converse.</p>
+</div></div></section><section><h3></h3>
+<div align="left"><article class="assemblage assemblage-like" id="assemblage-7"><h6 class="heading"><span class="title">Necessary and Sufficient.</span></h6>
+<p><ul>
+<li>“\(P\) is necessary for \(Q\)” means \(Q \imp P\text{.}\)</li>
+<li>“\(P\) is sufficient for \(Q\)” means \(P \imp Q\text{.}\)</li>
+<li><p>If \(P\) is necessary and sufficient for \(Q\text{,}\) then \(P \iff Q\text{.}\)</p></li>
+</ul></p></article></div></section><section><h3></h3>
+<div align="left"><div class="activity">
+<h3>Example (0.2.9):
+      </h3>
+<p>Recall from calculus, if a function is differentiable at a point \(c\text{,}\) then it is continuous at \(c\text{,}\) but that the converse of this statement is not true (for example, \(f(x) = |x|\) at the point 0). Restate this fact using “necessary and sufficient” language.</p>
+</div></div></section></section><section><section><h1>Predicates and Quantifiers</h1></section><section><h3></h3>
+<div align="left"><article class="investigation project-like" id="investigation-2"><h6 class="heading">
+<span class="type">Investigate!</span><span class="period">.</span>
+</h6>
+<p>Consider the statements below. Decide whether any are equivalent to each other, or whether any imply any others.</p>
+<p><ol>
+<li><p>You can fool some people all of the time.</p></li>
+<li><p>You can fool everyone some of the time.</p></li>
+<li><p>You can always fool some people.</p></li>
+<li><p>Sometimes you can fool everyone.</p></li>
+</ol></p></article></div></section><section><h3></h3>
+<div align="left"><article class="assemblage assemblage-like" id="assemblage-8"><h6 class="heading"><span class="title">Universal and Existential Quantifiers.</span></h6>
+<p>The existential quantifier is \(\exists\) and is read “there exists” or “there is.” For example, <div class="displaymath">
+\begin{equation*}
+\exists x (x \lt 0)
+\end{equation*}
+</div>asserts that there is a number less than 0.</p>
+<p>The universal quantifier is \(\forall\) and is read “for all” or “every.” For example, <div class="displaymath">
+\begin{equation*}
+\forall x (x \ge 0)
+\end{equation*}
+</div>asserts that every number is greater than or equal to 0.</p></article></div></section><section><h3></h3>
+<div align="left"><article class="assemblage assemblage-like" id="assemblage-9"><h6 class="heading"><span class="title">Quantifiers and Negation.</span></h6></article></div></section></section>
+</div></div>
+</body>
+<script>
+Reveal.initialize({
+  controls: false,
+  progress: false,
+  center: false,
+  hash: true,
+  transition: 'fade',
+  width: "100%",
+  height: "100%",
+  margin: "0.025",
+  dependencies: [
+    { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/plugin/math/math.min.js', async: true },
+    ]
+  });
+        </script>
+</html>

@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<pretext xmlns:xi="http://www.w3.org/2001/XInclude">
+  <xi:include href="slidesinfo.ptx"/>
+  <slideshow>
+    <title>Generating Functions</title>
+    <slide>
+      <example source-number="5.1.1">
+        <statement>
+          <p permid="IBF">
+          What sequence is represented by the generating series <m>3 + 8x^2 + x^3 + \frac{x^5}{7} + 100x^6 + \cdots</m>?
+        </p>
+        </statement>
+      </example>
+    </slide>
+    <subsection>
+      <title>Building Generating Functions</title>
+      <slide>
+        <assemblage>
+          <title>
+            <m>1,1,1,\ldots</m>
+          </title>
+          <p permid="ejJ">
+        The generating function for
+        <m>1,1,1,1,1,1,\ldots</m> is <m>\dfrac{1}{1-x}</m>
+      </p>
+        </assemblage>
+      </slide>
+      <slide>
+        <assemblage>
+          <title>
+            <m>1,2,3,\ldots</m>
+          </title>
+          <p permid="KqS">
+        The generating function for
+        <m>1, 2, 3, 4, 5, \ldots</m> is <m>\d\frac{1}{(1-x)^2}</m>.
+      </p>
+        </assemblage>
+      </slide>
+    </subsection>
+    <subsection>
+      <title>Differencing</title>
+      <slide>
+        <example source-number="5.1.2">
+          <statement>
+            <p permid="oIO">
+          Find a generating function for <m>1, 3, 5, 7, 9,\ldots</m>.
+        </p>
+          </statement>
+        </example>
+      </slide>
+      <slide>
+        <example source-number="5.1.3">
+          <statement>
+            <p permid="UPX">
+          Find the generating function for <m>1, 4, 9, 16, \ldots</m>.
+          Note we take <m>1 = a_0</m>.
+        </p>
+          </statement>
+        </example>
+      </slide>
+      <slide>
+        <example source-number="5.1.4">
+          <statement>
+            <p permid="AXg">
+          The sequence <m>1, 3, 7, 15, 31, 63, \ldots</m> satisfies the recurrence relation <m>a_n = 3a_{n-1} - 2a_{n-2}</m>.
+          Find the generating function for the sequence.
+        </p>
+          </statement>
+        </example>
+      </slide>
+    </subsection>
+    <subsection>
+      <title>Multiplication and Partial Sums</title>
+      <slide>
+        <example source-number="5.1.5">
+          <statement>
+            <p permid="hep">
+          <q>Multiply</q> the sequence
+          <m>1, 2, 3, 4, \ldots</m> by the sequence <m>1, 2, 4, 8, 16, \ldots</m>.
+        </p>
+          </statement>
+        </example>
+      </slide>
+    </subsection>
+    <subsection>
+      <title>Solving Recurrence Relations with Generating Functions</title>
+      <slide>
+        <example source-number="5.1.6">
+          <statement>
+            <p permid="Nly">
+          Solve the recurrence relation
+          <m>a_n = 3a_{n-1} - 2a_{n-2}</m> with initial conditions <m>a_0 = 1</m> and <m>a_1 = 3</m>.
+        </p>
+          </statement>
+        </example>
+      </slide>
+    </subsection>
+  </slideshow>
+</pretext>

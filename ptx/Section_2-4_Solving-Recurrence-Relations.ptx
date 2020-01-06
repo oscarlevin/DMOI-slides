@@ -1,0 +1,145 @@
+<?xml version="1.0"?>
+<pretext xmlns:xi="http://www.w3.org/2001/XInclude">
+  <xi:include href="slidesinfo.ptx"/>
+  <slideshow>
+    <title>Solving Recurrence Relations</title>
+    <slide>
+      <investigation>
+        <p permid="GOF">
+        Consider the recurrence relation
+        <me permid="elW">
+          a_n = 5a_{n-1} - 6a_{n-2}
+        </me>.
+        <ol permid="tQt"><li permid="ZXC">
+            <p permid="yAm">
+              What sequence do you get if the initial conditions are <m>a_0 = 1</m>,
+              <m>a_1 = 2</m>?
+              Give a closed formula for this sequence.
+            </p>
+          </li><li permid="GeL">
+            <p permid="eHv">
+              What sequence do you get if the initial conditions are <m>a_0 = 1</m>,
+              <m>a_1 = 3</m>?
+              Give a closed formula.
+            </p>
+          </li><li permid="mlU">
+            <p permid="KOE">
+              What if <m>a_0 = 2</m> and <m>a_1 = 5</m>?
+              Find a closed formula.
+            </p>
+          </li></ol>
+      </p>
+      </investigation>
+    </slide>
+    <slide>
+      <example source-number="2.4.1">
+        <statement>
+          <p permid="pQu">
+          Find a recurrence relation and initial conditions for <m>1, 5, 17, 53, 161, 485\ldots</m>.
+        </p>
+        </statement>
+      </example>
+    </slide>
+    <slide>
+      <example source-number="2.4.2">
+        <statement>
+          <p permid="VXD">
+          Check that <m>a_n = 2^n + 1</m> is a solution to the recurrence relation <m>a_n = 2a_{n-1} - 1</m> with <m>a_1 = 3</m>.
+        </p>
+        </statement>
+      </example>
+    </slide>
+    <slide>
+      <example source-number="2.4.3">
+        <statement>
+          <p permid="CeM">
+          Solve the recurrence relation
+          <m>a_n = a_{n-1} + n</m> with initial term <m>a_0 = 4</m>.
+        </p>
+        </statement>
+      </example>
+    </slide>
+    <slide>
+      <example source-number="2.4.4">
+        <statement>
+          <p permid="ilV">
+          Use iteration to solve the recurrence relation <m>a_n = a_{n-1} + n</m> with <m>a_0 = 4</m>.
+        </p>
+        </statement>
+      </example>
+    </slide>
+    <slide>
+      <example source-number="2.4.5">
+        <statement>
+          <p permid="Ote">
+          Solve the recurrence relation
+          <m>a_n = 3a_{n-1} + 2</m> subject to <m>a_0 = 1</m>.
+        </p>
+        </statement>
+      </example>
+    </slide>
+    <subsection>
+      <title>The Characteristic Root Technique</title>
+      <slide>
+        <assemblage>
+          <title>Characteristic Roots</title>
+          <p permid="cwJ">
+            <idx><h>characteristic roots</h></idx>
+        Given a recurrence relation <m>a_n + \alpha a_{n-1} + \beta a_{n-2} = 0</m>, the
+        <term>characteristic polynomial</term> is
+        <me permid="zUa">
+          x^2 + \alpha x + \beta
+        </me>
+        giving the
+        <term>characteristic equation</term>:
+        <me permid="gbj">
+          x^2 + \alpha x + \beta = 0
+        </me>.
+      </p>
+          <p permid="IDS">
+        If <m>r_1</m> and <m>r_2</m> are two distinct roots of the characteristic polynomial (i.e, solutions to the characteristic equation),
+        then the solution to the recurrence relation is
+        <me permid="Mis">
+          a_n = ar_1^n + br_2^n
+        </me>,
+        where <m>a</m> and <m>b</m> are constants determined by the initial conditions.
+      </p>
+        </assemblage>
+      </slide>
+      <slide>
+        <example source-number="2.4.6">
+          <statement>
+            <p permid="uAn">
+          Solve the recurrence relation
+          <m>a_n = 7a_{n-1} - 10 a_{n-2}</m> with <m>a_0 = 2</m> and <m>a_1 = 3</m>.
+        </p>
+          </statement>
+        </example>
+      </slide>
+      <slide>
+        <assemblage>
+          <title>Characteristic Root Technique for Repeated Roots</title>
+          <p permid="oLb">
+        Suppose the recurrence relation
+        <m>a_n = \alpha a_{n-1} + \beta a_{n-2}</m> has a characteristic polynomial with only one root <m>r</m>.
+        Then the solution to the recurrence relation is
+        <me permid="QSl">
+          a_n = ar^n + bnr^n
+        </me>
+        where <m>a</m> and <m>b</m> are constants determined by the initial conditions.
+      </p>
+        </assemblage>
+      </slide>
+      <slide>
+        <example source-number="2.4.7">
+          <statement>
+            <p permid="aHw">
+          Solve the recurrence relation
+          <m>a_n = 6a_{n-1} - 9a_{n-2}</m> with initial conditions <m>a_0 = 1</m> and <m>a_1 = 4</m>.
+        </p>
+          </statement>
+        </example>
+      </slide>
+    </subsection>
+  </slideshow>
+</pretext>

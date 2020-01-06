@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<pretext xmlns:xi="http://www.w3.org/2001/XInclude">
+  <xi:include href="slidesinfo.ptx"/>
+  <slideshow>
+    <title>Chapter Summary</title>
+    <slide>
+      <investigation>
+        <p permid="BVV">
+        Suppose you have a huge box of animal crackers containing plenty of each of 10 different animals.
+        For the counting questions below,
+        carefully examine their similarities and differences, and then give an answer.
+        The answers are all one of the following:
+      </p>
+        <sidebyside permid="htk">
+          <tabular permid="mMX">
+            <row>
+              <cell>
+                <m>P(10,6)\qquad</m>
+              </cell>
+              <cell>
+                <m>{10 \choose 6}\qquad</m>
+              </cell>
+              <cell>
+                <m>10^6\qquad</m>
+              </cell>
+              <cell><m>{15 \choose 9}</m>.</cell>
+            </row>
+          </tabular>
+        </sidebyside>
+        <p permid="ide">
+        <ol permid="FVU"><li permid="WUf">
+            <p permid="TZz">
+              How many animal parades containing 6 crackers can you line up?
+            </p>
+          </li><li permid="Dbo">
+            <p permid="AgI">
+              How many animal parades of 6 crackers can you line up so that the animals appear in alphabetical order?
+            </p>
+          </li><li permid="jix">
+            <p permid="gnR">
+              How many ways could you line up 6 different animals in alphabetical order?
+            </p>
+          </li><li permid="PpG">
+            <p permid="Mva">
+              How many ways could you line up 6 different animals if they can come in any order?
+            </p>
+          </li><li permid="vwP">
+            <p permid="sCj">
+              How many ways could you give 6 children one animal cracker each?
+            </p>
+          </li><li permid="bDY">
+            <p permid="YJs">
+              How many ways could you give 6 children one animal cracker each so that no two kids get the same animal?
+            </p>
+          </li><li permid="HLh">
+            <p permid="EQB">
+              How many ways could you give out 6 giraffes to 10 kids?
+            </p>
+          </li><li permid="nSq">
+            <p permid="kXK">
+              Write a question about giving animal crackers to kids that has the answer <m>{10\choose 6}</m>.
+            </p>
+          </li></ol>
+      </p>
+      </investigation>
+    </slide>
+  </slideshow>
+</pretext>

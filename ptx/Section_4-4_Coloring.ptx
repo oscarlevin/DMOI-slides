@@ -1,0 +1,257 @@
+<?xml version="1.0"?>
+<pretext xmlns:xi="http://www.w3.org/2001/XInclude">
+  <xi:include href="slidesinfo.ptx"/>
+  <slideshow>
+    <title>Coloring</title>
+    <slide>
+      <investigation>
+        <p permid="ACu">
+        Mapmakers in the fictional land of Euleria have drawn the borders of the various dukedoms of the land.
+        To make the map pretty, they wish to color each region.
+        Adjacent regions must be colored differently,
+        but it is perfectly fine to color two distant regions with the same color.
+        What is the fewest colors the mapmakers can use and still accomplish this task?
+      </p>
+        <sidebyside width="75%" permid="QQL">
+          <image permid="Qvm">
+            <latex-image>\begin{tikzpicture}
+	\draw[thick]
+		plot [smooth] coordinates {(0.1,1) (0,0) (2,0) (4,0.1) (5,0) (6,0) (7,0) (7,1) (7.1,3.5)}
+		plot [smooth] coordinates {(1,1) (0.1,1) (0,5)}
+		plot [smooth] coordinates {(2,5) (1,5) (1,4) (1,1) (1,.5) (3,.5) (3,1.25)}
+		plot [smooth] coordinates {(5,0) (5,1) (6,1) (6,0)}
+		plot [smooth] coordinates {(6,1) (6,3) (6,3.5) (5.5,3.5)}
+		plot [smooth] coordinates {(5,1) (4,1) (4,1.25) (4,1.5) (4,3) (2,3) (2,1) (3,1.25) (4,1.25)}
+		plot [smooth] coordinates {(4,1.5) (5,1.5) (5,3) (5,4) (4,4) (3,3.85) (2,4) (1.5,4) (1.5,3) (2,3)}
+		plot [smooth] coordinates {(5,3) (5.5,3) (5.5,3.5) (5.5, 4.2) (5.5,5) (4,5) (4,4)}
+		plot [smooth] coordinates {(6,3) (7.1, 3.5) (7,5) (5.5,4.2)}
+		plot [smooth] coordinates {(7,5) (5,6.5) (4,7) (1,7) (0,5) (1,4)}
+		plot [smooth] coordinates {(2,4) (2,5) (1.8,5.5) (2,6) (3,6.5) (4,5)}
+		plot [smooth] coordinates {(1,7) (3,6.5)};
+	\end{tikzpicture}</latex-image>
+          </image>
+        </sidebyside>
+      </investigation>
+    </slide>
+    <slide>
+      <example source-number="4.4.1">
+        <statement>
+          <p permid="bZK">
+          Find the chromatic number of the graphs below.
+        </p>
+          <sidebyside widths="20% 20% 30%" margins="auto" valign="middle" permid="wXU">
+            <image permid="wCv">
+              <latex-image>\begin{tikzpicture}
+	      \foreach \x in {0,...,6}
+	      \draw  (\x*60:1) \v -- (\x*60+60:1) -- (\x*60+180:1) -- cycle;
+	    \end{tikzpicture}</latex-image>
+            </image>
+            <image permid="cJE">
+              <latex-image>\begin{tikzpicture}[yscale=.8]
+	      \draw  (-1,0) \v -- (0,0) \v -- (1,0) \v -- (.5,1) \v -- (0,0) -- (-.5,1) \v -- (0,2) \v -- (.5,1) -- (-.5,1) -- (-1,0);
+	    \end{tikzpicture}</latex-image>
+            </image>
+            <image permid="IQN">
+              <latex-image>\begin{tikzpicture}[yscale=.8, xscale=1.5]
+	 \draw  (-1, 0) \v -- (-.5,2) \v -- (0,0) \v -- (.5, 2) \v -- (1,0) \v -- (-.5,2) (.5,2) -- (-1,0);
+	  \end{tikzpicture}</latex-image>
+            </image>
+          </sidebyside>
+        </statement>
+      </example>
+    </slide>
+    <slide>
+      <theorem source-number="4.4.2">
+        <title>The Four Color Theorem</title>
+        <statement>
+          <p permid="Dxa">
+              <idx><h>Four Color Theorem</h></idx>
+          If <m>G</m> is a planar graph,
+          then the chromatic number of <m>G</m> is less than or equal to 4.
+          Thus any map can be properly colored with 4 or fewer colors.
+        </p>
+        </statement>
+      </theorem>
+    </slide>
+    <subsection>
+      <title>Coloring in General</title>
+      <slide>
+        <investigation>
+          <p permid="dOX">
+        The math department plans to offer 10 classes next semester.
+        Some classes cannot run at the same time
+        (perhaps they are taught by the same professor,
+        or are required for seniors).
+      </p>
+          <sidebyside permid="HwZ">
+            <tabular permid="tHP">
+              <col right="minor" halign="center"/>
+              <col/>
+              <row bottom="minor">
+                <cell>Class:</cell>
+                <cell>Conflicts with:</cell>
+              </row>
+              <row>
+                <cell>A</cell>
+                <cell>D I</cell>
+              </row>
+              <row>
+                <cell>B</cell>
+                <cell>D I J</cell>
+              </row>
+              <row>
+                <cell>C</cell>
+                <cell>E F I</cell>
+              </row>
+              <row>
+                <cell>D</cell>
+                <cell>A B F</cell>
+              </row>
+              <row>
+                <cell>E</cell>
+                <cell>C H I</cell>
+              </row>
+              <row>
+                <cell>F</cell>
+                <cell>C D I</cell>
+              </row>
+              <row>
+                <cell>G</cell>
+                <cell>J</cell>
+              </row>
+              <row>
+                <cell>H</cell>
+                <cell>E I J</cell>
+              </row>
+              <row>
+                <cell>I</cell>
+                <cell>A B C E F H</cell>
+              </row>
+              <row>
+                <cell>J</cell>
+                <cell>B G H</cell>
+              </row>
+            </tabular>
+          </sidebyside>
+          <p permid="JWg">
+        How many different time slots are needed to teach these classes (and which should be taught at the same time)?
+        More importantly,
+        how could we use graph coloring to answer this question?
+      </p>
+        </investigation>
+      </slide>
+      <slide>
+        <example source-number="4.4.3">
+          <statement>
+            <p permid="IgT">
+          Radio stations broadcast their signal at certain frequencies.
+          However, there are a limited number of frequencies to choose from,
+          so nationwide many stations use the same frequency.
+          This works because the stations are far enough apart that their signals will not interfere;
+          no one radio could pick them up at the same time.
+        </p>
+            <p permid="ooc">
+          Suppose 10 new radio stations are to be set up in a currently unpopulated
+          (by radio stations)
+          region.
+          The radio stations that are close enough to each other to cause interference are recorded in the table below.
+          What is the fewest number of frequencies the stations could use.
+        </p>
+            <!-- Do to spacing concerns, instead of the mbx table, we use a latex table and import it as an image.  In sidebyside, the image gets scaled, even in latex.
+
+<table>
+	<tabular>
+		<col right="minor" /><col right="minor" /><col right="minor" /><col right="minor" /><col right="minor" /><col right="minor" /><col right="minor" /><col right="minor" /><col right="minor" />
+		<col right="minor" /><col/>
+	<row bottom="minor"> <cell></cell><cell>KQEA</cell><cell>KQEB</cell><cell>KQEC</cell><cell>KQED</cell><cell>KQEE</cell> <cell>KQEF</cell> <cell>KQEG</cell><cell> KQEH</cell> <cell>KQEI</cell><cell>KQEJ</cell></row>
+	<row bottom="minor">
+<cell>KQEA</cell><cell></cell><cell></cell><cell>x</cell><cell></cell><cell></cell><cell>x</cell><cell>x</cell><cell></cell><cell></cell><cell>x</cell></row>
+	<row bottom="minor"><cell>KQEB</cell><cell></cell><cell></cell><cell>x</cell><cell>x</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row>
+	<row bottom="minor"><cell>KQEC</cell><cell>x</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>x</cell><cell>x</cell><cell></cell><cell></cell><cell>x</cell></row>
+	<row bottom="minor"><cell>KQED</cell><cell></cell><cell>x</cell><cell></cell><cell></cell><cell>x</cell><cell>x</cell><cell></cell><cell>x</cell><cell></cell><cell></cell></row>
+	<row bottom="minor"><cell>KQEE</cell><cell></cell><cell></cell><cell></cell><cell>x</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>x</cell><cell></cell></row>
+	<row bottom="minor"><cell>KQEF</cell><cell>x</cell><cell></cell><cell>x</cell><cell>x</cell><cell></cell><cell></cell><cell>x</cell><cell></cell><cell></cell><cell>x</cell></row>
+	<row bottom="minor"><cell>KQEG</cell><cell>x</cell><cell></cell><cell>x</cell><cell></cell><cell></cell><cell>x</cell><cell></cell><cell></cell><cell></cell><cell>x</cell></row>
+	<row bottom="minor"><cell>KQEH </cell><cell></cell><cell></cell><cell></cell><cell>x</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>x</cell><cell></cell></row>
+	<row bottom="minor"><cell>KQEI</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell>x</cell><cell></cell><cell></cell><cell>x</cell><cell></cell><cell>x</cell></row>
+
+	<row bottom="minor"><cell>KQEJ</cell> <cell>x</cell><cell></cell><cell>x</cell><cell> </cell><cell></cell><cell>x</cell><cell>x</cell> <cell></cell><cell>x</cell><cell></cell></row>
+	</tabular>
+</table> -->
+            <sidebyside permid="nEi">
+              <image permid="Vff">
+                <latex-image>
+		\begin{tabular}{c|c|c|c|c|c|c|c|c|c|c|}
+		 &amp; {\tiny KQEA}&amp;{\tiny KQEB}&amp;{\tiny KQEC}&amp;{\tiny KQED}&amp;{\tiny KQEE}&amp;{\tiny KQEF}&amp;{\tiny KQEG}&amp;{\tiny  KQEH}&amp;{\tiny  KQEI}&amp;{\tiny KQEJ } \\ \hline
+		{\tiny KQEA }&amp;      &amp;      &amp;   x  &amp;      &amp;      &amp;   x  &amp;   x  &amp;      &amp;      &amp;  x   \\ \hline
+		{\tiny KQEB }&amp;      &amp;      &amp;   x  &amp;   x  &amp;      &amp;      &amp;      &amp;      &amp;      &amp;      \\ \hline
+		{\tiny KQEC }&amp;   x  &amp;      &amp;      &amp;      &amp;      &amp;   x  &amp;   x  &amp;      &amp;      &amp;  x   \\ \hline
+		{\tiny KQED }&amp;      &amp;  x   &amp;      &amp;      &amp;  x   &amp;  x   &amp;      &amp;  x   &amp;      &amp;      \\ \hline
+		{\tiny KQEE }&amp;      &amp;      &amp;      &amp;  x   &amp;      &amp;      &amp;      &amp;      &amp;  x   &amp;      \\ \hline
+		{\tiny KQEF }&amp;  x   &amp;      &amp;  x   &amp;  x   &amp;      &amp;      &amp;   x  &amp;      &amp;      &amp;  x   \\ \hline
+		{\tiny KQEG }&amp;  x   &amp;      &amp;  x   &amp;      &amp;      &amp;  x   &amp;      &amp;      &amp;      &amp;  x   \\ \hline
+		{\tiny KQEH }&amp;      &amp;      &amp;      &amp;  x   &amp;      &amp;      &amp;      &amp;      &amp;  x   &amp;      \\ \hline
+		{\tiny KQEI }&amp;      &amp;      &amp;      &amp;      &amp;  x   &amp;      &amp;      &amp;  x   &amp;      &amp;  x   \\ \hline
+		{\tiny KQEJ }&amp;  x   &amp;      &amp;  x   &amp;      &amp;      &amp;  x   &amp;   x  &amp;      &amp;  x   &amp;      \\ \hline
+		\end{tabular}
+
+	</latex-image>
+              </image>
+            </sidebyside>
+          </statement>
+        </example>
+      </slide>
+      <slide>
+        <theorem source-number="4.4.4">
+          <statement>
+            <p permid="jEj">
+          The chromatic number of a graph <m>G</m> is at least the clique number of <m>G</m>.
+        </p>
+          </statement>
+        </theorem>
+      </slide>
+      <slide>
+        <theorem source-number="4.4.5">
+          <title>Brooks' Theorem</title>
+          <statement>
+            <p permid="PLs">
+              <idx><h>Brooks' Theorem</h></idx>
+          Any graph <m>G</m> satisfies <m>\chi(G) \le \Delta(G)</m>,
+          unless <m>G</m> is a complete graph or an odd cycle,
+          in which case <m>\chi(G) = \Delta(G) + 1</m>.
+        </p>
+          </statement>
+        </theorem>
+      </slide>
+    </subsection>
+    <subsection>
+      <title>Coloring Edges</title>
+      <slide>
+        <example source-number="4.4.6">
+          <statement>
+            <p permid="Uvl">
+          Six friends decide to spend the afternoon playing chess.
+          Everyone will play everyone else once.
+          They have plenty of chess sets but nobody wants to play more than one game at a time.
+          Games will last an hour
+          (thanks to their handy chess clocks).
+          How many hours will the tournament last?
+        </p>
+          </statement>
+        </example>
+      </slide>
+      <slide>
+        <theorem source-number="4.4.7">
+          <title>Vizing's Theorem</title>
+          <statement>
+            <p permid="vSB">
+              <idx><h>Vizing's Theorem</h></idx>
+          For any graph <m>G</m>, the chromatic index <m>\chi'(G)</m> is either
+          <m>\Delta(G)</m> or <m>\Delta(G) + 1</m>.
+        </p>
+          </statement>
+        </theorem>
+      </slide>
+    </subsection>
+  </slideshow>
+</pretext>

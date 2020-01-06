@@ -1,0 +1,360 @@
+<?xml version="1.0"?>
+<pretext xmlns:xi="http://www.w3.org/2001/XInclude">
+  <xi:include href="slidesinfo.ptx"/>
+  <slideshow>
+    <title>Sets</title>
+    <subsection>
+      <title>Notation</title>
+      <slide>
+        <example source-number="0.3.1">
+          <statement>
+            <p permid="SdV">
+          Describe each of the following sets both in words and by listing out enough elements to see the pattern.
+        </p>
+            <p permid="yle">
+          <ol permid="FWH"><li permid="Dcb"><m>\{x \st x + 3 \in \N\}</m>.</li><li permid="jjk"><m>\{x \in \N \st x + 3 \in \N\}</m>.</li><li permid="Pqt"><m>\{x \st x \in \N \vee -x \in \N\}</m>.</li><li permid="vxC"><m>\{x \st x \in \N \wedge -x \in \N\}</m>.</li></ol>
+        </p>
+          </statement>
+        </example>
+      </slide>
+      <slide>
+        <example source-number="0.3.2">
+          <statement>
+            <p permid="esn">
+          List a few elements in the sets below and describe them in words.  The set <m>\Z</m> is the set of <term>integers</term>; positive and negative whole numbers.
+          <ol permid="mdQ"><li permid="Ahv">
+              <p permid="eNM">
+                <m>A = \{x \in \Z \st x^2 \in \N\}</m>
+              </p>
+            </li><li permid="goE">
+              <p permid="KUV">
+                <m>B = \{x^2 \st x \in \N\}</m>
+              </p>
+            </li></ol>
+        </p>
+          </statement>
+        </example>
+      </slide>
+      <slide>
+        <assemblage>
+          <title>Special sets</title>
+          <p permid="Aar">
+        <dl width="narrow" permid="qNJ"><li permid="vcd">
+            <title><m>\emptyset</m></title>
+            <p permid="jxF">
+              The <term>empty set</term> is the set which contains no elements.
+
+              <notation><usage>\emptyset</usage><description>the empty set</description></notation>
+
+                <idx><h>empty set</h></idx>
+            </p>
+          </li><li permid="bjm">
+            <title><m>\U</m></title>
+            <p permid="PEO">
+              The <term>universe set</term> is the set of all elements.
+
+              <notation><usage>\U</usage><description>universal set (domain of discourse)</description></notation>
+
+            </p>
+          </li><li permid="Hqv">
+            <title><m>\N</m></title>
+            <p permid="vLX">
+              The set of natural numbers.
+              That is, <m>\N = \{0, 1, 2, 3\ldots\}</m>.
+
+              <notation><usage>\N</usage><description>the set of natural numbers</description></notation>
+
+              <idx><h>natural numbers</h></idx>
+            </p>
+          </li><li permid="nxE">
+            <title><m>\Z</m></title>
+            <p permid="bTg">
+              The set of
+              integers.
+              That is, <m>\Z = \{\ldots, -2, -1, 0, 1, 2, 3, \ldots\}</m>.
+                <idx><h>integers</h></idx>
+              <notation><usage>\Z</usage><description>the set of integers</description></notation>
+
+            </p>
+          </li><li permid="TEN">
+            <title><m>\Q</m></title>
+            <p permid="Iap">
+              The set of rational numbers.
+
+              <notation><usage>\Q</usage><description>the set of rational numbers</description></notation>
+
+                <idx><h>rationals</h></idx>
+            </p>
+          </li><li permid="zLW">
+            <title><m>\R</m></title>
+            <p permid="ohy">
+              The set of real numbers.
+              <notation><usage>\R</usage><description>the set of real numbers</description></notation>
+
+                <idx><h>reals</h></idx>
+            </p>
+          </li><li permid="fTf">
+            <title><m>\pow(A)</m></title>
+            <p permid="UoH">
+              The <term>power set</term> of any set <m>A</m> is the set of all subsets of <m>A</m>.
+                  <idx><h>power set</h></idx>
+              <notation><usage>\pow(A)</usage><description>the power set of <m>A</m></description></notation>
+
+            </p>
+          </li></dl>
+      </p>
+        </assemblage>
+      </slide>
+      <slide>
+        <assemblage>
+          <title>Set Theory Notation</title>
+          <p permid="ghA">
+        <dl width="narrow" permid="WUS"><li permid="Mao">
+            <title><m>\{, \}</m></title>
+            <p permid="AvQ">
+              We use these <term>braces</term> to enclose the elements of a set.
+              So <m>\{1,2,3\}</m> is the set containing 1, 2, and 3.
+
+              <notation><usage>\{, \}</usage><description>braces, to contain set elements.</description></notation>
+
+            </p>
+          </li><li permid="shx">
+            <title><m>\st</m></title>
+            <p permid="gCZ">
+              <m>\{x \st x &gt; 2\}</m> is the set of all <m>x</m> <term>such that</term>
+              <m>x</m> is greater than 2.
+
+              <notation><usage>\st</usage><description><q>such that</q></description></notation>
+
+            </p>
+          </li><li permid="YoG">
+            <title><m>\in</m></title>
+            <p permid="MKi">
+              <m>2 \in \{1,2,3\}</m> asserts that 2 is
+              <term>an element of</term>
+              the set <m>\{1,2,3\}</m>.
+
+              <notation><usage>\in</usage><description><q>is an element of</q></description></notation>
+
+            </p>
+          </li><li permid="EvP">
+            <title><m>\not\in</m></title>
+            <p permid="sRr">
+              <m>4 \notin \{1,2,3\}</m> because 4
+              <term>is not an element of</term>
+              the set <m>\{1,2,3\}</m>.
+            </p>
+          </li><li permid="kCY">
+            <title><m>\subseteq</m></title>
+            <p permid="YYA">
+              <m>A \subseteq B</m> asserts that
+              <term><m>A</m> is a subset of <m>B</m></term>:
+              every element of <m>A</m> is also an element of <m>B</m>.
+
+              <notation><usage>\subseteq</usage><description><q>is a subset of</q></description></notation>
+
+            </p>
+          </li><li permid="QKh">
+            <title><m>\subset</m></title>
+            <p permid="FfJ">
+              <m>A \subset B</m> asserts that
+              <term><m>A</m> is a proper subset of <m>B</m></term>:
+              every element of <m>A</m> is also an element of <m>B</m>,
+              but <m>A \ne B</m>.
+
+              <notation><usage>\subset</usage><description><q>is a proper subset of</q></description></notation>
+
+            </p>
+          </li><li permid="wRq">
+            <title><m>\cap</m></title>
+            <p permid="lmS">
+              <m>A \cap B</m> is the <term>intersection of <m>A</m> and <m>B</m></term>:
+              the set containing all elements which are elements of both <m>A</m> and <m>B</m>.
+
+              <notation><usage>\cap</usage><description>set intersection</description></notation>
+
+                <idx><h>intersection</h></idx>
+            </p>
+          </li><li permid="cYz">
+            <title><m>\cup</m></title>
+            <p permid="Rub">
+              <m>A \cup B</m> is the <term>union of <m>A</m> and <m>B</m></term>:
+              is the set containing all elements which are elements of <m>A</m> or <m>B</m> or both.
+
+              <notation><usage>\cup</usage><description>set union</description></notation>
+
+                <idx><h>union</h></idx>
+            </p>
+          </li><li permid="JfI">
+            <title><m>\times</m></title>
+            <p permid="xBk">
+              <m>A \times B</m> is the <term>Cartesian product of <m>A</m> and <m>B</m></term>:
+              the set of all ordered pairs <m>(a,b)</m> with <m>a \in A</m> and <m>b \in B</m>.
+
+              <notation><usage>\times</usage><description>Cartesian product</description></notation>
+
+            </p>
+          </li><li permid="pmR">
+            <title><m>\setminus</m></title>
+            <p permid="dIt">
+              <m>A \setminus B</m> is <term><m>A</m> set-minus <m>B</m></term>:
+              the set containing all elements of <m>A</m> which are not elements of <m>B</m>.
+
+              <notation><usage>\setminus</usage><description>set difference</description></notation>
+
+            </p>
+          </li><li permid="Vua">
+            <title><m>\bar{A}</m></title>
+            <p permid="JPC">
+              The <term>complement of <m>A</m></term>
+              is the set of everything which is not an element of <m>A</m>.
+
+              <notation><usage>\bar{A}</usage><description>the complement of <m>A</m></description></notation>
+
+            </p>
+          </li><li permid="BBj">
+            <title><m>\card{A}</m></title>
+            <p permid="pWL">
+              The <term>cardinality
+              (or size)
+              of <m>A</m></term> is the number of elements in <m>A</m>.
+
+              <notation><usage>\card{A}</usage><description>cardinality (size) of <m>A</m></description></notation>
+
+                <idx><h>cardinality</h></idx>
+            </p>
+          </li></dl>
+      </p>
+        </assemblage>
+      </slide>
+      <slide>
+        <investigation>
+          <p permid="TTi">
+        <ol permid="KGA"><li permid="YKf">
+            <p permid="YhC">
+              Find the cardinality of each set below.
+
+              <ol permid="kvU"><li permid="EoL"><m>A = \{3,4,\ldots, 15\}</m>.</li><li permid="ERo"><m>B = \{n \in \N \st 2 \lt n \le 200\}</m>.</li><li permid="kYx">
+                  <m>C = \{n \le 100 \st n \in \N \wedge \exists m \in \N (n = 2m+1)\}</m>.
+                </li></ol>
+            </p>
+          </li><li permid="hIs">
+            <p permid="WdU">
+              Find two sets <m>A</m> and <m>B</m> for which <m>|A| = 5</m>,
+              <m>|B| = 6</m>, and <m>|A\cup B| = 9</m>.
+              What is <m>|A \cap B|</m>?
+            </p>
+          </li><li permid="NPB">
+            <p permid="Cld">
+              Find sets <m>A</m> and <m>B</m> with <m>|A| = |B|</m> such that
+              <m>|A\cup B| = 7</m> and <m>|A \cap B| = 3</m>.
+              What is <m>|A|</m>?
+            </p>
+          </li><li permid="tWK">
+            <p permid="ism">
+              Let <m>A = \{1,2,\ldots, 10\}</m>.
+              Define <m>\mathcal{B}_2 = \{B \subseteq A \st |B| = 2\}</m>.
+              Find <m>|\mathcal{B}_2|</m>.
+            </p>
+          </li><li permid="adT">
+            For any sets <m>A</m> and <m>B</m>,
+            define <m>AB = \{ab \st a\in A \wedge b \in B\}</m>.
+            If <m>A = \{1,2\}</m> and <m>B = \{2,3,4\}</m>, what is <m>|AB|</m>?
+            What is <m>|A \times B|</m>?
+          </li></ol>
+      </p>
+        </investigation>
+      </slide>
+    </subsection>
+    <subsection>
+      <title>Relationships Between Sets</title>
+      <slide>
+        <example source-number="0.3.3">
+          <statement>
+            <p permid="Kzw">
+          Let <m>A = \{1, 2, 3, 4, 5, 6\}</m>,
+          <m>B = \{2, 4, 6\}</m>, <m>C = \{1, 2, 3\}</m> and <m>D = \{7, 8, 9\}</m>.
+          Determine which of the following are true, false, or meaningless.
+        </p>
+            <p permid="qGF">
+          <ol cols="3" permid="SkZ"><li permid="RfG"><m>A \subset B</m>.</li><li permid="xmP"><m>B \subset A</m>.</li><li permid="dtY"><m>B \in C</m>.</li><li permid="JBh"><m>\emptyset \in A</m>.</li><li permid="pIq"><m>\emptyset \subset A</m>.</li><li permid="VPz"><m>A \lt D</m>.</li><li permid="BWI"><m>3 \in C</m>.</li><li permid="idR"><m>3 \subset C</m>.</li><li permid="Ola"><m>\{3\} \subset C</m>.</li></ol>
+        </p>
+          </statement>
+        </example>
+      </slide>
+      <slide>
+        <example source-number="0.3.4">
+          <statement>
+            <p permid="WNO">
+          Let <m>A = \{1,2,3\}</m>.
+          Find <m>\pow(A)</m>.
+        </p>
+          </statement>
+        </example>
+      </slide>
+      <slide>
+        <example source-number="0.3.5">
+          <statement>
+            <p permid="CUX">
+          <ol permid="ysi"><li permid="XEM">
+              <p permid="rLY">
+                Find the cardinality of <m>A = \{23, 24, \ldots, 37, 38\}</m>.
+              </p>
+            </li><li permid="DLV">
+              <p permid="XTh">
+                Find the cardinality of <m>B = \{1, \{2, 3, 4\}, \emptyset\}</m>.
+              </p>
+            </li><li permid="jTe">
+              <p permid="Eaq">
+                If <m>C = \{1,2,3\}</m>, what is the cardinality of <m>\pow(C)</m>?
+              </p>
+            </li></ol>
+        </p>
+          </statement>
+        </example>
+      </slide>
+    </subsection>
+    <subsection>
+      <title>Operations On Sets</title>
+      <slide>
+        <example source-number="0.3.6">
+          <statement>
+            <p permid="jcg">
+          Let <m>A = \{1, 2, 3, 4, 5, 6\}</m>,
+          <m>B = \{2, 4, 6\}</m>, <m>C = \{1, 2, 3\}</m> and <m>D = \{7, 8, 9\}</m>.
+          If the universe is <m>\U = \{1, 2, \ldots, 10\}</m>, find:
+
+          <ol cols="3" permid="ezr"><li permid="IvO"><m>A \cup B</m>.</li><li permid="oCX"><m>A \cap B</m>.</li><li permid="UKg"><m>B \cap C</m>.</li><li permid="ARp"><m>A \cap D</m>.</li><li permid="gYy"><m>\bar{B \cup C}</m>.</li><li permid="NfH"><m>A \setminus B</m>.</li><li permid="tmQ"><m>(D \cap \bar C) \cup \bar{A \cap B}</m>.</li><li permid="ZtZ"><m>\emptyset \cup C</m>.</li><li permid="lIr"><m>\emptyset \cap C</m>.</li></ol>
+        </p>
+          </statement>
+        </example>
+      </slide>
+      <slide>
+        <example source-number="0.3.7">
+          <statement>
+            <p permid="Pjp">
+          If <m>A = \{1,2,3\}</m>, then we can describe the set we get by adding the number 4 as <m>A \cup \{4\}</m>.  If we want to express the set we get by removing the number 2 from <m>A</m> we can do so by writing <m>A \setminus \{2\}</m>.
+        </p>
+            <p permid="vqy">
+          Careful though.  If you add an element to the set, you get a new set!  So you would have <m>B = A \cup \{4\}</m> and then correctly say that <m>B</m> contains 4, but <m>A</m> does not.
+        </p>
+          </statement>
+        </example>
+      </slide>
+      <slide>
+        <example source-number="0.3.8">
+          <statement>
+            <p permid="bxH">
+          Let <m>A = \{1,2\}</m> and <m>B = \{3,4,5\}</m>.
+          Find <m>A \times B</m> and <m>A \times A</m>.
+          How many elements do you expect to be in <m>B \times B</m>?
+        </p>
+          </statement>
+        </example>
+      </slide>
+    </subsection>
+    <subsection>
+      <title>Venn Diagrams</title>
+    </subsection>
+  </slideshow>
+</pretext>

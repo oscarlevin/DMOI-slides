@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<pretext xmlns:xi="http://www.w3.org/2001/XInclude">
+  <xi:include href="slidesinfo.ptx"/>
+  <slideshow>
+    <title>Chapter Summary</title>
+    <slide>
+      <investigation>
+        <p permid="KHn">
+        Each day your supply of magic chocolate covered espresso beans doubles
+        (each one splits in half),
+        but then you eat 5 of them.
+        You have 10 at the start of day 0.
+
+        <ol permid="wDI"><li permid="BnB">
+            <p permid="tJc">
+              Write out the first few terms of the sequence.
+              Then give a recursive definition for the sequence and explain how you know it is correct.
+            </p>
+          </li><li permid="huK">
+            <p permid="ZQl">
+              Prove, using induction,
+              that the last digit of the number of beans you have on the <m>n</m>th day is always a 5 for all <m>n \ge 1</m>.
+            </p>
+          </li><li permid="NBT">
+            <p permid="FXu">
+              Find a closed formula for the <m>n</m>th term of the sequence and prove it is correct by induction.
+            </p>
+          </li></ol>
+      </p>
+      </investigation>
+    </slide>
+  </slideshow>
+</pretext>

@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<pretext xmlns:xi="http://www.w3.org/2001/XInclude">
+  <xi:include href="slidesinfo.ptx"/>
+  <slideshow>
+    <title>Introduction and Preliminaries</title>
+  </slideshow>
+</pretext>

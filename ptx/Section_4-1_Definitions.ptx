@@ -1,0 +1,385 @@
+<?xml version="1.0"?>
+<pretext xmlns:xi="http://www.w3.org/2001/XInclude">
+  <xi:include href="slidesinfo.ptx"/>
+  <slideshow>
+    <title>Definitions</title>
+    <slide>
+      <investigation>
+        <p permid="nbF">
+      Which (if any) of the graphs below are the same?
+    </p>
+        <sidebyside width="18%" margins="auto" valign="bottom" permid="VOZ">
+          <image permid="hWn">
+            <latex-image>
+					\begin{tikzpicture}
+	\coordinate (A) at (-1,0);
+	\coordinate (B) at (0,0);
+	\coordinate (C) at (1,0);
+	\coordinate (D) at (-.5,1);
+	\coordinate (E) at (.5,1);
+
+	\draw (A) -- (D) -- (B) -- (E) -- (C) -- (D) (A) -- (E);
+	\foreach \x in {(A), (B), (C), (D), (E)}{
+		\fill \x \v;
+	}
+	\end{tikzpicture}
+				</latex-image>
+          </image>
+          <image permid="Odw">
+            <latex-image>
+					\begin{tikzpicture}
+	\coordinate (A) at (90+360/5:1);
+	\coordinate (B) at (90+2*360/5:1);
+	\coordinate (C) at (90+3*360/5:1);
+	\coordinate (D) at (90+4*360/5:1);
+	\coordinate (E) at (90:1);
+
+	\draw (A) -- (B) -- (C) -- (D) -- (E) -- (A);
+	\foreach \x in {(A), (B), (C), (D), (E)}{
+		\fill \x \v;
+	}
+	\end{tikzpicture}
+				</latex-image>
+          </image>
+          <image permid="ukF">
+            <latex-image>
+					\begin{tikzpicture}
+	\coordinate (A) at (-1,0);
+	\coordinate (B) at (0,1);
+	\coordinate (C) at (0,0);
+	\coordinate (D) at (0,-1);
+	\coordinate (E) at (1,0);
+
+	\draw (A) -- (B) -- (E) -- (C) -- (A) -- (D) -- (E);
+	\foreach \x in {(A), (B), (C), (D), (E)}{
+		\fill \x \v;
+	}
+	\end{tikzpicture}
+				</latex-image>
+          </image>
+          <image permid="arO">
+            <latex-image>
+					\begin{tikzpicture}
+	\coordinate (A) at (90+360/5:1);
+	\coordinate (B) at (90+2*360/5:1);
+	\coordinate (C) at (90+3*360/5:1);
+	\coordinate (D) at (90+4*360/5:1);
+	\coordinate (E) at (90:1);
+
+	\draw (A) -- (C) -- (E) -- (B) -- (D) -- (A);
+	\foreach \x in {(A), (B), (C), (D), (E)}{
+		\fill \x \v;
+	}
+	\end{tikzpicture}
+				</latex-image>
+          </image>
+          <image permid="GyX">
+            <latex-image>
+					\begin{tikzpicture}
+	\coordinate (A) at (-1,0);
+	\coordinate (B) at (0,1);
+	\coordinate (C) at (0,0);
+	\coordinate (D) at (0,-1);
+	\coordinate (E) at (1,0);
+
+	\draw (A) -- (C) -- (B) (D) -- (C) -- (E);
+	\foreach \x in {(A), (B), (C), (D), (E)}{
+		\fill \x \v;
+	}
+	\end{tikzpicture}
+				</latex-image>
+          </image>
+        </sidebyside>
+        <p permid="TiO">
+      The graphs above are unlabeled.
+      Usually we think of a graph as having a specific set of vertices.
+      Which (if any) of the graphs below are the same?
+    </p>
+        <sidebyside width="18%" margins="auto" valign="bottom" permid="BWi">
+          <image permid="mGg">
+            <latex-image>
+					\begin{tikzpicture}
+\coordinate (A) at (-1,0);
+\coordinate (B) at (-1, 1);
+\coordinate (C) at (0,0);
+\coordinate (D) at (0,1);
+\coordinate (E) at (1,0);
+\coordinate (F) at (1,1);
+
+\draw (A) node[below] {\(a\)} -- (B) node[above] {\(b\)} -- (C) node[below] {\(c\)} -- (D) node[above] {\(d\)} -- (E) node[below] {\(e\)} -- (F) node[above] {\(f\)} -- (C) (A) -- (D);
+\foreach \x in {(A), (B), (C), (D), (E), (F)}{
+	\fill \x \v;
+}
+\end{tikzpicture}
+				</latex-image>
+          </image>
+          <image permid="SNp">
+            <latex-image>
+					\begin{tikzpicture}
+\coordinate (A) at (-1,0);
+\coordinate (B) at (-1, 1);
+\coordinate (C) at (0,1);
+\coordinate (D) at (0,0);
+\coordinate (E) at (1,0);
+\coordinate (F) at (1,1);
+
+\draw (A) node[below] {\(a\)} -- (B) node[above] {\(b\)} -- (C) node[above] {\(c\)} -- (D) node[below] {\(d\)} -- (E) node[below] {\(e\)} -- (F) node[above] {\(f\)} -- (C) (A) -- (D);
+\foreach \x in {(A), (B), (C), (D), (E), (F)}{
+	\fill \x \v;
+}
+\end{tikzpicture}
+				</latex-image>
+          </image>
+          <image permid="yUy">
+            <latex-image>
+					\begin{tikzpicture}
+\coordinate (A) at (-1,0);
+\coordinate (B) at (-1, 1);
+\coordinate (C) at (0,0);
+\coordinate (D) at (0,1);
+\coordinate (E) at (1,0);
+\coordinate (F) at (1,1);
+
+\draw (A) node[below] {\(a\)} -- (B) node[above] {\(c\)} -- (C) node[below] {\(e\)} -- (D) node[above] {\(b\)} -- (E) node[below] {\(d\)} -- (F) node[above] {\(f\)} -- (C) (A) -- (D);
+\foreach \x in {(A), (B), (C), (D), (E), (F)}{
+	\fill \x \v;
+}
+\end{tikzpicture}
+				</latex-image>
+          </image>
+          <image permid="fbH">
+            <latex-image>
+					\begin{tikzpicture}
+\coordinate (A) at (-1,0);
+\coordinate (B) at (-1, 1);
+\coordinate (C) at (0,1);
+\coordinate (D) at (0,0);
+\coordinate (E) at (1,0);
+\coordinate (F) at (1,1);
+
+\draw (A) node[below] {\(v_6\)} -- (B) node[above] {\(v_1\)} -- (C) node[above] {\(v_2\)} -- (D) node[below] {\(v_5\)} -- (E) node[below] {\(v_4\)} -- (F) node[above] {\(v_3\)} -- (C) (A) -- (D);
+\foreach \x in {(A), (B), (C), (D), (E), (F)}{
+	\fill \x \v;
+}
+\end{tikzpicture}
+				</latex-image>
+          </image>
+        </sidebyside>
+        <p permid="zpX">
+      Actually, all the graphs we have seen above are just
+      <em>drawings</em> of graphs.
+      A graph is really an abstract mathematical object consisting of two sets <m>V</m> and <m>E</m> where <m>E</m> is a set of 2-element subsets of <m>V</m>.
+			Are the graphs below the same or different?
+      <dl width="narrow" permid="cof"><li permid="UJG">
+          <title>Graph 1:</title>
+          <p permid="LZO">
+            <m>V = \{a, b, c, d, e\}</m>,
+          </p>
+
+          <p permid="sgX">
+            <m>E = \{\{a,b\}, \{a, c\}, \{a,d\}, \{a,e\}, \{b,c\}, \{d,e\}\}</m>.
+          </p>
+        </li><li permid="AQP">
+          <title>Graph 2:</title>
+          <p permid="Yog">
+            <m>V = \{v_1, v_2, v_3, v_4, v_5\}</m>,
+          </p>
+
+          <p permid="Evp">
+            <m>E = \{\{v_1, v_3\}, \{v_1, v_5\}, \{v_2, v_4\}, \{v_2, v_5\}, \{v_3, v_5\}, \{v_4, v_5\}\}</m>.
+          </p>
+        </li></dl>
+    </p>
+      </investigation>
+    </slide>
+    <slide>
+      <assemblage>
+        <title>Graph Definition</title>
+        <p permid="rLy">
+      A <term>graph</term> is an ordered pair
+      <m>G = (V, E)</m> consisting of a nonempty set <m>V</m>
+      (called the <term>vertices</term>)
+      and a set <m>E</m>
+      (called the <term>edges</term>)
+      of two-element subsets of <m>V</m>.
+    </p>
+      </assemblage>
+    </slide>
+    <slide>
+      <example source-number="4.1.1">
+        <statement>
+          <p permid="xAK">
+        Are the graphs below equal?
+        <me permid="EJK">
+          G_1 = (\{a,b,c\}, \{\{a,b\}, \{b,c\}\}); \qquad G_2 = (\{a,b,c\}, \{\{a,c\}, \{c, b\}\})
+        </me>.
+      </p>
+        </statement>
+      </example>
+    </slide>
+    <slide>
+      <example source-number="4.1.2">
+        <statement>
+          <p permid="dHT">
+        Consider the graphs:
+
+        <me permid="kQT">
+          G_1 = \{V_1, E_1\} \text{ where }
+          V_1 = \{a, b, c\} \text{ and } E_1 = \{\{a,b\}, \{a,c\}, \{b,c\}\};
+        </me>
+
+        <me permid="QYc">
+          G_2 = \{V_2, E_2\} \text{ where }
+          V_2 = \{u,v,w\} \text{ and }E_2 = \{\{u,v\}, \{u,w\}, \{v,w\}\}.
+        </me>
+      </p>
+          <p permid="JPc">
+        Are these graphs the same?
+      </p>
+        </statement>
+      </example>
+    </slide>
+    <slide>
+      <assemblage>
+        <title>Isomorphic Graphs</title>
+        <p permid="XSH">
+      An <term>isomorphism</term>
+          <idx><h>isomorphism</h></idx>
+      between two graphs <m>G_1</m> and <m>G_2</m> is a bijection
+      <m>f:V_1 \to V_2</m> between the vertices of the graphs such that
+      <m>\{a,b\}</m> is an edge in <m>G_1</m> if and only if <m>\{f(a), f(b)\}</m> is an edge in <m>G_2</m>.
+    </p>
+        <p permid="DZQ">
+      Two graphs are <term>isomorphic</term> if there is an isomorphism between them.
+      In this case we write <m>G_1 \isom G_2</m>.
+    </p>
+      </assemblage>
+    </slide>
+    <slide>
+      <example source-number="4.1.3">
+        <statement>
+          <p permid="pWl">
+        Decide whether the graphs <m>G_1 = \{V_1, E_1\}</m> and
+        <m>G_2 = \{V_2, E_2\}</m> are equal or isomorphic.
+      </p>
+          <p permid="Wdu">
+        <m>V_1 = \{a,b,c,d\}</m>,
+        <m>E_1 = \{\{a,b\}, \{a,c\}, \{a,d\}, \{c,d\}\}</m>
+      </p>
+          <p permid="CkD">
+        <m>V_2 = \{a,b,c,d\}</m>,
+        <m>E_2 = \{\{a,b\}, \{a,c\}, \{b,c\}, \{c,d\}\}</m>
+      </p>
+        </statement>
+      </example>
+    </slide>
+    <slide>
+      <assemblage>
+        <title>Subgraphs</title>
+        <p oldPERMID="cBa" permid="kgZ">
+      We say that <m>G' = (V', E')</m> is a <term>subgraph</term>
+      of <m>G = (V, E)</m>, and write <m>G' \subseteq G</m>,
+      provided <m>V' \subseteq V</m> and <m>E' \subseteq E</m>.
+    </p>
+        <p oldPERMID="IIj" permid="Qoi">
+      We say that <m>G' = (V', E')</m> is an
+      <term>induced subgraph</term>
+          <idx><h>subgraph</h><h>induced</h></idx>
+          <idx><h>induced subgraph</h></idx>
+      of <m>G = (V, E)</m> provided
+      <m>V' \subseteq V</m> and every edge in <m>E</m> whose vertices are still in <m>V'</m> is also an edge in <m>E'</m>.
+    </p>
+      </assemblage>
+    </slide>
+    <slide>
+      <example source-number="4.1.4">
+        <statement>
+          <p permid="irM">
+        Consider the graphs:
+      </p>
+          <sidebyside widths="18% 18% 18% 18%" margins="auto" valign="bottom" permid="zbC">
+            <!-- valigns="bottom bottom bottom bottom"> -->
+            <image permid="AJL">
+              <latex-image>\begin{tikzpicture}[yscale=.8]
+						      \draw  (-1,0) \vb{\footnotesize $a$} -- (0,0) \vb{\footnotesize $b$} -- (1,0) \vb{\footnotesize $c$} -- (.5,1) \vb{\footnotesize $e$} -- (0,0) -- (-.5,1) \vb{\footnotesize $d$} -- (0,2) \vb{\footnotesize $f$} -- (.5,1) -- (-.5,1) -- (-1,0);
+									\node[below] at (0,-.5) {$G_1$};
+						    \end{tikzpicture}</latex-image>
+            </image>
+            <image permid="gQU">
+              <latex-image>\begin{tikzpicture}[yscale=.8]
+									\draw  (-1,0) \vb{\footnotesize $a$} -- (0,0) \vb{\footnotesize $b$} -- (1,0) \vb{\footnotesize $c$}  (0,0) -- (-.5,1) \vb{\footnotesize $d$} (-.5,1) -- (-1,0);
+									\node[below] at (0,-.5) {$G_2$};
+								\end{tikzpicture}</latex-image>
+            </image>
+            <image permid="MYd">
+              <latex-image>\begin{tikzpicture}[yscale=.8]
+									\draw  (-1,0) \vb{\footnotesize $a$} (0,0) \vb{\footnotesize $b$} -- (1,0) \vb{\footnotesize $c$}  (0,0) -- (-.5,1) \vb{\footnotesize $d$} -- (0,2) \vb{\footnotesize $f$} (-1,0) -- (-.5,1);
+									\node[below] at (0,-.5) {$G_3$};
+								\end{tikzpicture}</latex-image>
+            </image>
+            <image permid="tfm">
+              <latex-image>\begin{tikzpicture}[yscale=.8]
+									\draw  (-1,0) \vb{\footnotesize $a$} -- (0,0) \vb{\footnotesize $b$} -- (1,0) \vb{\footnotesize $c$} -- (.5,1) (0,0) -- (-.5,1) \vb{\footnotesize $d$} -- (0,2) \vb{\footnotesize $f$} -- (.5,1) (-.5,1) -- (-1,0);
+									\node[below] at (0,-.5) {$G_4$};
+								\end{tikzpicture}</latex-image>
+            </image>
+          </sidebyside>
+          <p permid="OyV">
+        Here both <m>G_2</m> and <m>G_3</m> are subgraphs of <m>G_1</m>.
+        But only <m>G_2</m> is an <em>induced</em> subgraph.
+        Every edge in <m>G_1</m> that connects vertices in <m>G_2</m> is also an edge in <m>G_2</m>.
+        In <m>G_3</m>,
+        the edge <m>\{a,b\}</m> is in <m>E_1</m> but not <m>E_3</m>,
+        even though vertices <m>a</m> and <m>b</m> are in <m>V_3</m>.
+      </p>
+          <p permid="uGe">
+        The graph <m>G_4</m> is NOT a subgraph of <m>G_1</m>,
+        even though it looks like all we did is remove vertex <m>e</m>.
+        The reason is that in <m>E_4</m> we have the edge <m>\{c,f\}</m> but this is not an element of <m>E_1</m>,
+        so we don't have the required 	<m>E_4 \subseteq E_1</m>.
+      </p>
+        </statement>
+      </example>
+    </slide>
+    <slide>
+      <lemma source-number="4.1.5">
+        <title>Handshake Lemma</title>
+        <statement>
+          <p permid="RtB">
+        In any graph, the sum of the degrees of vertices in the graph is always twice the number of edges.
+      </p>
+        </statement>
+      </lemma>
+    </slide>
+    <slide>
+      <example source-number="4.1.6">
+        <statement>
+          <p permid="aNn">
+        How many vertices and edges must a graph have if its degree sequence is <me permid="VHV">
+          (4, 4, 3, 3, 3, 2, 1)
+        </me>?
+      </p>
+        </statement>
+      </example>
+    </slide>
+    <slide>
+      <example source-number="4.1.7">
+        <statement>
+          <p permid="GUw">
+        At a recent math seminar, 9 mathematicians greeted each other by shaking hands.
+        Is it possible that each mathematician shook hands with exactly 7 people at the seminar?
+      </p>
+        </statement>
+      </example>
+    </slide>
+    <slide>
+      <proposition source-number="4.1.8">
+        <statement>
+          <p permid="lms">
+        In any graph, the number of vertices with odd degree must be even.
+      </p>
+        </statement>
+      </proposition>
+    </slide>
+  </slideshow>
+</pretext>

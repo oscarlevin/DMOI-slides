@@ -1,0 +1,198 @@
+<?xml version="1.0"?>
+<pretext xmlns:xi="http://www.w3.org/2001/XInclude">
+  <xi:include href="slidesinfo.ptx"/>
+  <slideshow>
+    <title>Proofs</title>
+    <slide>
+      <investigation>
+        <p permid="mlu">
+        Decide which of the following are valid proofs of the following statement:
+      </p>
+        <p permid="SsD">
+        <ol permid="PjC"><li permid="bxU">
+            <p permid="dnh">
+              Suppose <m>a</m> and <m>b</m> are odd.
+              That is, <m>a=2k+1</m> and <m>b=2m+1</m> for some integers <m>k</m> and <m>m</m>.
+              Then
+              <md permid="GOf"><mrow>ab \amp =(2k+1)(2m+1)</mrow><mrow>\amp =4km+2k+2m+1</mrow><mrow>\amp =2(2km+k+m)+1</mrow></md>.
+            </p>
+
+            <p permid="Juq">
+              Therefore <m>ab</m> is odd.
+            </p>
+          </li><li permid="HFd">
+            <p permid="pBz">
+              Assume that <m>a</m> or <m>b</m> is even - say it is <m>a</m>
+              (the case where <m>b</m> is even will be identical).
+              That is, <m>a=2k</m> for some integer <m>k</m>.
+              Then
+              <md permid="mVo"><mrow>ab \amp =(2k)b</mrow><mrow>\amp =2(kb)</mrow></md>.
+            </p>
+
+            <p permid="VII">
+              Thus <m>ab</m> is even.
+            </p>
+          </li><li permid="nMm">
+            <p permid="BPR">
+              Suppose that <m>ab</m> is even but <m>a</m> and <m>b</m> are both odd.
+              Namely, <m>ab = 2n</m>,
+              <m>a=2k+1</m> and <m>b=2j+1</m> for some integers <m>n</m>,
+              <m>k</m>,
+              and <m>j</m>.
+              Then
+              <md permid="Tcx"><mrow>2n \amp =(2k+1)(2j+1)</mrow><mrow>2n \amp =4kj+2k+2j+1</mrow><mrow>n \amp = 2kj+k+j+\frac{1}{2}</mrow></md>.
+            </p>
+
+            <p permid="hXa">
+              But since <m>2kj+k+j</m> is an integer,
+              this says that the integer <m>n</m> is equal to a non-integer,
+              which is impossible.
+            </p>
+          </li><li permid="TTv">
+            <p permid="Oej">
+              Let <m>ab</m> be an even number,
+              say <m>ab=2n</m>, and <m>a</m> be an odd number, say <m>a=2k+1</m>.
+              <md permid="zjG"><mrow>ab \amp =(2k+1)b</mrow><mrow>2n \amp =2kb+b</mrow><mrow>2n-2kb\amp =b</mrow><mrow>2(n-kb)\amp =b</mrow></md>.
+            </p>
+
+            <p permid="uls">
+              Therefore <m>b</m> must be even.
+            </p>
+          </li></ol>
+      </p>
+      </investigation>
+    </slide>
+    <slide>
+      <theorem source-number="3.2.1">
+        <statement>
+          <p permid="wKz">
+          There are infinitely many primes.
+              <idx><h>prime numbers</h></idx>
+        </p>
+        </statement>
+      </theorem>
+    </slide>
+    <subsection>
+      <title>Direct Proof</title>
+      <slide>
+        <example source-number="3.2.2">
+          <statement>
+            <p permid="cRI">
+          Prove: For all integers <m>n</m>,
+          if <m>n</m> is even, then <m>n^2</m> is even.
+        </p>
+          </statement>
+        </example>
+      </slide>
+      <slide>
+        <example source-number="3.2.3">
+          <statement>
+            <p permid="IYR">
+          Prove: For all integers <m>a</m>, <m>b</m>,
+          and <m>c</m>, if <m>a|b</m> and <m>b|c</m> then <m>a|c</m>.
+          (Here <m>x|y</m>, read <q><m>x</m> divides <m>y</m></q>
+          means that <m>y</m> is a multiple of <m>x</m>, i.e., that <m>x</m> will divide into <m>y</m> without remainder).
+        </p>
+          </statement>
+        </example>
+      </slide>
+    </subsection>
+    <subsection>
+      <title>Proof by Contrapositive</title>
+      <slide>
+        <example source-number="3.2.4">
+          <statement>
+            <p permid="pga">
+          Is the statement <q>for all integers <m>n</m>,
+          if <m>n^2</m> is even, then <m>n</m> is even</q> true?
+        </p>
+          </statement>
+        </example>
+      </slide>
+      <slide>
+        <example source-number="3.2.5">
+          <statement>
+            <p permid="Vnj">
+          Prove: for all integers <m>a</m> and <m>b</m>,
+          if <m>a + b</m> is odd, then <m>a</m> is odd or <m>b</m> is odd.
+        </p>
+          </statement>
+        </example>
+      </slide>
+      <slide>
+        <example source-number="3.2.6">
+          <statement>
+            <p permid="Bus">
+          Consider the following statement: for every prime number <m>p</m>,
+          either <m>p = 2</m> or <m>p</m> is odd.
+          We can rephrase this: for every prime number <m>p</m>,
+          if <m>p \ne 2</m>, then <m>p</m> is odd.
+          Now try to prove it.
+        </p>
+          </statement>
+        </example>
+      </slide>
+    </subsection>
+    <subsection>
+      <title>Proof by Contradiction</title>
+      <slide>
+        <example source-number="3.2.7">
+          <statement>
+            <p permid="hBB">
+          Prove that <m>\sqrt{2}</m> is irrational.
+        </p>
+          </statement>
+        </example>
+      </slide>
+      <slide>
+        <example source-number="3.2.8">
+          <statement>
+            <p permid="NIK">
+          Prove: There are no integers <m>x</m> and <m>y</m> such that <m>x^2 = 4y + 2</m>.
+        </p>
+          </statement>
+        </example>
+      </slide>
+      <slide>
+        <example source-number="3.2.9">
+          <statement>
+            <p permid="tPT">
+          The <term>Pigeonhole Principle</term>:
+              <idx><h>pigeonhole principle</h></idx>
+          If more than <m>n</m> pigeons fly into <m>n</m> pigeon holes,
+          then at least one pigeon hole will contain at least two pigeons.
+          Prove this!
+        </p>
+          </statement>
+        </example>
+      </slide>
+    </subsection>
+    <subsection>
+      <title>Proof by (counter) Example</title>
+      <slide>
+        <example source-number="3.2.10">
+          <statement>
+            <p permid="ZXc">
+          Above we proved,
+          <q>for all integers <m>a</m> and <m>b</m>, if <m>a+b</m> is odd,
+          then <m>a</m> is odd or <m>b</m> is odd.</q> Is the converse true?
+        </p>
+          </statement>
+        </example>
+      </slide>
+    </subsection>
+    <subsection>
+      <title>Proof by Cases</title>
+      <slide>
+        <example source-number="3.2.11">
+          <statement>
+            <p permid="Gel">
+          Prove: For any integer <m>n</m>,
+          the number <m>(n^3 -n)</m> is even.
+        </p>
+          </statement>
+        </example>
+      </slide>
+    </subsection>
+  </slideshow>
+</pretext>

@@ -1,0 +1,228 @@
+<?xml version="1.0"?>
+<pretext xmlns:xi="http://www.w3.org/2001/XInclude">
+  <xi:include href="slidesinfo.ptx"/>
+  <slideshow>
+    <title>Describing Sequences</title>
+    <slide>
+      <investigation>
+        <p permid="PMF">
+        You have a large collection of
+        <m>1\times 1</m> squares and <m>1\times 2</m> dominoes.
+        You want to arrange these to make a <m>1 \times 15</m> strip.
+        How many ways can you do this?
+
+        <ol permid="QDD"><li permid="NIX">
+            <p permid="IDF">
+              Start by collecting data.
+              How many length <m>1\times 1</m> strips can you make?
+              How many <m>1\times 2</m> strips?
+              How many <m>1\times 3</m> strips?
+              And so on.
+            </p>
+          </li><li permid="tQg">
+            <p permid="oKO">
+              How are the <m>1\times 3</m> and
+              <m>1 \times 4</m> strips related to the <m>1\times 5</m> strips?
+            </p>
+          </li><li permid="ZXp">
+            <p permid="URX">
+              How many <m>1\times 15</m> strips can you make?
+            </p>
+          </li><li permid="Gey">
+            <p permid="AZg">
+              What if I asked you to find the number of <m>1\times 1000</m> strips?
+              Would the method you used to calculate the number fo <m>1 \times 15</m> strips be helpful?
+            </p>
+          </li></ol>
+      </p>
+      </investigation>
+    </slide>
+    <slide>
+      <example source-number="2.1.1">
+        <statement>
+          <p permid="alK">
+          Can you find the next term in the following sequences?
+        </p>
+          <p permid="GsT">
+          <ol permid="LTK"><li permid="mlH"><m>7,7,7,7,7, \ldots</m></li><li permid="SsQ"><m>3, -3, 3, -3, 3, \ldots</m></li><li permid="yzZ"><m>1, 5, 2, 10, 3, 15, \ldots</m></li><li permid="eHi"><m>1, 2, 4, 8, 16, 32, \ldots</m></li><li permid="KOr"><m>1, 4, 9, 16, 25, 36, \ldots</m></li><li permid="qVA"><m>1, 2, 3, 5, 8, 13, 21, \ldots</m></li><li permid="XcJ"><m>1, 3, 6, 10, 15, 21, \ldots</m></li><li permid="DjS"><m>2, 3, 5, 7, 11, 13, \ldots</m></li><li permid="jrb"><m>3, 2, 1, 0, -1, \ldots</m></li><li permid="Pyk"><m>1, 1, 2, 6, \ldots</m></li></ol>
+        </p>
+        </statement>
+      </example>
+    </slide>
+    <slide>
+      <assemblage>
+        <title>Closed formula</title>
+        <p permid="Uwy">
+        A <term>closed formula</term>
+            <idx><h>closed formula</h></idx>
+        for a sequence <m>(a_n)_{n\in\N}</m> is a formula for <m>a_n</m> using a fixed finite number of operations on <m>n</m>.
+        This is what you normally think of as a formula in <m>n</m>,
+        just as if you were defining a function in terms of <m>n</m>
+        (because that is exactly what you are doing).
+      </p>
+      </assemblage>
+    </slide>
+    <slide>
+      <assemblage>
+        <title>Recursive definition</title>
+        <p permid="ADH">
+        A <term>recursive definition</term>
+            <idx><h>recursive definition</h></idx>
+        (sometimes called an <term>inductive definition</term>) for a sequence <m>(a_n)_{n\in\N}</m> consists of a
+        <term>recurrence relation</term>
+            <idx><h>recurrence relation</h></idx>
+        : an equation relating a term of the sequence to previous terms
+        (terms with smaller index)
+        and an <term>initial condition</term>:
+        a list of a few terms of the sequence
+        (one less than the number of terms in the recurrence relation).
+      </p>
+      </assemblage>
+    </slide>
+    <slide>
+      <example source-number="2.1.2">
+        <statement>
+          <p permid="mAc">
+          Here are a few closed formulas for sequences:
+
+          <ul permid="saT"><li permid="cRV"><m>a_n = n^2</m>.</li><li permid="IZe"><m>\d a_n = \frac{n(n+1)}{2}</m>.</li><li permid="pgn">
+              <m>\d a_n = \frac{\left(\frac{1 + \sqrt 5}{2}\right)^n - \left(\frac{1 - \sqrt 5}{2}\right)^{-n}}{\sqrt{5}}</m>.
+            </li></ul>
+        </p>
+          <p permid="SHl">
+          Note in each formula, if you are given <m>n</m>,
+          you can calculate <m>a_n</m> directly:
+          just plug in <m>n</m>.
+          For example, to find <m>a_3</m> in the second sequence,
+          just compute <m>a_3 = \frac{3(3+1)}{2} = 6</m>.
+        </p>
+          <p permid="yOu">
+          Here are a few recursive definitions for sequences:
+
+          <ul permid="Yic"><li permid="Vnw"><m>a_n = 2a_{n-1}</m> with <m>a_0 = 1</m>.</li><li permid="BuF"><m>a_n = 2a_{n-1}</m> with <m>a_0 = 27</m>.</li><li permid="hBO">
+              <m>a_n = a_{n-1} + a_{n-2}</m> with <m>a_0 = 0</m> and <m>a_1 = 1</m>.
+            </li></ul>
+        </p>
+          <p permid="eVD">
+          In these formulas, if you are given <m>n</m>,
+          you cannot calculate <m>a_n</m> directly,
+          you first need to find <m>a_{n-1}</m>
+          (or <m>a_{n-1}</m> and <m>a_{n-2}</m>).
+          In the second sequence, to find <m>a_3</m> you would take <m>2a_2</m>,
+          but to find <m>a_2 = 2a_1</m> we would need to know <m>a_1 = 2a_0</m>.
+          We do know this,
+          so we could trace back through these equations to find <m>a_1 = 54</m>,
+          <m>a_2 = 108</m> and finally <m>a_3 = 216</m>.
+              <idx><h>Fibonacci sequence</h></idx>
+        </p>
+        </statement>
+      </example>
+    </slide>
+    <slide>
+      <example source-number="2.1.3">
+        <statement>
+          <p permid="LcM">
+          Find <m>a_6</m> in the sequence defined by
+          <m>a_n = 2a_{n-1} - a_{n-2}</m> with <m>a_0 = 3</m> and <m>a_1 = 4</m>.
+        </p>
+        </statement>
+      </example>
+    </slide>
+    <slide>
+      <assemblage>
+        <title>Common Sequences</title>
+        <p permid="gKQ">
+          <dl width="medium" permid="wKM"><li permid="kaV">
+            <title><m>1, 4, 9, 16, 25, \ldots</m></title>
+            <p permid="lQi">The <term>square numbers</term>.  The sequence <m>(s_n)_{n \ge 1}</m> has closed formula <m>s_n = n^2</m></p>
+          </li><li permid="Qie">
+            <title><m>1, 3, 6, 10, 15, 21, \ldots</m></title>
+            <p permid="RXr">
+              The <term>triangular numbers</term>.  The sequence <m>(T_n)_{n \ge 1}</m> has closed formula <m>T_n = \frac{n(n+1)}{2}</m>.
+            </p>
+            <notation><usage>T_n</usage><description>the <m>n</m>th triangular number</description></notation>
+          </li><li permid="wpn">
+            <title><m>1, 2, 4, 8, 16, 32,\ldots</m></title>
+            <p permid="yeA">
+              The <term>powers of 2</term>.  The sequence <m>(a_n)_{n \ge 0}</m> with closed formula <m>a_n = 2^n</m>.
+            </p>
+          </li><li permid="cww">
+            <title><m>1, 1, 2, 3, 5, 8, 13, \ldots</m></title>
+            <p permid="elJ">
+              The <term>Fibonacci numbers</term> (or Fibonacci sequence), defined recursively by <m>F_n = F_{n-1} + F_{n-2}</m> with <m>F_1 = F_2 = 1</m>
+            </p>
+          </li></dl>
+      </p>
+      </assemblage>
+    </slide>
+    <slide>
+      <example source-number="2.1.4">
+        <statement>
+          <p permid="rjV">
+          Use the formulas <m>T_n = \frac{n(n+1)}{2}</m> and
+          <m>a_n = 2^n</m> to find closed formulas that agree with the following sequences.  Assume each first term corresponds to <m>n=0</m>.
+
+          <ol permid="Epl"><li permid="EZf">
+              <p permid="KsS">
+                <m>(b_n)</m>: <m>1, 2, 4, 7, 11, 16, 22, \ldots </m>.
+              </p>
+            </li><li permid="lgo">
+              <p permid="qAb">
+                <m>(c_n)</m>: <m>3, 5, 9, 17, 33,\ldots </m>.
+              </p>
+            </li><li permid="Rnx">
+              <p permid="WHk">
+                <m>(d_n)</m>: <m>0, 2, 6, 12, 20, 30, 42,\ldots </m>.
+              </p>
+            </li><li permid="xuG">
+              <p permid="COt">
+                <m>(e_n)</m>: <m>3, 6, 10, 15, 21, 28, \ldots</m>.
+              </p>
+            </li><li permid="dBP">
+              <p permid="iVC">
+                <m>(f_n)</m>: <m>0, 1, 3, 7, 15, 31, \ldots </m>.
+              </p>
+            </li><li permid="JIY">
+              <p permid="PcL">
+                <m>(g_n)</m> <m>3, 6, 12, 24, 48, \ldots </m>.
+              </p>
+            </li><li permid="pQh">
+              <p permid="vjU">
+                <m>(h_n)</m>: <m>6, 10, 18, 34, 66, \ldots </m>.
+              </p>
+            </li><li permid="VXq">
+              <p permid="brd">
+                <m>(j_n)</m>: <m>15, 33, 57, 87, 123, \ldots</m>.
+              </p>
+            </li></ol>
+        </p>
+        </statement>
+      </example>
+    </slide>
+    <slide>
+      <example source-number="2.1.5">
+        <statement>
+          <p permid="Xre">
+          Sam keeps track of how many push-ups she does each day of her <q>do lots of push-ups challenge.</q>  Let <m>(a_n)_{n \ge 1}</m> be the sequence that describes the number of push-ups done on the <m>n</m>th day of the challenge.  The sequence starts
+          <me permid="OHm">
+            3, 5, 6, 10, 9, 0, 12, \ldots
+          </me>.
+          Describe a sequence <m>(b_n)_{n \ge 1}</m> that describes the total number of push-ups done by Sam after the <m>n</m>th day.
+        </p>
+        </statement>
+      </example>
+    </slide>
+    <slide>
+      <example source-number="2.1.6">
+        <statement>
+          <p permid="Dyn">
+          Use <m>\sum</m> notation to rewrite the sums:
+        </p>
+          <p permid="jFw">
+          <ol permid="kwu"><li permid="zjT"><m>1 + 2 + 3 + 4 + \cdots + 100</m></li><li permid="frc"><m>1 + 2 + 4 + 8 + \cdots + 2^{50}</m></li><li permid="Lyl"><m>6 + 10 + 14 + \cdots + (4n - 2)</m>.</li></ol>
+        </p>
+        </statement>
+      </example>
+    </slide>
+  </slideshow>
+</pretext>

@@ -1,0 +1,142 @@
+<?xml version="1.0"?>
+<pretext xmlns:xi="http://www.w3.org/2001/XInclude">
+  <xi:include href="slidesinfo.ptx"/>
+  <slideshow>
+    <title>Planar Graphs</title>
+    <slide>
+      <investigation>
+        <p permid="FmA">
+        When a connected graph can be drawn without any edges crossing,
+        it is called <term>planar</term>.
+        When a planar graph is drawn in this way,
+        it divides the plane into regions called <term>faces</term>.
+
+        <ol permid="QQY"><li permid="dfq">
+            <p permid="BIa">
+              Draw, if possible,
+              two different planar graphs with the same number of vertices, edges,
+              and faces.
+            </p>
+          </li><li permid="Jmz">
+            <p permid="hPj">
+              Draw, if possible,
+              two different planar graphs with the same number of vertices and edges,
+              but a different number of faces.
+            </p>
+          </li></ol>
+      </p>
+      </investigation>
+    </slide>
+    <slide>
+      <assemblage>
+        <title>Euler's Formula for Planar Graphs</title>
+        <p permid="izd">
+        For any (connected) planar graph with <m>v</m> vertices,
+        <m>e</m> edges and <m>f</m> faces, we have
+        <me permid="htK">
+          v-e + f = 2
+        </me>.
+      </p>
+      </assemblage>
+    </slide>
+    <subsection>
+      <title>Non-planar Graphs</title>
+      <slide>
+        <investigation>
+          <p permid="niW">
+        For the complete graphs <m>K_n</m>,
+        we would like to be able to say something about the number of vertices,
+        edges, and
+        (if the graph is planar)
+        faces.
+        Let's first consider <m>K_3</m>:
+
+        <ol permid="wYh"><li permid="ptI">
+            <p permid="NWs">
+              How many vertices does <m>K_3</m> have?
+              How many edges?
+            </p>
+          </li><li permid="VAR">
+            <p permid="udB">
+              If <m>K_3</m> is planar, how many faces should it have?
+            </p>
+          </li></ol>
+      </p>
+          <p permid="Tqf">
+        Repeat parts (1) and (2) for <m>K_4</m>,
+        <m>K_5</m>, and <m>K_{23}</m>.
+      </p>
+          <p permid="zxo">
+        What about complete bipartite graphs?
+        How many vertices, edges, and faces
+        (if it were planar)
+        does <m>K_{7,4}</m> have?
+        For which values of <m>m</m> and <m>n</m> are <m>K_n</m> and <m>K_{m,n}</m> planar?
+      </p>
+        </investigation>
+      </slide>
+      <slide>
+        <theorem source-number="4.3.1">
+          <statement>
+            <p permid="gJQ">
+          <m>K_5</m> is not planar.
+        </p>
+          </statement>
+        </theorem>
+      </slide>
+      <slide>
+        <theorem source-number="4.3.2">
+          <statement>
+            <p permid="MQZ">
+          <m>K_{3,3}</m> is not planar.
+        </p>
+          </statement>
+        </theorem>
+      </slide>
+    </subsection>
+    <subsection>
+      <title>Polyhedra</title>
+      <slide>
+        <investigation>
+          <p permid="fEx">
+        A cube
+            <idx><h>cube</h></idx>
+        is an example of a convex polyhedron.
+        It contains 6 identical squares for its faces, 8 vertices,
+        and 12 edges.
+        The cube is a <term>regular polyhedron</term>
+        (also known as a <term>Platonic solid</term>)
+            <idx><h>Platonic solid</h></idx>
+        because each face is an identical regular polygon and each vertex joins an equal number of faces.
+      </p>
+          <p permid="LLG">
+        There are exactly four other regular polyhedra:
+        the tetrahedron, octahedron, dodecahedron,
+        and icosahedron with 4, 8, 12 and 20 faces respectively.
+        How many vertices and edges do each of these have?
+      </p>
+        </investigation>
+      </slide>
+      <slide>
+        <example source-number="4.3.3">
+          <statement>
+            <p permid="Zfr">
+          Is there a convex polyhedron consisting of three triangles and six pentagons?
+          What about three triangles,
+          six pentagons and five heptagons (7-sided polygons)?
+        </p>
+          </statement>
+        </example>
+      </slide>
+      <slide>
+        <theorem source-number="4.3.4">
+          <statement>
+            <p permid="sYi">
+          There are exactly five regular polyhedra.
+        </p>
+          </statement>
+        </theorem>
+      </slide>
+    </subsection>
+  </slideshow>
+</pretext>

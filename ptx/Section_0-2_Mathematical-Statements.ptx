@@ -1,0 +1,571 @@
+<?xml version="1.0"?>
+<pretext xmlns:xi="http://www.w3.org/2001/XInclude">
+  <xi:include href="slidesinfo.ptx"/>
+  <slideshow>
+    <frontmatter>
+    <title>Mathematical Statements</title>
+    <subtitle>Section 0.2</subtitle>
+    </frontmatter>
+    <section xml:id="sec-warm-up">
+      <title>Warm-up</title>
+    <slide>
+      <title>Warm-up</title>
+      <investigation>
+        <p permid="azF">
+        While walking through a fictional forest,
+        you encounter three trolls guarding a bridge.
+        Each is either a <em>knight</em>,
+        who always tells the truth, or a
+        <em>knave</em>, who always lies.
+        The trolls will not let you pass until you correctly identify each as either a knight or a knave.
+        Each troll makes a single statement:
+      </p>
+        <p permid="GGO">
+        Which troll is which?
+      </p>
+      </investigation>
+    </slide>
+    </section>
+    <section>
+      <title>Atomic and Molecular Statements</title>
+      <slide>
+        <title>Statements: atomic and molecular</title>
+        <p>
+        <ul pause="true">
+          <li>
+            <p>
+              A <term>statement</term> is any declarative sentence which is either true or false.
+            </p>
+          </li>
+          <li>
+            <p>
+              A statement is <term>atomic</term> if it cannot be divided into smaller statements, otherwise it is called
+              <term>molecular</term>.
+            </p>
+          </li>
+        </ul>
+        </p>
+      </slide>
+      <slide>
+        <example source-number="0.2.1">
+          <statement>
+            <p permid="YKs">
+              These are statements (in fact,
+              <em>atomic</em> statements):
+
+          <ul permid="uzA"><li permid="DTm">
+              <p permid="IhG">
+                Telephone numbers in the USA have 10 digits.
+              </p>
+            </li><li permid="kav">
+              <p permid="ooP">
+                The moon is made of cheese.
+              </p>
+            </li><li permid="QhE">
+              <p permid="UvY">
+                42 is a perfect square.
+              </p>
+            </li><li permid="woN">
+              <p permid="ADh">
+                Every even number greater than 2 can be expressed as the sum of two primes.
+              </p>
+            </li><li permid="cvW">
+              <p permid="gKq">
+                <m>3+7 = 12</m>
+              </p>
+            </li></ul>
+            </p>
+            </statment>
+            </example>
+            </slide>
+
+            <slide>
+            <example source-number="0.2.1">
+            <statement>
+            <p>
+          And these are not statements:
+
+          <ul permid="aGJ">
+          <li permid="IDf">
+              <p permid="MRz">
+                Would you like some cake?
+              </p>
+            </li>
+            <li permid="oKo">
+              <p permid="sYI">
+                The sum of two squares.
+              </p>
+            </li>
+            <li permid="URx"><m>1+3+5+7+\cdots+2n+1</m>.</li>
+            <li permid="AYG">
+              <p permid="ZfR">
+                Go to your room!
+              </p>
+            </li>
+            <li permid="hfP">
+              <p permid="Fna">
+                <m>3+x = 12</m>
+              </p>
+            </li>
+          </ul>
+        </p>
+          </statement>
+        </example>
+      </slide>
+      <slide>
+        <title>Molecular statements</title>
+          <p permid="Zum">
+                You can build more complicated (molecular) statements out of simpler
+                (atomic or molecular)
+                ones using
+            <term>logical connectives</term>.
+                For example, this is a molecular statement:
+          </p>
+
+          <blockquote permid="JIy">
+            <p permid="nTq">
+                  Telephone numbers in the USA have 10 digits and 42 is a perfect square.
+            </p>
+          </blockquote>
+        <p>
+          we can break this down into two smaller statements.
+      The two shorter statements are
+          <em>connected</em> by an
+          <q>and.</q>
+        </p>
+      </slide>
+      <slide>
+          <title>Logical Connectives</title>
+          <p permid="DMi">
+          There are five logical connectives we will consider:
+        <ul pause="yes" permid="zjt"><li permid="NmY">
+            <m>P \wedge Q</m> is read <q><m>P</m> and <m>Q</m>,</q>
+            and called a <term>conjunction</term>.
+
+          </li>
+          <li permid="tuh">
+            <m>P \vee Q</m> is read <q><m>P</m> or <m>Q</m>,</q>
+            and called a <term>disjunction</term>.
+            
+          </li>
+          <li permid="ZBq">
+            <m>P \imp Q</m> is read <q>if <m>P</m> then <m>Q</m>,</q>
+            and called an <term>implication</term>
+            or <term>conditional</term>.
+          </li>
+          <li permid="FIz">
+            <m>P \iff Q</m> is read <q><m>P</m> if and only if <m>Q</m>,</q>
+            and called a <term>biconditional</term>.
+              
+              
+        </li>
+        <li permid="lPI">
+            <m>\neg P</m> is read <q>not <m>P</m>,</q>
+            and called a <term>negation</term>.
+
+          </li>
+          </ul>
+      </p>
+      </slide>
+      <slide>
+          <title>Truth Conditions for Connectives</title>
+          <p permid="jTr">
+          Key point: the truth-value of a molecular statement is determined by the truth values of its parts and the type of connective.
+        <ul pause="yes" permid="fqC">
+        <li permid="RWR">
+            <m>P \wedge Q</m> is true when both <m>P</m> and <m>Q</m> are true
+          </li><li permid="yea">
+            <m>P \vee Q</m> is true when <m>P</m> or <m>Q</m> or both are true.
+          </li><li permid="elj">
+            <m>P \imp Q</m> is true when <m>P</m> is false or <m>Q</m> is true or both.
+          </li><li permid="Kss">
+            <m>P \iff Q</m> is true when <m>P</m> and <m>Q</m> are both true,
+            or both false.
+          </li><li permid="qzB"><m>\neg P</m> is true when <m>P</m> is false.</li></ul>
+        </p>
+        </assemblage>
+      </slide>
+    </section>
+    <section>
+      <title>Implications</title>
+      <slide>
+          <title>Implications</title>
+          <p permid="QaA">
+        An <term>implication</term> or <term>conditional</term>
+        is a molecular statement of the form
+        <me permid="NPO">
+          P \imp Q
+        </me>
+        where <m>P</m> and <m>Q</m> are statements.
+        We say that
+
+        <ul permid="LxL"><li permid="WGK">
+            <m>P</m> is the <term>hypothesis</term>
+            (or <term>antecedent</term>).
+          </li><li permid="iVc">
+            <m>Q</m> is the <term>conclusion</term>
+            (or <term>consequent</term>).
+          </li></ul>
+      </p>
+          <p permid="whJ">
+        An implication is <em>true</em>
+        provided <m>P</m> is false or <m>Q</m> is true
+        (or both),
+        and <em>false</em> otherwise.
+        In particular, the only way for
+        <m>P \imp Q</m> to be false is for <m>P</m> to be true
+        <em>and</em> <m>Q</m> to be false.
+      </p>
+      </slide>
+      <slide>
+        <example source-number="0.2.2">
+          <statement>
+            <p permid="ERB">
+          Consider the statement:
+        </p>
+            <blockquote permid="UhD">
+              <p permid="AhI">
+            If Bob gets a 90 on the final,
+            then Bob will pass the class.
+          </p>
+            </blockquote>
+            <p permid="kYK">
+            <ul pause="yes">
+              <li>
+                <p>
+          This is definitely an implication:
+          <m>P</m> is the statement <q>Bob gets a 90 on the final,</q>
+          and <m>Q</m> is the statement <q>Bob will pass the class.</q>
+                  
+                </p>
+              </li>
+              <li>
+                <p>
+                  Is it true or false?  What would it take for the statement to be <em>fasle</em>?
+                </p>
+              </li>
+              <li>
+                <p>
+                  The only way to be false: Bob does get a 90 on the final <em>AND</em> Bob still does not pass the class.
+                </p>
+              </li>
+              <li>
+                <p>
+                  In particular, if Bob does not get a 90 on the final (<m>P</m> is false), then whether or not he passes the class, the statement is true.
+                </p>
+              </li>
+            </ul>
+        </p>
+          </statement>
+        </example>
+      </slide>
+      <slide>
+        <example source-number="0.2.3">
+          <statement>
+            <p permid="xnc">
+          Decide which of the following statements are true and which are false.
+          Briefly explain.
+
+          <ol permid="GNS"><li permid="TMe">
+              <p permid="luj">
+                If <m>1=1</m>, then most horses have 4 legs.
+              </p>
+            </li><li permid="zTn">
+              <p permid="RBs">
+                If <m>0=1</m>, then <m>1=1</m>.
+              </p>
+            </li><li permid="gaw">
+              <p permid="xIB">
+                If 8 is a prime number, then the 7624th digit of
+                <m>\pi</m> is an 8.
+              </p>
+            </li><li permid="MhF">
+              <p permid="dPK">
+                If the 7624th digit of <m>\pi</m> is an 8, then <m>2+2 = 4</m>.
+              </p>
+            </li></ol>
+        </p>
+          </statement>
+        </example>
+      </slide>
+      <slide>
+          <title>Direct Proofs of Implications</title>
+          <p>
+            The truth conditions for an implication tell us one way we could <em>prove</em> that an implication is true.
+          </p>
+          <p pause="yes" permid="coS">
+        To prove an implication
+        <m>P \imp Q</m>, it is enough to <em>assume</em>
+        <m>P</m>, and from it, <em>deduce</em> <m>Q</m>.
+      </p>
+
+      </slide>
+      <slide>
+        <example source-number="0.2.4">
+          <statement>
+            <p permid="dul">
+          Prove: If two numbers <m>a</m> and <m>b</m> are even, then their sum
+          <m>a+b</m> is even.
+        </p>
+          </statement>
+        </example>
+        <proof permid="MDe">
+          <p pause="yes" permid="Slm">
+            Suppose the numbers <m>a</m> and <m>b</m> are even.
+            This means that <m>a = 2k</m> and <m>b=2j</m> for some integers <m>k</m> and <m>j</m>.
+            The sum is then <m>a+b = 2k+2j = 2(k+j)</m>.
+            Since <m>k+j</m> is an integer,
+            this means that <m>a+b</m> is even.
+          </p>
+        </proof>
+      </slide>
+      <slide>
+          <title>Converse and Contrapositive</title>
+          <p permid="Iwb">
+          How does <m>P \imp Q</m> relate to <m>Q \imp P</m>?
+        <ul pause="yes" permid="rEU"><li permid="Pcl">
+            <p permid="izD">
+              The
+              <term>converse</term>
+                  <idx><h>converse</h></idx>
+              of an implication
+              <m>P \imp Q</m> is the implication
+              <m>Q \imp P</m>.
+                
+              </p>
+              </li>
+              <li>
+              <p>
+              The converse is
+              <em>NOT</em> logically equivalent to the original implication.
+              That is, whether the converse of an implication is true is independent of the truth of the implication.
+            </p>
+          </li>
+          <li permid="vju">
+            <p permid="OGM">
+              The
+              <term>contrapositive</term>
+              of an implication
+              <m>P \imp Q</m> is the statement
+              <m>\neg Q \imp \neg P</m>.
+              </p>
+              </li>
+              <li>
+              <p>
+              An implication and its contrapositive are logically equivalent
+              (they are either both true or both false).
+            </p>
+          </li>
+          </ul>
+      </p>
+      </slide>
+
+      <slide>
+        <example source-number="0.2.5">
+          <statement>
+            <p permid="JBu">
+          True or false: If you draw any nine playing cards from a regular deck,
+          then you will have at least three cards all of the same suit.
+        </p>
+        <p pause="yes">
+          Try looking at the contrapositive!
+        </p>
+        <p pause="yes">
+          Is the converse true?
+        </p>
+          </statement>
+        </example>
+      </slide>
+      <slide>
+        <example source-number="0.2.6">
+          <statement>
+            <p permid="pID">
+          Suppose I tell Sue that if she gets a 93% on her final,
+          then she will get an A in the class.
+          Assuming that what I said is true,
+          what can you conclude in the following cases:
+        </p>
+            <p permid="VPM">
+          <ol permid="mVb">
+          <li permid="QRy">
+              <p permid="uNV">
+                Sue gets a 93% on her final.
+              </p>
+            </li>
+            <li permid="wYH">
+              <p permid="aVe">
+                Sue gets an A in the class.
+              </p>
+            </li>
+            <li permid="dfQ">
+              <p permid="Hcn">
+                Sue does not get a 93% on her final.
+              </p>
+            </li>
+            <li permid="JmZ">
+              <p permid="njw">
+                Sue does not get an A in the class.
+              </p>
+            </li></ol>
+        </p>
+          </statement>
+        </example>
+      </slide>
+      <slide>
+          <title>If and only if</title>
+
+        <blockquote permid="xug">
+          <p permid="goR">
+            <m>P \iff Q</m> is logically equivalent to <m>(P \imp Q) \wedge (Q \imp P)</m>.
+          </p>
+        </blockquote>
+
+          <p pause="yes" permid="oDk">
+        Example: Given an integer <m>n</m>,
+        it is true that <m>n</m> is even if and only if <m>n^2</m> is even.
+        That is, if <m>n</m> is even,
+        then <m>n^2</m> is even, as well as the converse:
+        if <m>n^2</m> is even, then <m>n</m> is even.
+      </p>
+      </slide>
+
+      <slide>
+        <example source-number="0.2.7">
+          <statement>
+            <p permid="BWV">
+          Suppose it is true that I sing if and only if I'm in the shower.
+          We know this means both that if I sing, then I'm in the shower,
+          and also the converse, that if I'm in the shower, then I sing.
+          Let <m>P</m> be the statement,
+          <q>I sing,</q> and <m>Q</m> be,
+          <q>I'm in the shower.</q> So
+          <m>P \imp Q</m> is the statement <q>if I sing,
+          then I'm in the shower.</q> Which part of the if and only if statement is this?
+        </p>
+          </statement>
+        </example>
+      </slide>
+      <slide>
+        <example source-number="0.2.8">
+          <statement>
+            <p permid="Oln">
+          Rephrase the implication,
+          <q>if I dream, then I am asleep</q>
+          in as many different ways as possible.
+          Then do the same for the converse.
+        </p>
+          </statement>
+        </example>
+      </slide>
+      <slide>
+          <title>Necessary and Sufficient</title>
+          <p permid="UKt">
+            A common way to express the relationship between statements in mathematics is to say that one is necessary or sufficient for the other.
+        <ul pause="yes" permid="XMd"><li permid="bqD">
+            <q> <m>P</m> is necessary for <m>Q</m> </q> means <m>Q \imp P</m>.
+          </li><li permid="HxM">
+            <q> <m>P</m> is sufficient for <m>Q</m> </q> means <m>P \imp Q</m>.
+          </li><li permid="nEV">
+            <p permid="huk">
+              If <m>P</m> is necessary and sufficient for <m>Q</m>, then <m>P \iff Q</m>.
+            </p>
+          </li></ul>
+      </p>
+      </slide>
+      <slide>
+        <example source-number="0.2.9">
+          <statement>
+            <p permid="usw">
+          Recall from calculus, if a function is differentiable at a point
+          <m>c</m>, then it is continuous at
+          <m>c</m>, but that the converse of this statement is not true (for example,
+          <m>f(x) = |x|</m> at the point 0).
+          Restate this fact using <q>necessary and sufficient</q> language.
+        </p>
+          </statement>
+        </example>
+      </slide>
+    </section>
+    <section>
+      <title>Predicates and Quantifiers</title>
+      <slide>
+        <title>Predicates</title>
+        <p oldPERMID="gIQ" permid="wRD">
+          <idx>
+            <h>free variable</h>
+          </idx>
+          <idx>
+            <h>predicate</h>
+          </idx>
+      
+      How could we claim that if <m>n</m> is prime,
+      then <m>n+7</m> is not prime?
+      This looks like an implication.
+      I would like to write something like
+          <me permid="tWX">
+        P(n) \imp \neg P(n+7)
+          </me>
+      where <m>P(n)</m> means <q>
+          <m>n</m> is prime.</q>
+      But this is not quite right.
+      </p>
+      <p pause="yes">
+        
+      For one thing, this sentence has a
+        <term>free variable</term>
+      (that is, a variable that we have not specified anything about),
+      so it is not a statement.  A sentence that contains variables is called a <term>predicate</term>.
+      </p>
+      <p pause="yes" permid="cYM">
+      If we plug in a specific value for <m>n</m>, we do get a statement.
+      What we really want to say is that
+        <em>for all</em> values of <m>n</m>,
+      if <m>n</m> is prime, then <m>n+7</m> is not.
+      We need to <em>quantify</em> the variable.
+      </p>
+       
+      </slide>
+      <slide>
+          <title>Universal and Existential Quantifiers</title>
+          <p permid="ARC">
+        The existential quantifier is
+        <m>\exists</m> and is read
+        <q>there exists</q> or
+        <q>there is.</q> For example,
+        <me permid="aeg">
+          \exists x (x \lt 0)
+        </me>
+        asserts that there is a number less than 0.
+      </p>
+          <p pause="yes" permid="gYL">
+        The universal quantifier is
+        <m>\forall</m> and is read
+        <q>for all</q> or
+        <q>every.</q> For example,
+        <me permid="Glp">
+          \forall x (x \ge 0)
+        </me>
+        asserts that every number is greater than or equal to 0.
+      </p>
+        </assemblage>
+      </slide>
+      <slide>
+          <title>Quantifiers and Negation</title>
+          <p>
+            When is a quantified statement false?  
+          </p>
+
+        <p pause="true" permid="Mwa">
+          <m>\neg \forall x P(x)</m> is equivalent to
+          <m>\exists x \neg P(x)</m>.
+        </p>
+
+        <p pause="true" permid="sDj">
+          <m>\neg \exists x P(x)</m> is equivalent to
+          <m>\forall x \neg P(x)
+          </m>.
+        </p>
+      </slide>
+    </section>
+  </slideshow>
+</pretext>

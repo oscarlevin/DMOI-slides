@@ -1,0 +1,130 @@
+<?xml version="1.0"?>
+<pretext xmlns:xi="http://www.w3.org/2001/XInclude">
+  <xi:include href="slidesinfo.ptx"/>
+  <slideshow>
+    <title>Combinatorial Proofs</title>
+    <slide>
+      <investigation>
+        <p permid="bwU">
+        <ol permid="CFP"><li permid="fSs">
+            <p permid="adg">
+              The Stanley Cup is decided in a best of 7 tournament between two teams.
+              In how many ways can your team win?
+              Let's answer this question two ways:
+
+              <ol permid="Kdk"><li permid="dWb">
+                  <p permid="xOS">
+                    How many of the 7 games does your team need to win?
+                    How many ways can this happen?
+                  </p>
+                </li><li permid="LZB">
+                  <p permid="Gkp">
+                    What if the tournament goes all 7 games?
+                    So you win the last game.
+                    How many ways can the first 6 games go down?
+                  </p>
+                </li><li permid="sgK">
+                  <p permid="mry">
+                    What if the tournament goes just 6 games?
+                    How many ways can this happen?
+                    What about 5 games? 4 games?
+                  </p>
+                </li><li permid="YnT">
+                  <p permid="SyH">
+                    What are the two different ways to compute the number of ways your team can win?
+                    Write down an equation involving binomial coefficients
+                    (that is, <m>{n \choose k}</m>'s).
+                    What pattern in Pascal's triangle is this an example of?
+                  </p>
+                </li></ol>
+            </p>
+          </li><li permid="tVX">
+            <p permid="yFQ">
+              Generalize.
+              What if the rules changed and you played a best of <m>9</m> tournament (5 wins required)?
+              What if you played an <m>n</m> game tournament with <m>k</m> wins required to be named champion?
+            </p>
+          </li></ol>
+      </p>
+      </investigation>
+    </slide>
+    <subsection>
+      <title>Patterns in Pascal's Triangle</title>
+      <slide>
+        <example source-number="1.4.1">
+          <statement>
+            <p permid="KyJ">
+          Give an algebraic proof for the binomial identity
+          <me permid="yUl">
+            {n \choose k} = {n-1\choose k-1} + {n-1 \choose k}
+          </me>.
+        </p>
+          </statement>
+        </example>
+      </slide>
+      <slide>
+        <example source-number="1.4.2">
+          <statement>
+            <p permid="qFS">
+          Explain why <m>{n \choose 0} = 1</m> and <m>{n \choose n} = 1</m>.
+        </p>
+          </statement>
+        </example>
+      </slide>
+      <slide>
+        <example source-number="1.4.3">
+          <statement>
+            <p permid="WNb">
+          Explain why <m>{n \choose k} = {n-1 \choose k-1} + {n-1 \choose k}</m>.
+        </p>
+          </statement>
+        </example>
+      </slide>
+      <slide>
+        <example source-number="1.4.4">
+          <statement>
+            <p permid="CUk">
+          Prove the binomial identity <m>{n \choose k} = {n \choose n-k}</m>.
+        </p>
+          </statement>
+        </example>
+      </slide>
+      <slide>
+        <example source-number="1.4.5">
+          <statement>
+            <p permid="jbt">
+          Prove the binomial identity <m>{n\choose 0} + {n \choose 1} + {n\choose 2} + \cdots + {n \choose n} = 2^n</m>.
+        </p>
+          </statement>
+        </example>
+      </slide>
+    </subsection>
+    <subsection>
+      <title>More Proofs</title>
+      <slide>
+        <example source-number="1.4.6">
+          <statement>
+            <p permid="PiC">
+          Prove the identity
+          <me permid="cgO">
+            1 n + 2(n-1) + 3 (n-2) + \cdots + (n-1) 2 + n 1 = {n+2 \choose 3}
+          </me>.
+        </p>
+          </statement>
+        </example>
+      </slide>
+      <slide>
+        <example source-number="1.4.7">
+          <statement>
+            <p permid="vpL">
+          Prove the binomial identity
+          <me permid="UCp">
+            {n \choose 0}^2 + {n \choose 1}^2 + {n \choose 2}^2 + \cdots + {n \choose n}^2 = {2n \choose n}
+          </me>.
+        </p>
+          </statement>
+        </example>
+      </slide>
+    </subsection>
+  </slideshow>
+</pretext>
