@@ -10,7 +10,7 @@
       <title>Warm-up</title>
     <slide>
       <title>Warm-up</title>
-      <investigation>
+
         <p permid="azF">
         While walking through a fictional forest,
         you encounter three trolls guarding a bridge.
@@ -23,7 +23,6 @@
         <p permid="GGO">
         Which troll is which?
       </p>
-      </investigation>
     </slide>
     </section>
     <section>
@@ -53,7 +52,8 @@
               These are statements (in fact,
               <em>atomic</em> statements):
 
-          <ul permid="uzA"><li permid="DTm">
+          <ul permid="uzA">
+          <li permid="DTm">
               <p permid="IhG">
                 Telephone numbers in the USA have 10 digits.
               </p>
@@ -73,9 +73,10 @@
               <p permid="gKq">
                 <m>3+7 = 12</m>
               </p>
-            </li></ul>
+            </li>
+            </ul>
             </p>
-            </statment>
+            </statement>
             </example>
             </slide>
 
@@ -183,7 +184,6 @@
             or both false.
           </li><li permid="qzB"><m>\neg P</m> is true when <m>P</m> is false.</li></ul>
         </p>
-        </assemblage>
       </slide>
     </section>
     <section>
@@ -547,7 +547,6 @@
         </me>
         asserts that every number is greater than or equal to 0.
       </p>
-        </assemblage>
       </slide>
       <slide>
           <title>Quantifiers and Negation</title>
