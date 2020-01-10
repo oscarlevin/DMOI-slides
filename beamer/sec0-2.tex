@@ -1,6 +1,14 @@
 \documentclass[11pt, compress]{beamer}
 \usepackage{amsmath}
 \usetheme{Boadilla}
+\usefonttheme[onlymath]{serif}
+%get rid of navigation:
+\setbeamertemplate{navigation symbols}{}
+
+
+ %%%% Start PreTeXt generated preamble: %%%%% 
+
+\newcommand{\tabularfont}{}
 \usepackage[xparse, raster]{tcolorbox}
 \tcbset{colback=white, colframe=white}
 \NewTColorBox{image}{mmm}{boxrule=0.25pt, colframe=gray, left skip=#1\linewidth,width=#2\linewidth}
@@ -10,6 +18,7 @@
 \newcommand{\terminology}[1]{\textbf{#1}}\newcommand{\lt}{<}
 \newcommand{\gt}{>}
 \newcommand{\amp}{&}
+
 
 \renewcommand{\d}{\displaystyle}
 \newcommand{\N}{\mathbb N}
@@ -39,8 +48,66 @@
 \newcommand{\vl}[1]{\vtx{left}{#1}}
 \renewcommand{\v}{\vtx{above}{}}
 
+%% Graphics Preamble Entries
+\usepackage{tikz, pgfplots}
+
+\usetikzlibrary{positioning,matrix,arrows}
+
+\usetikzlibrary{shapes,decorations,shadows,fadings,patterns}
+\usetikzlibrary{decorations.markings}
+
+\usepackage{skak} %for chessboards etc.
+
+\def\circleA{(-.5,0) circle (1)}
+\def\circleAlabel{(-1.5,.6) node[above]{$A$}}
+\def\circleB{(.5,0) circle (1)}
+\def\circleBlabel{(1.5,.6) node[above]{$B$}}
+\def\circleC{(0,-1) circle (1)}
+\def\circleClabel{(.5,-2) node[right]{$C$}}
+\def\twosetbox{(-2,-1.4) rectangle (2,1.4)}
+\def\threesetbox{(-2.5,-2.4) rectangle (2.5,1.4)}
+\newcommand{\hexbox}[3]{
+  \def\x{-cos{30}*\r*#1+cos{30}*#2*\r*2}
+  \def\y{-\r*#1-sin{30}*\r*#1}
+  \draw (\x,\y) +(90:\r) -- +(30:\r) -- +(-30:\r) -- +(-90:\r) -- +(-150:\r) -- +(150:\r) -- cycle;
+  \draw (\x,\y) node{#3};
+}
+
+\tikzset{->-/.style={decoration={
+  markings,
+  mark=at position .5 with {\arrow{>}}},postaction={decorate}}}
+
+  \newcommand{\onedot}{
+    +(.5,.5) \v
+  }
+  \newcommand{\twodots}{
+    +(.25,.25) \v +(.75,.75) \v
+  }
+  \newcommand{\threedots}{
+  +(.25,.25) \v +(.5, .5) \v +(.75,.75) \v
+  }
+  \newcommand{\fourdots}{
+    +(.25,.25) \v +(.25,.75) \v +(.75,.25) \v +(.75,.75) \v
+  }
+  \newcommand{\fivedots}{
+    +(.5,.5) \v +(.25,.25) \v +(.25,.75) \v +(.75,.25) \v +(.75,.75) \v
+  }
+  \newcommand{\sixdots}{
+    +(.25,.5) \v +(.75,.5) \v +(.25,.25) \v +(.25,.75) \v +(.75,.25) \v +(.75,.75) \v
+  }
+  \newcommand{\dominoborder}{
+    \draw[thick, rounded corners] (0,0) rectangle (1,2);
+    \draw[thin] (0,1) -- (1,1);
+  }
+
+
+%%%% End of PreTeXt generated preamble %%%%% 
+
 \title{Mathematical Statements}
 \subtitle{(Section 0.2)}
+\author{}
+\date{}
+
 \begin{document}
 \begin{frame}
 \maketitle 
@@ -55,8 +122,17 @@
 \section{Warm-up}
 \begin{frame}
 \frametitle{Warm-up}
- While walking through a fictional forest, you encounter three trolls guarding a bridge. Each is either a \emph{knight}, who always tells the truth, or a \emph{knave}, who always lies. The trolls will not let you pass until you correctly identify each as either a knight or a knave. Each troll makes a single statement:
- Which troll is which?
+ While walking through a fictional forest, you encounter three trolls guarding a bridge. Each is either a \emph{knight}, who always tells the truth, or a \emph{knave}, who always lies. The trolls will not let you pass until you correctly identify each as either a knight or a knave. Each troll makes a single statement:\begin{itemize}
+\item{} Troll 1: If I am a knave, then there are exactly two knights here.
+
+
+\item{} Troll 2: Troll 1 is lying.
+
+
+\item{} Troll 3: Either we are all knaves or at least one of us is a knight.
+
+\end{itemize}
+Which troll is which?
 \end{frame}
  
 
@@ -123,7 +199,10 @@
  \begin{quote}%
 Telephone numbers in the USA have 10 digits and 42 is a perfect square.
 \end{quote}
- we can break this down into two smaller statements. The two shorter statements are \emph{connected} by an ``and.''
+ 
+\pause \vfill 
+
+We can break this down into two smaller statements. The two shorter statements are \emph{connected} by an ``and.''
 \end{frame}
  
 \begin{frame}
@@ -195,7 +274,7 @@ If Bob gets a 90 on the final, then Bob will pass the class.
 \item{} This is definitely an implication: \(P\) is the statement ``Bob gets a 90 on the final,'' and \(Q\) is the statement ``Bob will pass the class.''
 
 
-\item{} Is it true or false?  What would it take for the statement to be \emph{fasle}?
+\item{} Is it true or false?  What would it take for the statement to be \emph{false}?
 
 
 \item{} The only way to be false: Bob does get a 90 on the final \emph{AND} Bob still does not pass the class.
@@ -231,7 +310,7 @@ If Bob gets a 90 on the final, then Bob will pass the class.
 \frametitle{Direct Proofs of Implications}
  The truth conditions for an implication tell us one way we could \emph{prove} that an implication is true.
  
-\pause 
+\pause \vfill 
 
 To prove an implication \(P \imp Q\), it is enough to \emph{assume} \(P\), and from it, \emph{deduce} \(Q\).
 \end{frame}
@@ -241,7 +320,7 @@ To prove an implication \(P \imp Q\), it is enough to \emph{assume} \(P\), and f
 \begin{example}[0.2.4]Prove: If two numbers \(a\) and \(b\) are even, then their sum \(a+b\) is even.
 \end{example}
  \begin{proof}
-\pause 
+\pause \vfill 
 
 Suppose the numbers \(a\) and \(b\) are even. This means that \(a = 2k\) and \(b=2j\) for some integers \(k\) and \(j\). The sum is then \(a+b = 2k+2j = 2(k+j)\). Since \(k+j\) is an integer, this means that \(a+b\) is even.
 \end{proof}\end{frame}
@@ -271,11 +350,11 @@ Suppose the numbers \(a\) and \(b\) are even. This means that \(a = 2k\) and \(b
 \frametitle{}
 \begin{example}[0.2.5]True or false: If you draw any nine playing cards from a regular deck, then you will have at least three cards all of the same suit.
 
-\pause 
+\pause \vfill 
 
 Try looking at the contrapositive!
 
-\pause 
+\pause \vfill 
 
 Is the converse true?
 \end{example}
@@ -307,7 +386,7 @@ Is the converse true?
 \(P \iff Q\) is logically equivalent to \((P \imp Q) \wedge (Q \imp P)\).
 \end{quote}
  
-\pause 
+\pause \vfill 
 
 Example: Given an integer \(n\), it is true that \(n\) is even if and only if \(n^2\) is even. That is, if \(n\) is even, then \(n^2\) is even, as well as the converse: if \(n^2\) is even, then \(n\) is even.
 \end{frame}
@@ -357,11 +436,11 @@ P(n) \imp \neg P(n+7)
 \end{equation*}
 where \(P(n)\) means ``\(n\) is prime.'' But this is not quite right.
  
-\pause 
+\pause \vfill 
 
 For one thing, this sentence has a \terminology{free variable} (that is, a variable that we have not specified anything about), so it is not a statement.  A sentence that contains variables is called a \terminology{predicate}.
  
-\pause 
+\pause \vfill 
 
 If we plug in a specific value for \(n\), we do get a statement. What we really want to say is that \emph{for all} values of \(n\), if \(n\) is prime, then \(n+7\) is not. We need to \emph{quantify} the variable.
 \end{frame}
@@ -374,7 +453,7 @@ If we plug in a specific value for \(n\), we do get a statement. What we really 
 \end{equation*}
 asserts that there is a number less than 0.
  
-\pause 
+\pause \vfill 
 
 The universal quantifier is \(\forall\) and is read ``for all'' or ``every.'' For example,%
 \begin{equation*}

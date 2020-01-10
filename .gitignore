@@ -2,6 +2,8 @@
 *.glo
 *.idx
 *.log
+*.nav
+*.snm
 *.toc
 *.ist
 *.acn

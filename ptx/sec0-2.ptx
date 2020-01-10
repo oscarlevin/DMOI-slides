@@ -19,8 +19,27 @@
         <em>knave</em>, who always lies.
         The trolls will not let you pass until you correctly identify each as either a knight or a knave.
         Each troll makes a single statement:
-      </p>
-        <p permid="GGO">
+      
+
+      <ul>
+      <li>
+        <p permid="vxP">
+          Troll 1: If I am a knave, then there are exactly two knights here.
+        </p>
+      </li>
+      <li>
+        <p permid="bEY">
+          Troll 2: Troll 1 is lying.
+        </p>
+      </li>
+      <li>
+        <p permid="HMh">
+          Troll 3: Either we are all knaves or at least one of us is a knight.
+        </p>
+      </li>
+      </ul>
+
+
         Which troll is which?
       </p>
     </slide>
@@ -128,8 +147,8 @@
                   Telephone numbers in the USA have 10 digits and 42 is a perfect square.
             </p>
           </blockquote>
-        <p>
-          we can break this down into two smaller statements.
+        <p pause="yes">
+          We can break this down into two smaller statements.
       The two shorter statements are
           <em>connected</em> by an
           <q>and.</q>

@@ -1,0 +1,584 @@
+<?xml version="1.0"?>
+<pretext xmlns:xi="http://www.w3.org/2001/XInclude">
+  <xi:include href="slidesinfo.ptx"/>
+  <slideshow>
+    <title>Functions</title>
+    <subtitle>(Section 0.4)</subtitle>
+    <section>
+      <title>Definitions and Examples</title>
+    <slide>
+      <p permid="sKa">
+      A <term>function</term>
+      is a rule that assigns each input exactly one output.
+      We call the output the <term>image</term> of the input.
+      The set of all inputs for a function is called the <term>domain</term>.
+      The set of all allowable outputs is called the
+        <term>codomain</term>.
+        
+      </p>
+      <p pause="yes">
+      We would write <m>f:X \to Y</m> to describe a function with name <m>f</m>,
+      domain <m>X</m> and codomain <m>Y</m>.
+      This does not tell us <em>which</em>
+      function <m>f</m> is though.
+      </p>
+      <p pause="yes">
+      To define the function, we must describe the rule.
+      This is often done by giving a formula to compute the output for any input
+      (although this is certainly not the only way to describe the rule).
+      </p>
+    </slide>
+      
+    <slide>
+      <example source-number="0.4.1">
+        <statement>
+          <p oldPERMID="jat" permid="jqo">
+          The following are all examples of functions:
+
+          <ol permid="nLM" pause="yes">
+          <li permid="ukS">
+              <p permid="FtR">
+                <m>f:\Z \to \Z</m> defined by <m>f(n) = 3n</m>.
+                The domain and codomain are all integers.
+                The range is only the integer multiples of 3.
+              </p>
+            </li>
+            <li permid="asb">
+              <p permid="lBa">
+                <m>g: \{1,2,3\} \to \{a,b,c\}</m> defined by <m>g(1) = c</m>,
+                <m>g(2) = a</m> and <m>g(3) = a</m>.
+                The domain is the set <m>\{1,2,3\}</m>,
+                the codomain is the set <m>\{a,b,c\}</m> and the range is the set <m>\{a,c\}</m>.
+                It is okay that <m>g(2)</m> and <m>g(3)</m> are the same element of the codomain: each element in the <em>domain</em> still has only one output.
+              </p>
+            </li>
+            <li permid="Gzk">
+              <p permid="RIj">
+                <m>h:\{1,2,3,4\} \to \N</m> defined by the table:
+              </p>
+
+              <sidebyside permid="lWz"><tabular permid="ptV"><row bottom="minor"><cell right="minor" halign="center"><m>x</m></cell><cell>1</cell><cell>2</cell><cell>3</cell><cell>4</cell></row><row><cell right="minor" halign="center"><m>h(x)</m></cell><cell>3</cell><cell>6</cell><cell>9</cell><cell>12</cell></row></tabular></sidebyside>
+
+              <p permid="xPs">
+                Here the domain is the finite set
+                <m>\{1,2,3,4\}</m> and to codomain is the set of natural numbers,
+                <m>\N</m>.
+                This function is NOT the same as <m>f</m> defined above.
+                Even though the rule is the same,
+                the domain and codomain are different.
+              </p>
+            </li>
+            </ol>
+        </p>
+        </statement>
+      </example>
+    </slide>
+    <slide>
+      <example source-number="0.4.2">
+        <statement>
+          <p permid="Pxx">
+          Just because you can describe a rule in the same way you would write a function,
+          does not mean that the rule is a function.
+          The following are NOT functions.
+
+          <ol permid="TSV" pause="yes">
+          <li permid="mGt">
+              <p permid="dWB">
+                <m>f:\N \to \N</m> defined by <m>f(n) = \frac{n}{2}</m>.
+                The reason this is not a function is because not every input has an output.
+                Where does <m>f</m> send 3?
+                The rule says that <m>f(3) = \frac{3}{2}</m>,
+                but <m>\frac{3}{2}</m> is not an element of the codomain.
+              </p>
+            </li>
+            <li permid="SNC">
+              <p permid="KdK">
+                Consider the rule that matches each person to their phone number.
+                If you think of the set of people as the domain and the set of phone numbers as the codomain,
+                then this is not a function, since some people have two phone numbers.
+                Switching the domain and codomain sets doesn't help either,
+                since some phone numbers belong to multiple people
+                (assuming some households still have landlines when you are reading this).
+              </p>
+            </li></ol>
+        </p>
+        </statement>
+      </example>
+    </slide>
+    </section>
+    <section>
+      <title>Describing Functions</title>
+      <slide>
+        <example source-number="0.4.3">
+          <statement>
+            <p permid="vEG">
+          Which of the following diagrams represent a function?
+          Let <m>X = \{1,2,3,4\}</m> and <m>Y = \{a,b,c,d\}</m>.
+        </p>
+            <sidebyside widths="25% 25% 25%" margins="auto" permid="Ead">
+              <image xml:id="f-arrows" width="75%" permid="TLR">
+                <latex-image>
+              \begin{tikzpicture}[scale=0.9]
+                \draw[-&gt;] (-1.5,1) node[above] {1} -- (1.5,0) node[below] {\(d\)};
+                \draw[-&gt;] (-.5,1) node[above] {2} -- (-1.5,0) node[below] {\(a\)};
+                \draw[-&gt;] (.5,1) node[above] {3} -- (.5, 0) node[below] {\(c\)};
+                \draw[-&gt;] (1.5,1) node[above] {4} -- (-.5, 0) node[below] {\(b\)};
+                \node[above] at (0,1.5) {$f:X \to Y$};
+              \end{tikzpicture}
+            </latex-image>
+              </image>
+              <image xml:id="g-arrows" width="75%" permid="zTa">
+                <latex-image>
+              \begin{tikzpicture}[scale=0.9]
+                \draw[-&gt;] (-1.5,1) node[above] {1} -- (1.5,0) node[below] {\(d\)};
+                \draw[-&gt;] (-.5,1) node[above] {2} -- (-1.6,0) node[below] {\(a\)};
+                \draw[-&gt;] (.5,1) node[above] {3} -- (-1.4, 0);
+                \draw[-&gt;] (1.5,1) node[above] {4} -- (-.5, 0) node[below] {\(b\)};
+                \draw (.5,0) node[below] {\(c\)};
+                \node[above] at (0,1.5) { $g:X \to Y$};
+              \end{tikzpicture}
+            </latex-image>
+              </image>
+              <image xml:id="h-arrows" width="75%" permid="gaj">
+                <latex-image>
+              \begin{tikzpicture}[scale=0.9]
+                \draw (-1.5,1) node[above] {1};
+                \draw[-&gt;] (-.5,1) node[above] {2} (-.6,1) -- (-1.5,0) node[below] {\(a\)};
+                \draw[-&gt;] (-.4,1) -- (.5,0);
+                \draw[-&gt;] (.5,1) node[above] {3} -- (1.5, 0) node[below] {\(d\)};
+                \draw[-&gt;] (1.5,1) node[above] {4} -- (-.5, 0) node[below] {\(b\)};
+                \draw (.5,0) node[below] {\(c\)};
+                \node[above] at (0,1.5) {$h:X \to Y$};
+              \end{tikzpicture}
+            </latex-image>
+              </image>
+            </sidebyside>
+          </statement>
+        </example>
+      </slide>
+      <slide>
+        <title>Ways to describe functions</title>
+        <p>
+          Here are three ways to describe the same function <m>f:\{1,2,3\} \to \{1,2,3\}</m>:
+        </p>
+        <sidebyside widths="25% 25%" permid="LEC">
+
+          <image xml:id="discrete-function-graph" permid="Hxz">
+
+            <latex-image> \begin{tikzpicture}[scale=1]
+            \draw[thin, gray!50] (0,0) grid (3.5, 3.5);
+            \draw[-&gt;, thick] (0,0) -- (0,3.5);
+            \draw[-&gt;, thick] (0,0) -- (3.5,0);
+            \fill (1,2) circle (3pt) (2,1) circle (3pt) (3,3) circle (3pt);
+          \end{tikzpicture}
+            </latex-image>
+          </image>
+
+        <image xml:id="arrow-function-example" permid="nEI">
+
+          <latex-image> \begin{tikzpicture}[scale=1]
+            \draw[-&gt;] (-1,1) node[above] {1} -- (0,0) node[below] {2};
+            \draw[-&gt;] (0,1) node[above] {2} -- (-1,0) node[below] {1};
+            \draw[-&gt;] (1,1) node[above] {3} -- (1,0) node[below] {3};
+          \end{tikzpicture}
+          </latex-image>
+        </image>
+
+        </sidebyside>
+        <p>
+          <me permid="RWE">
+        f(x) = \begin{cases} x+1 \amp \text{ if } x = 1 \\ x-1 \amp \text{ if } x = 2 \\ x \amp \text{ if } x = 3\end{cases}
+          </me>.
+        </p>
+      </slide>
+
+      <slide>
+        <title>Tables and Two-Line Notation</title>
+        <p>
+          For functions with small (finite) domains, defining the function through a table values is appropriate:
+        </p>
+
+          <sidebyside permid="XSU">
+            <tabular permid="VBe">
+              <row bottom="minor">
+                <cell right="minor" halign="center">
+                  <m>x</m>
+                </cell>
+                <cell>0</cell>
+                <cell>1</cell>
+                <cell>2</cell>
+                <cell>3</cell>
+                <cell>4</cell>
+              </row>
+              <row>
+                <cell right="minor" halign="center">
+                  <m>f(x)</m>
+                </cell>
+                <cell>3</cell>
+                <cell>3</cell>
+                <cell>2</cell>
+                <cell>4</cell>
+                <cell>1</cell>
+              </row>
+            </tabular>
+          </sidebyside>
+
+          <p permid="mUO" pause="yes">
+      We simplify this further by writing this as a <q>matrix</q> with each input directly over its output:
+            <me permid="ydN">
+        f = \twoline{0 \amp 1 \amp 2\amp 3 \amp 4}{3 \amp 3 \amp 2 \amp 4 \amp 1}
+            </me>.
+      Note this is just notation and not the same sort of matrix you would find in a linear algebra class
+      (it does not make sense to do operations with these matrices,
+      or row reduce them, for example).
+          </p>
+        
+      </slide>
+
+      <slide>
+        <title>Closed and non-closed formulas</title>
+        <p>
+          If the domain of a function is infinite (probably <m>\N</m> in this course), a <term>closed formula</term> might be a good way to describe the rule.  For example, <m>f(n) = n^2</m> is a closed formula.
+        </p>
+        
+        <p pause="yes">
+          Compare that formula to the following, which is not a closed formula:
+        </p>
+        <example source-number="0.4.4">
+          <statement>
+            <p permid="bLP">
+          Consider the function <m>f:\N \to \N</m> given by
+          <m>f(0) = 0</m> and <m>f(n+1) = f(n) + 2n+1</m>.
+          Find <m>f(6)</m>.
+        </p>
+          </statement>
+        </example>
+      </slide>
+
+      <slide>
+          <title>Recursively Defined Functions</title>
+          <p permid="RmK">
+        For a function <m>f:\N \to \N</m>,
+        a <term>recursive definition</term>
+        consists of an <term>initial condition</term>
+        together with a <term>recurrence relation</term>.
+        The initial condition is the explicitly given value of <m>f(0)</m>.
+        The recurrence relation is a formula for <m>f(n+1)</m> in terms for <m>f(n)</m>
+        (and possibly <m>n</m> itself).
+      </p>
+      </slide>
+
+      <slide>
+        <example source-number="0.4.5">
+          <statement>
+            <p permid="HSY">
+          Give recursive definitions for the functions described below.
+
+          <ol permid="Aae" pause="yes"><li permid="yUL">
+              <p permid="qkT">
+                <m>f:\N \to \N</m> gives the number of snails in your terrarium <m>n</m> years after you built it,
+                assuming you started with 3 snails and the number of snails doubles each year.
+              </p>
+            </li><li permid="fbU">
+              <p permid="Wsc">
+                <m>g:\N \to \N</m> gives the number of push-ups you do <m>n</m> days after you started your push-ups challenge,
+                assuming you could do 7 push-ups on day 0 and you can do 2 more push-ups each day.
+              </p>
+            </li><li permid="Ljd">
+              <p permid="Czl">
+                <m>h:\N \to \N</m> defined by <m>h(n) = n!</m>.
+                Recall that <m>n! = 1 \cdot 2 \cdot 3 \cdot \cdots \cdot (n-1)\cdot n</m> is the product of all numbers from <m>1</m> through <m>n</m>.
+                We also define <m>0! = 1</m>.
+              </p>
+            </li></ol>
+        </p>
+          </statement>
+        </example>
+      </slide>
+    </section>
+
+    <section>
+      <title>Surjections, Injections, and Bijections</title>
+      <slide>
+        <title>Surjective functions</title>
+        
+        
+        <p permid="Qhr">
+      Sometimes there are elements of the codomain which are not in the range.
+      When this sort of the thing <em>does not</em> happen,
+      (that is, when everything in the codomain is in the range)
+      we say the function is
+          <term>onto</term>
+      or that the function maps the domain
+          <em>onto</em> the codomain.
+      </p>
+
+      <p>
+      The fancy math term for an onto function is a
+          <term>surjection</term>,
+
+      and we say that an onto function is a
+          <term>surjective</term> function.
+        </p>
+
+        <p permid="woA" pause="yes">
+      In pictures:
+        </p>
+
+        <sidebyside widths="30% 30%" margins="auto" permid="IJW">
+
+          <image xml:id="surjective-ex" permid="ECT">
+
+            <latex-image>
+            \begin{tikzpicture}
+            \fill (-1.5, 1.2) circle (.1) (-.5,1.2) circle (.1) (.5, 1.2) circle (.1) (1.5,1.2) circle (.1);
+            \draw[-&gt;] (-1.5, 1) -- (-1,0);
+            \draw[-&gt;] (-.5,1) -- (0, 0);
+            \draw[-&gt;] (.5, 1) -- (.9,0);
+            \draw[-&gt;] (1.5,1) -- (1.1,0);
+            \draw (-1, -0.2) circle (.1) (0, -0.2) circle (.1) (1, -0.2) circle (.1);
+            \node[below] at (0,-.5) {Surjective};
+          \end{tikzpicture}
+            </latex-image>
+          </image>
+          <!-- <caption>Surjective.</caption> -->
+          <image xml:id="non-surjective-ex" permid="kKc">
+
+            <latex-image>
+            \begin{tikzpicture}
+            \fill (-1.5, 1.2) circle (.1) (-.5,1.2) circle (.1) (.5, 1.2) circle (.1) (1.5,1.2) circle (.1);
+            \draw[-&gt;] (-1.5, 1) -- (-1.1,0);
+            \draw[-&gt;] (-.5,1) -- (-.9, 0);
+            \draw[-&gt;] (.5, 1) -- (.9,0);
+            \draw[-&gt;] (1.5,1) -- (1.1,0);
+            \draw (-1, -0.2) circle (.1) (0, -0.2) circle (.1) (1, -0.2) circle (.1);
+            \node[below] at (0,-.5) {Not surjective};
+          \end{tikzpicture}
+            </latex-image>
+          </image>
+          <!-- <caption>Not surjective.</caption> -->
+        </sidebyside>
+      </slide>
+      <slide>
+        <example source-number="0.4.6">
+          <statement>
+            <p permid="oah">
+          Which functions are surjective (i.e., onto)?
+
+          <ol permid="ghn">
+          <li permid="jLN"><m>f:\Z \to \Z</m> defined by <m>f(n) = 3n</m>.</li>
+          <li permid="PSW">
+              <m>g: \{1,2,3\} \to \{a,b,c\}</m> defined by <m>g = \begin{pmatrix}1 \amp 2 \amp 3 \\ c \amp a \amp a \end{pmatrix}</m>.
+            </li>
+            <li permid="waf">
+              <p permid="bbV">
+                <m>h:\{1,2,3\} \to \{1,2,3\}</m> defined as follows:
+              </p>
+
+              <sidebyside width="20%" permid="oRf"><image xml:id="ex-surj-q" permid="QRl"><latex-image>
+                    \begin{tikzpicture}
+          \draw[-&gt;] (-1,1) node[above] {1} -- (0,0) node[below] {2};
+          \draw[-&gt;] (0,1) node[above] {2} -- (-1,0) node[below] {1};
+          \draw[-&gt;] (1,1) node[above] {3} -- (1,0) node[below] {3};
+        \end{tikzpicture}
+                  </latex-image></image></sidebyside>
+
+            </li>
+            </ol>
+        </p>
+          </statement>
+        </example>
+      </slide>
+      <slide>
+        <title>Injective functions</title>
+        <p permid="cvJ">
+      A function might assign the same element of the codomain to two or more different elements of the domain.
+      When this <em>does not</em> occur
+      (that is, when each element of the codomain is the image of at most one element of the domain)
+      then we say the function is
+          <term>one-to-one</term>.
+      </p>
+
+      <p>
+      The fancy math term for a one-to-one function is an
+          <term>injection</term>.
+      We call one-to-one functions
+          <term>injective</term> functions.
+        </p>
+
+        <p permid="ICS" pause="yes">
+      In pictures:
+        </p>
+
+        <sidebyside widths="40% 40%" margins="auto" permid="UYo">
+
+          <image xml:id="injective-ex" permid="wYu">
+
+            <latex-image>
+            \begin{tikzpicture}
+            \fill (-1.5, 1.2) circle (.1) (-.5,1.2) circle (.1) (.5, 1.2) circle (.1) (1.5,1.2) circle (.1);
+            \draw[-&gt;] (-1.5, 1) -- (-2,0);
+            \draw[-&gt;] (-.5,1) -- (-1, 0);
+            \draw[-&gt;] (.5, 1) -- (1,0);
+            \draw[-&gt;] (1.5,1) -- (2,0);
+            \draw (-2, -0.2) circle (.1) (-1, -.2) circle (.1) (0, -0.2) circle (.1) (1, -0.2) circle (.1) (2, -0.2) circle (.1);
+              \node[below] at (0,-.5) {Injective};
+          \end{tikzpicture}
+            </latex-image>
+          </image>
+          <!-- <caption>Injective.</caption> -->
+          <image xml:id="non-injective-ex" permid="dfD">
+
+            <latex-image>
+            \begin{tikzpicture}
+              \fill (-1.5, 1.2) circle (.1) (-.5,1.2) circle (.1) (.5, 1.2) circle (.1) (1.5,1.2) circle (.1);
+              \draw[-&gt;] (-1.5, 1) -- (-2,0);
+              \draw[-&gt;] (-.5,1) -- (-1, 0);
+              \draw[-&gt;] (.5, 1) -- (.9,0);
+              \draw[-&gt;] (1.5,1) -- (1.1,0);
+              \draw (-2, -0.2) circle (.1) (-1, -.2) circle (.1) (0, -0.2) circle (.1) (1, -0.2) circle (.1) (2, -0.2) circle (.1);
+                \node[below] at (0,-.5) {Not injective};
+            \end{tikzpicture}
+            </latex-image>
+          </image>
+        </sidebyside>
+        
+      </slide>
+
+
+      <slide>
+        <example source-number="0.4.7">
+          <statement>
+            <p permid="Uhq">
+          Which functions are injective (i.e., one-to-one)?
+
+          <ol permid="Mow">
+          <li permid="UCP"><m>f:\Z \to \Z</m> defined by <m>f(n) = 3n</m>.</li>
+          <li permid="AJY">
+              <m>g: \{1,2,3\} \to \{a,b,c\}</m> defined by <m>g = \begin{pmatrix}1 \amp 2 \amp 3 \\ c \amp a \amp a \end{pmatrix}</m>.
+            </li>
+            <li permid="gRh">
+              <p permid="Hje">
+                <m>h:\{1,2,3\} \to \{1,2,3\}</m> defined as follows:
+              </p>
+
+              <sidebyside width="20%" permid="Bfx"><image permid="JmM"><latex-image>
+              \begin{tikzpicture}
+                \draw[-&gt;] (-1,1) node[above] {1} -- (0,0) node[below] {2};
+                \draw[-&gt;] (0,1) node[above] {2} -- (-1,0) node[below] {1};
+                \draw[-&gt;] (1,1) node[above] {3} -- (1,0) node[below] {3};
+              \end{tikzpicture}
+            </latex-image></image></sidebyside>
+
+            </li></ol>
+        </p>
+          </statement>
+        </example>
+      </slide>
+
+      <slide>
+          <title>Injective vs Surjective</title>
+          <p permid="xtT">
+        A function is <term>injective</term>
+        provided every element of the codomain is the image of <em>at most</em>
+        one element from the domain.
+      </p>
+          <p permid="dBc" pause="yes">
+        A function is <term>surjective</term>
+        provided every element of the codomain is the image of <em>at least</em>
+        one element from the domain.
+      </p>
+
+      <p pause="yes">
+        A function might be both injective and surjective.  Such a functions is called a <term>bijection</term> (a <term>bijective function</term>).
+      </p>
+      </slide>
+    </section>
+
+    <section>
+      <title>Image and Inverse Image</title>
+
+      <slide>
+        <title>Images</title>
+        <p>
+          The codomain element <m>y</m> that corresponds to a domain element <m>x</m> (that is, <m>f(x) = y</m>) is calle the <term>image</term> of <m>x</m>.
+        </p>
+
+        <p pause="yes">
+
+      How can we describe the <em>set</em>
+      of images of elements from some subset of the domain?
+      Suppose <m>f:X \to Y</m> is a function and that
+          <m>A \subseteq X</m> is some subset of the domain
+      (possibly all of it).
+      We will use the notation <m>f(A)</m> to denote the
+          <term>image of <m>A</m> under <m>f</m>
+          </term>,
+      namely the set of elements in <m>Y</m> that are the image of elements from <m>A</m>.
+      That is, <m>f(A) = \{f(a) \in Y \st a \in A\}</m>.
+        </p>
+      </slide>
+
+      <slide>
+        <title>Inverse Image</title>
+
+        <p permid="ttU">
+      We can do this in the other direction as well.
+      We might ask which elements of the domain get mapped to a particular set in the codomain.
+
+      </p>
+      <p pause="yes">
+        
+      Let <m>f:X \to Y</m> be a function and suppose
+          <m>B \subseteq Y</m> is a subset of the codomain.
+      Then we will write <m>f\inv(B)</m> for the
+          <term>inverse image of <m>B</m> under <m>f</m>
+          </term>,
+      namely the set of elements in <m>X</m> whose image are elements in <m>B</m>.
+      In other words, <m>f\inv(B) = \{x \in X \st f(x) \in B\}</m>.
+        </p>
+
+        <p pause="yes">
+          When <m>B</m> contains only one element, we write <m>f\inv(y)</m> instead of <m>f\inv(\{y\})</m>.  But this is still a <em>set</em>.
+        </p>
+      </slide>
+
+      <slide>
+        <example source-number="0.4.8">
+          <statement>
+            <p oldPERMID="MmW" permid="Aoz">
+          Consider the function <m>f:\{1,2,3,4,5,6\} \to \{a,b,c,d\}</m> given by
+          <me oldPERMID="bav" permid="iUP">
+            f = \begin{pmatrix}1 \amp 2 \amp 3 \amp 4 \amp 5 \amp 6 \\ a \amp a \amp b \amp b \amp b \amp c\end{pmatrix}
+          </me>.
+          Find <m>f(\{1,2,3\})</m>,
+          <m>f\inv(\{a,b\})</m>, and <m>f\inv(d)</m>.
+        </p>
+          </statement>
+        </example>
+      </slide>
+
+      <slide>
+        <example source-number="0.4.9">
+          <statement>
+            <p permid="gvI">
+          Consider the function <m>g:\Z \to \Z</m> defined by <m>g(n) = n^2 + 1</m>.
+          Find <m>g(1)</m> and <m>g(\{1\})</m>.
+          Then find <m>g\inv(1)</m>,
+          <m>g\inv(2)</m>, and <m>g\inv(3)</m>.
+        </p>
+          </statement>
+        </example>
+      </slide>
+      <slide>
+        <example source-number="0.4.10">
+          <statement>
+            <p permid="MCR">
+          Find a function <m>f:\{1,2,3,4,5\} \to \N</m> such that <m>\card{f\inv(7)} = 5</m>.
+        </p>
+          </statement>
+        </example>
+      </slide>
+    </section>
+  </slideshow>
+</pretext>

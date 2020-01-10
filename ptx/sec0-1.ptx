@@ -3,13 +3,13 @@
   <xi:include href="slidesinfo.ptx"/>
   <slideshow>
     <title>What is Discrete Mathematics?</title>
+    <section>
     <slide>
       <title>What is Discrete Mathematics?</title>
             
-      <blockquote permid="akX">
         <p permid="PLS">
-            dis<midpoint/>
-      crete / dis'krët.
+            <term>dis<midpoint/>
+      crete / dis'krët.</term>
         </p>
 
         <p permid="vTb">
@@ -19,7 +19,7 @@
         <p permid="cak">
           <em>Synonyms</em>: separate - detached - distinct - abstract.
         </p>
-      </blockquote>
+
       <p pause="yes">
         Whatever your conception of what mathematics is,
         try applying the concept of <q>discrete</q> to it, as defined above.
@@ -131,5 +131,7 @@
         But first, we will review some basic mathematical tools that will help us study these questions.
       </p>
     </slide>
+</section>
+
   </slideshow>
 </pretext>

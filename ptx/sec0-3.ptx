@@ -3,8 +3,30 @@
   <xi:include href="slidesinfo.ptx"/>
   <slideshow>
     <title>Sets</title>
-    <subsection>
+    <subtitle>(Section 0.3)</subtitle>
+    <section>
       <title>Notation</title>
+      <slide>
+        <p>
+          A <term>set</term> is an unordered collection of elements.
+        </p>
+
+        <p pause="yes">
+          We can define a set by listing its elements, such as
+          <me>
+            A = \{1, 2, 3\} \text{ or } B = \{0, 2, 4, 6, \ldots\}.
+          </me>          
+        </p>
+
+        <p pause="yes">
+          Or we can use <term>set builder notation</term>, such as
+          <me>
+            B = \{x \in \N \st x \text{ is even}\}.
+          </me>
+        </p>
+      </slide>
+
+
       <slide>
         <example source-number="0.3.1">
           <statement>
@@ -12,7 +34,12 @@
           Describe each of the following sets both in words and by listing out enough elements to see the pattern.
         </p>
             <p permid="yle">
-          <ol permid="FWH"><li permid="Dcb"><m>\{x \st x + 3 \in \N\}</m>.</li><li permid="jjk"><m>\{x \in \N \st x + 3 \in \N\}</m>.</li><li permid="Pqt"><m>\{x \st x \in \N \vee -x \in \N\}</m>.</li><li permid="vxC"><m>\{x \st x \in \N \wedge -x \in \N\}</m>.</li></ol>
+          <ol permid="FWH">
+          <li permid="Dcb"><m>\{x \st x + 3 \in \N\}</m>.</li>
+          <li permid="jjk"><m>\{x \in \N \st x + 3 \in \N\}</m>.</li>
+          <li permid="Pqt"><m>\{x \st x \in \N \vee -x \in \N\}</m>.</li>
+          <li permid="vxC"><m>\{x \st x \in \N \wedge -x \in \N\}</m>.
+          </li></ol>
         </p>
           </statement>
         </example>
@@ -36,7 +63,6 @@
         </example>
       </slide>
       <slide>
-        <assemblage>
           <title>Special sets</title>
           <p permid="Aar">
         <dl width="narrow" permid="qNJ"><li permid="vcd">
@@ -103,9 +129,8 @@
             </p>
           </li></dl>
       </p>
-        </assemblage>
       </slide>
-      <slide>
+      <!-- <slide>
         <assemblage>
           <title>Set Theory Notation</title>
           <p permid="ghA">
@@ -226,48 +251,85 @@
           </li></dl>
       </p>
         </assemblage>
-      </slide>
+      </slide> -->
+
       <slide>
-        <investigation>
-          <p permid="TTi">
+      <title>Investigate!</title>
+      
+      <p permid="TTi">
         <ol permid="KGA"><li permid="YKf">
             <p permid="YhC">
               Find the cardinality of each set below.
 
-              <ol permid="kvU"><li permid="EoL"><m>A = \{3,4,\ldots, 15\}</m>.</li><li permid="ERo"><m>B = \{n \in \N \st 2 \lt n \le 200\}</m>.</li><li permid="kYx">
+              <ol permid="kvU"><li permid="EoL"><m>A = \{3,4,\ldots, 15\}</m>.</li>
+              <li permid="ERo"><m>B = \{n \in \N \st 2 \lt n \le 200\}</m>.</li>
+              <li permid="kYx">
                   <m>C = \{n \le 100 \st n \in \N \wedge \exists m \in \N (n = 2m+1)\}</m>.
                 </li></ol>
             </p>
-          </li><li permid="hIs">
+          </li>
+          <li permid="hIs">
             <p permid="WdU">
               Find two sets <m>A</m> and <m>B</m> for which <m>|A| = 5</m>,
               <m>|B| = 6</m>, and <m>|A\cup B| = 9</m>.
               What is <m>|A \cap B|</m>?
             </p>
-          </li><li permid="NPB">
+          </li>
+          <li permid="NPB">
             <p permid="Cld">
               Find sets <m>A</m> and <m>B</m> with <m>|A| = |B|</m> such that
               <m>|A\cup B| = 7</m> and <m>|A \cap B| = 3</m>.
               What is <m>|A|</m>?
             </p>
-          </li><li permid="tWK">
+          </li>
+          <li permid="tWK">
             <p permid="ism">
               Let <m>A = \{1,2,\ldots, 10\}</m>.
               Define <m>\mathcal{B}_2 = \{B \subseteq A \st |B| = 2\}</m>.
               Find <m>|\mathcal{B}_2|</m>.
             </p>
-          </li><li permid="adT">
+          </li>
+          <li permid="adT">
             For any sets <m>A</m> and <m>B</m>,
             define <m>AB = \{ab \st a\in A \wedge b \in B\}</m>.
             If <m>A = \{1,2\}</m> and <m>B = \{2,3,4\}</m>, what is <m>|AB|</m>?
             What is <m>|A \times B|</m>?
           </li></ol>
       </p>
-        </investigation>
       </slide>
-    </subsection>
-    <subsection>
+    </section>
+    <section>
       <title>Relationships Between Sets</title>
+      <slide>
+        <title>When sets are equal</title>
+        <p>
+          Sets are equal when they contain exactly the same elements.  In particular:
+          <me>
+            \{1,2,3\} = \{2,1,3\}
+          </me>
+          and
+          <me>
+            \{1,2,3\} = \{1, 1+1, 1+1+1\} = \{1, 2, 3, 1+2\}.
+          </me>         
+        </p>
+
+        <p pause="yes">
+          When sets are not equal, it might happen that every one is somehow <q>part</q> of the other.
+        </p>
+      </slide>
+      <slide>
+        <title>Subsets</title>
+        <p>
+          We say that <m>A</m> is a <term>subset</term> of <m>B</m> provided every element of <m>A</m> is also an element of <m>B</m>.  We write this <m>A \subseteq B</m>.
+        </p>
+        <p pause="yes">
+          If <m>A \subseteq B</m> and <m>A \ne B</m>, then we say that <m>A</m> is a <term>proper subset</term> of <m>B</m>, and write <m>A \subset B</m>.
+        </p>
+        <p pause="yes">
+          For example, <m>\{2,4\} \subseteq \{1,2,3,4\}</m>, but it is more precise to say <m>\{2,4\} \subset \{1,2,3,4\}</m>. 
+        </p>
+      </slide>
+
       <slide>
         <example source-number="0.3.3">
           <statement>
@@ -277,12 +339,26 @@
           Determine which of the following are true, false, or meaningless.
         </p>
             <p permid="qGF">
-          <ol cols="3" permid="SkZ"><li permid="RfG"><m>A \subset B</m>.</li><li permid="xmP"><m>B \subset A</m>.</li><li permid="dtY"><m>B \in C</m>.</li><li permid="JBh"><m>\emptyset \in A</m>.</li><li permid="pIq"><m>\emptyset \subset A</m>.</li><li permid="VPz"><m>A \lt D</m>.</li><li permid="BWI"><m>3 \in C</m>.</li><li permid="idR"><m>3 \subset C</m>.</li><li permid="Ola"><m>\{3\} \subset C</m>.</li></ol>
+          <ol cols="3" permid="SkZ"><li permid="RfG"><m>A \subset B</m>.</li>
+          <li permid="xmP"><m>B \subset A</m>.</li>
+          <li permid="dtY"><m>B \in C</m>.</li>
+          <li permid="JBh"><m>\emptyset \in A</m>.</li>
+          <li permid="pIq"><m>\emptyset \subset A</m>.</li>
+          <li permid="VPz"><m>A \lt D</m>.</li>
+          <li permid="BWI"><m>3 \in C</m>.</li>
+          <li permid="idR"><m>3 \subset C</m>.</li>
+          <li permid="Ola"><m>\{3\} \subset C</m>.</li>
+          </ol>
         </p>
           </statement>
         </example>
       </slide>
       <slide>
+      <title>Power set</title>
+      <p>
+        The <term>power set</term> of a set <m>A</m>, written <m>\pow(A)</m>, is the set of all subsets of <m>A</m>.
+      </p>
+      
         <example source-number="0.3.4">
           <statement>
             <p permid="WNO">
@@ -293,6 +369,11 @@
         </example>
       </slide>
       <slide>
+        <title>Cardinality</title>
+        <p>
+          The number of elements in a set is called its <term>cardinality</term> (or size).  We write <m>|A|</m> for the cardinality of <m>A</m>.
+        </p>
+        
         <example source-number="0.3.5">
           <statement>
             <p permid="CUX">
@@ -313,9 +394,63 @@
           </statement>
         </example>
       </slide>
-    </subsection>
-    <subsection>
+    </section>
+    <section>
       <title>Operations On Sets</title>
+      <slide>
+        <title>Set operations</title>
+        <p>
+          We can combine and modify sets in various ways.
+          <ul pause="yes">
+            <li permid="wRq">
+              <title>
+                <m>\cap</m>
+              </title>
+              <p permid="lmS">
+                <m>A \cap B</m> is the <term>intersection of <m>A</m> and <m>B</m>
+              </term>:
+              the set containing all elements which are elements of both <m>A</m> and <m>B</m>.
+            </p>
+          </li>
+          <li permid="cYz">
+            <title>
+              <m>\cup</m>
+            </title>
+            <p permid="Rub">
+              <m>A \cup B</m> is the <term>union of <m>A</m> and <m>B</m>
+            </term>:
+              is the set containing all elements which are elements of <m>A</m> or <m>B</m> or both.
+          </p>
+        </li>
+
+      <li permid="pmR">
+        <title>
+          <m>\setminus</m>
+        </title>
+        <p permid="dIt">
+          <m>A \setminus B</m> is <term>
+          <m>A</m> set-minus <m>B</m>
+        </term>:
+              the set containing all elements of <m>A</m> which are not elements of <m>B</m>.
+
+      </p>
+    </li>
+    <li permid="Vua">
+      <title>
+        <m>\bar{A}</m>
+      </title>
+      <p permid="JPC">
+              The <term>complement of <m>A</m>
+      </term>
+              is the set of everything which is not an element of <m>A</m>.
+    </p>
+  </li>
+          </ul>
+        </p>
+        
+      </slide>
+
+
       <slide>
         <example source-number="0.3.6">
           <statement>
@@ -324,7 +459,16 @@
           <m>B = \{2, 4, 6\}</m>, <m>C = \{1, 2, 3\}</m> and <m>D = \{7, 8, 9\}</m>.
           If the universe is <m>\U = \{1, 2, \ldots, 10\}</m>, find:
 
-          <ol cols="3" permid="ezr"><li permid="IvO"><m>A \cup B</m>.</li><li permid="oCX"><m>A \cap B</m>.</li><li permid="UKg"><m>B \cap C</m>.</li><li permid="ARp"><m>A \cap D</m>.</li><li permid="gYy"><m>\bar{B \cup C}</m>.</li><li permid="NfH"><m>A \setminus B</m>.</li><li permid="tmQ"><m>(D \cap \bar C) \cup \bar{A \cap B}</m>.</li><li permid="ZtZ"><m>\emptyset \cup C</m>.</li><li permid="lIr"><m>\emptyset \cap C</m>.</li></ol>
+          <ol cols="3" permid="ezr">
+          <li permid="IvO"><m>A \cup B</m>.</li>
+          <li permid="oCX"><m>A \cap B</m>.</li>
+          <li permid="UKg"><m>B \cap C</m>.</li>
+          <li permid="ARp"><m>A \cap D</m>.</li>
+          <li permid="gYy"><m>\bar{B \cup C}</m>.</li>
+          <li permid="NfH"><m>A \setminus B</m>.</li>
+          <li permid="tmQ"><m>(D \cap \bar C) \cup \bar{A \cap B}</m>.</li>
+          <li permid="ZtZ"><m>\emptyset \cup C</m>.</li>
+          <li permid="lIr"><m>\emptyset \cap C</m>.</li></ol>
         </p>
           </statement>
         </example>
@@ -342,6 +486,14 @@
         </example>
       </slide>
       <slide>
+      <title>Cartesian product</title>
+        <p permid="xBk">
+          <m>A \times B</m> is the <term>Cartesian product of <m>A</m> and <m>B</m>
+        </term>:
+              the set of all ordered pairs <m>(a,b)</m> with <m>a \in A</m> and <m>b \in B</m>.
+      </p>
+
+      
         <example source-number="0.3.8">
           <statement>
             <p permid="bxH">
@@ -352,9 +504,115 @@
           </statement>
         </example>
       </slide>
-    </subsection>
-    <subsection>
+    </section>
+    <section>
       <title>Venn Diagrams</title>
-    </subsection>
+
+      <slide>
+        <title>Venn diagrams</title>
+        <p>
+          We can represent operations on set using partially intersecting circles, called a <term>Venn diagram</term>.  We can also represent cardinality of a particular set by putting the number in the corresponding region.
+        </p>
+        <sidebyside widths="34% 34%" margins="auto" permid="fEK">
+          <!-- <figure> -->
+          <image xml:id="two-set-venn-empty" permid="TxJ">
+
+            <latex-image> \begin{tikzpicture}[fill=gray!50,scale=0.85]
+ \draw[thick] \circleA \circleAlabel \circleB \circleBlabel \twosetbox;
+\end{tikzpicture}
+            </latex-image>
+          </image>
+          <!-- </figure> -->
+          <!-- <figure> -->
+          <image xml:id="three-set-empty" permid="zES">
+
+            <latex-image> \begin{tikzpicture}[scale=.60, fill=gray!50]
+ \draw[thick] \circleA \circleAlabel \circleB \circleBlabel \circleC \circleClabel \threesetbox;
+\end{tikzpicture}
+            </latex-image>
+          </image>
+          <!-- </figure> -->
+        </sidebyside>
+
+        <p permid="IoK">
+      Each circle represents a set.
+      The rectangle containing the circles represents the universe.
+      To represent combinations of these sets,
+      we shade the corresponding region.
+        </p>
+      </slide>
+
+      <slide>
+        <p>
+          We can represent <m>A \cap B</m> as
+        </p>
+      <sidebyside width="34%" permid="LLT">
+
+        <image xml:id="two-set-cap" permid="fMb">
+
+          <latex-image> \begin{tikzpicture}[fill=gray!50,scale=0.85]
+  	\begin{scope}
+  	\clip \circleA;
+  	\fill \circleB;
+  	\end{scope}
+   \draw[thick] \circleA \circleAlabel \circleB \circleBlabel \twosetbox;
+  \end{tikzpicture}
+          </latex-image>
+        </image>
+
+      </sidebyside>
+
+      <p pause="yes">
+        We can represent <m>A \cap \bar{B} = A \setminus B</m> as
+      </p>
+      <sidebyside width="34%" permid="rTc">
+
+        <image xml:id="two-set-a-minus-b" permid="LTk">
+
+          <latex-image> \begin{tikzpicture}[fill=gray!50,scale=0.85]
+  	\begin{scope}
+  	\clip \twosetbox \circleB;
+  	\fill \circleA;
+  	\end{scope}
+   \draw[thick] \circleA \circleAlabel \circleB \circleBlabel \twosetbox;
+  \end{tikzpicture}
+          </latex-image>
+        </image>
+
+      </sidebyside>
+      </slide>
+
+
+
+      <slide>
+      <p permid="UDc">
+      A more complicated example is <m>(B \cap C) \cup (C \cap \bar A)</m>:
+
+      </p>
+      <sidebyside width="33%" permid="Yal">
+
+        <image xml:id="three-set-complicated" permid="sat">
+
+          <latex-image> \begin{tikzpicture}[fill=gray!50,scale=1]
+  	\fill \circleC;
+  	\begin{scope}
+  	    \clip \circleC;
+  	    \fill[white] \circleA \circleB;
+  	  \end{scope}
+  	  \begin{scope}
+  	  	\clip \circleC;
+  	  	\fill \circleB;
+  	  \end{scope}
+   \draw[thick] \circleA \circleAlabel \circleB \circleBlabel \circleC \circleClabel \threesetbox;
+  \end{tikzpicture}
+          </latex-image>
+        </image>
+
+      </sidebyside>
+        <p>
+          Can you describe the shaded region another way?
+        </p>
+      </slide>
+    </section>
   </slideshow>
 </pretext>
