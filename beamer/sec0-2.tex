@@ -1,0 +1,394 @@
+\documentclass[11pt, compress]{beamer}
+\usepackage{amsmath}
+\usetheme{Boadilla}
+\usepackage[xparse, raster]{tcolorbox}
+\tcbset{colback=white, colframe=white}
+\NewTColorBox{image}{mmm}{boxrule=0.25pt, colframe=gray, left skip=#1\linewidth,width=#2\linewidth}
+\RenewTColorBox{definition}{m}{colback=teal!30!white, colbacktitle=teal!30!white, coltitle=black, colframe=gray, boxrule=0.5pt, sharp corners=downhill, titlerule = 0.25pt, title={#1}}
+\RenewTColorBox{theorem}{m}{colback=pink!30!white, colbacktitle=pink!30!white, coltitle=black, colframe=gray, boxrule=0.5pt, sharp corners=downhill, titlerule = 0.25pt, title={#1}}
+\RenewTColorBox{proof}{}{boxrule=0.25pt, colframe=gray, colback=white, before upper={Proof:}, after upper={\qed}}
+\newcommand{\terminology}[1]{\textbf{#1}}\newcommand{\lt}{<}
+\newcommand{\gt}{>}
+\newcommand{\amp}{&}
+
+\renewcommand{\d}{\displaystyle}
+\newcommand{\N}{\mathbb N}
+\newcommand{\B}{\mathbf B}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\U}{\mathcal U}
+\newcommand{\pow}{\mathcal P}
+\newcommand{\inv}{^{-1}}
+\newcommand{\st}{:}
+\renewcommand{\iff}{\leftrightarrow}
+\newcommand{\Iff}{\Leftrightarrow}
+\newcommand{\imp}{\rightarrow}
+\newcommand{\Imp}{\Rightarrow}
+\newcommand{\isom}{\cong}
+
+\renewcommand{\bar}{\overline}
+\newcommand{\card}[1]{\left| #1 \right|}
+\newcommand{\twoline}[2]{\begin{pmatrix}#1 \\ #2 \end{pmatrix}}
+
+\newcommand{\vtx}[2]{node[fill,circle,inner sep=0pt, minimum size=4pt,label=#1:#2]{}}
+\newcommand{\va}[1]{\vtx{above}{#1}}
+\newcommand{\vb}[1]{\vtx{below}{#1}}
+\newcommand{\vr}[1]{\vtx{right}{#1}}
+\newcommand{\vl}[1]{\vtx{left}{#1}}
+\renewcommand{\v}{\vtx{above}{}}
+
+\title{Mathematical Statements}
+\subtitle{(Section 0.2)}
+\begin{document}
+\begin{frame}
+\maketitle 
+\end{frame}
+ 
+\begin{frame}
+\frametitle{Overview}
+\tableofcontents 
+\end{frame}
+ 
+
+\section{Warm-up}
+\begin{frame}
+\frametitle{Warm-up}
+ While walking through a fictional forest, you encounter three trolls guarding a bridge. Each is either a \emph{knight}, who always tells the truth, or a \emph{knave}, who always lies. The trolls will not let you pass until you correctly identify each as either a knight or a knave. Each troll makes a single statement:
+ Which troll is which?
+\end{frame}
+ 
+
+
+\section{Atomic and Molecular Statements}
+\begin{frame}
+\frametitle{Statements: atomic and molecular}
+ \begin{itemize}
+\item{} A \terminology{statement} is any declarative sentence which is either true or false.
+
+
+\item{} A statement is \terminology{atomic} if it cannot be divided into smaller statements, otherwise it is called \terminology{molecular}.
+
+\end{itemize}
+
+\end{frame}
+ 
+\begin{frame}
+\frametitle{}
+\begin{example}[0.2.1]These are statements (in fact, \emph{atomic} statements):\begin{itemize}
+\item{} Telephone numbers in the USA have 10 digits.
+
+
+\item{} The moon is made of cheese.
+
+
+\item{} 42 is a perfect square.
+
+
+\item{} Every even number greater than 2 can be expressed as the sum of two primes.
+
+
+\item{} \(3+7 = 12\)
+
+\end{itemize}
+
+\end{example}
+\end{frame}
+ 
+\begin{frame}
+\frametitle{}
+\begin{example}[0.2.1]And these are not statements:\begin{itemize}
+\item{} Would you like some cake?
+
+
+\item{} The sum of two squares.
+
+
+\item{} \(1+3+5+7+\cdots+2n+1\).
+
+\item{} Go to your room!
+
+
+\item{} \(3+x = 12\)
+
+\end{itemize}
+
+\end{example}
+\end{frame}
+ 
+\begin{frame}
+\frametitle{Molecular statements}
+ You can build more complicated (molecular) statements out of simpler (atomic or molecular) ones using \terminology{logical connectives}. For example, this is a molecular statement:
+ \begin{quote}%
+Telephone numbers in the USA have 10 digits and 42 is a perfect square.
+\end{quote}
+ we can break this down into two smaller statements. The two shorter statements are \emph{connected} by an ``and.''
+\end{frame}
+ 
+\begin{frame}
+\frametitle{Logical Connectives}
+ There are five logical connectives we will consider:
+\pause 
+
+\begin{itemize}[<+->]
+\item{} \(P \wedge Q\) is read ``\(P\) and \(Q\),'' and called a \terminology{conjunction}.
+
+\item{} \(P \vee Q\) is read ``\(P\) or \(Q\),'' and called a \terminology{disjunction}.
+
+\item{} \(P \imp Q\) is read ``if \(P\) then \(Q\),'' and called an \terminology{implication} or \terminology{conditional}.
+
+\item{} \(P \iff Q\) is read ``\(P\) if and only if \(Q\),'' and called a \terminology{biconditional}.
+
+\item{} \(\neg P\) is read ``not \(P\),'' and called a \terminology{negation}.
+\end{itemize}
+
+\end{frame}
+ 
+\begin{frame}
+\frametitle{Truth Conditions for Connectives}
+ Key point: the truth-value of a molecular statement is determined by the truth values of its parts and the type of connective.
+\pause 
+
+\begin{itemize}[<+->]
+\item{} \(P \wedge Q\) is true when both \(P\) and \(Q\) are true
+
+\item{} \(P \vee Q\) is true when \(P\) or \(Q\) or both are true.
+
+\item{} \(P \imp Q\) is true when \(P\) is false or \(Q\) is true or both.
+
+\item{} \(P \iff Q\) is true when \(P\) and \(Q\) are both true, or both false.
+
+\item{} \(\neg P\) is true when \(P\) is false.
+\end{itemize}
+
+\end{frame}
+ 
+
+
+\section{Implications}
+\begin{frame}
+\frametitle{Implications}
+ An \terminology{implication} or \terminology{conditional} is a molecular statement of the form%
+\begin{equation*}
+P \imp Q
+\end{equation*}
+where \(P\) and \(Q\) are statements. We say that\begin{itemize}
+\item{} \(P\) is the \terminology{hypothesis} (or \terminology{antecedent}).
+
+\item{} \(Q\) is the \terminology{conclusion} (or \terminology{consequent}).
+\end{itemize}
+
+ An implication is \emph{true} provided \(P\) is false or \(Q\) is true (or both), and \emph{false} otherwise. In particular, the only way for \(P \imp Q\) to be false is for \(P\) to be true \emph{and} \(Q\) to be false.
+\end{frame}
+ 
+\begin{frame}
+\frametitle{}
+\begin{example}[0.2.2]Consider the statement:
+\begin{quote}%
+If Bob gets a 90 on the final, then Bob will pass the class.
+\end{quote}
+
+\pause 
+
+\begin{itemize}[<+->]
+\item{} This is definitely an implication: \(P\) is the statement ``Bob gets a 90 on the final,'' and \(Q\) is the statement ``Bob will pass the class.''
+
+
+\item{} Is it true or false?  What would it take for the statement to be \emph{fasle}?
+
+
+\item{} The only way to be false: Bob does get a 90 on the final \emph{AND} Bob still does not pass the class.
+
+
+\item{} In particular, if Bob does not get a 90 on the final (\(P\) is false), then whether or not he passes the class, the statement is true.
+
+\end{itemize}
+
+\end{example}
+\end{frame}
+ 
+\begin{frame}
+\frametitle{}
+\begin{example}[0.2.3]Decide which of the following statements are true and which are false. Briefly explain.\begin{enumerate}
+\item{} If \(1=1\), then most horses have 4 legs.
+
+
+\item{} If \(0=1\), then \(1=1\).
+
+
+\item{} If 8 is a prime number, then the 7624th digit of \(\pi\) is an 8.
+
+
+\item{} If the 7624th digit of \(\pi\) is an 8, then \(2+2 = 4\).
+
+\end{enumerate}
+
+\end{example}
+\end{frame}
+ 
+\begin{frame}
+\frametitle{Direct Proofs of Implications}
+ The truth conditions for an implication tell us one way we could \emph{prove} that an implication is true.
+ 
+\pause 
+
+To prove an implication \(P \imp Q\), it is enough to \emph{assume} \(P\), and from it, \emph{deduce} \(Q\).
+\end{frame}
+ 
+\begin{frame}
+\frametitle{}
+\begin{example}[0.2.4]Prove: If two numbers \(a\) and \(b\) are even, then their sum \(a+b\) is even.
+\end{example}
+ \begin{proof}
+\pause 
+
+Suppose the numbers \(a\) and \(b\) are even. This means that \(a = 2k\) and \(b=2j\) for some integers \(k\) and \(j\). The sum is then \(a+b = 2k+2j = 2(k+j)\). Since \(k+j\) is an integer, this means that \(a+b\) is even.
+\end{proof}\end{frame}
+ 
+\begin{frame}
+\frametitle{Converse and Contrapositive}
+ How does \(P \imp Q\) relate to \(Q \imp P\)?
+\pause 
+
+\begin{itemize}[<+->]
+\item{} The \terminology{converse} \index{converse} of an implication \(P \imp Q\) is the implication \(Q \imp P\).
+
+
+\item{} The converse is \emph{NOT} logically equivalent to the original implication. That is, whether the converse of an implication is true is independent of the truth of the implication.
+
+
+\item{} The \terminology{contrapositive} of an implication \(P \imp Q\) is the statement \(\neg Q \imp \neg P\).
+
+
+\item{} An implication and its contrapositive are logically equivalent (they are either both true or both false).
+
+\end{itemize}
+
+\end{frame}
+ 
+\begin{frame}
+\frametitle{}
+\begin{example}[0.2.5]True or false: If you draw any nine playing cards from a regular deck, then you will have at least three cards all of the same suit.
+
+\pause 
+
+Try looking at the contrapositive!
+
+\pause 
+
+Is the converse true?
+\end{example}
+\end{frame}
+ 
+\begin{frame}
+\frametitle{}
+\begin{example}[0.2.6]Suppose I tell Sue that if she gets a 93\% on her final, then she will get an A in the class. Assuming that what I said is true, what can you conclude in the following cases:
+\begin{enumerate}
+\item{} Sue gets a 93\% on her final.
+
+
+\item{} Sue gets an A in the class.
+
+
+\item{} Sue does not get a 93\% on her final.
+
+
+\item{} Sue does not get an A in the class.
+
+\end{enumerate}
+
+\end{example}
+\end{frame}
+ 
+\begin{frame}
+\frametitle{If and only if}
+ \begin{quote}%
+\(P \iff Q\) is logically equivalent to \((P \imp Q) \wedge (Q \imp P)\).
+\end{quote}
+ 
+\pause 
+
+Example: Given an integer \(n\), it is true that \(n\) is even if and only if \(n^2\) is even. That is, if \(n\) is even, then \(n^2\) is even, as well as the converse: if \(n^2\) is even, then \(n\) is even.
+\end{frame}
+ 
+\begin{frame}
+\frametitle{}
+\begin{example}[0.2.7]Suppose it is true that I sing if and only if I'm in the shower. We know this means both that if I sing, then I'm in the shower, and also the converse, that if I'm in the shower, then I sing. Let \(P\) be the statement, ``I sing,'' and \(Q\) be, ``I'm in the shower.'' So \(P \imp Q\) is the statement ``if I sing, then I'm in the shower.'' Which part of the if and only if statement is this?
+\end{example}
+\end{frame}
+ 
+\begin{frame}
+\frametitle{}
+\begin{example}[0.2.8]Rephrase the implication, ``if I dream, then I am asleep'' in as many different ways as possible. Then do the same for the converse.
+\end{example}
+\end{frame}
+ 
+\begin{frame}
+\frametitle{Necessary and Sufficient}
+ A common way to express the relationship between statements in mathematics is to say that one is necessary or sufficient for the other.
+\pause 
+
+\begin{itemize}[<+->]
+\item{} ``\(P\) is necessary for \(Q\)'' means \(Q \imp P\).
+
+\item{} ``\(P\) is sufficient for \(Q\)'' means \(P \imp Q\).
+
+\item{} If \(P\) is necessary and sufficient for \(Q\), then \(P \iff Q\).
+
+\end{itemize}
+
+\end{frame}
+ 
+\begin{frame}
+\frametitle{}
+\begin{example}[0.2.9]Recall from calculus, if a function is differentiable at a point \(c\), then it is continuous at \(c\), but that the converse of this statement is not true (for example, \(f(x) = |x|\) at the point 0). Restate this fact using ``necessary and sufficient'' language.
+\end{example}
+\end{frame}
+ 
+
+
+\section{Predicates and Quantifiers}
+\begin{frame}
+\frametitle{Predicates}
+ \index{free variable}\index{predicate} How could we claim that if \(n\) is prime, then \(n+7\) is not prime? This looks like an implication. I would like to write something like%
+\begin{equation*}
+P(n) \imp \neg P(n+7)
+\end{equation*}
+where \(P(n)\) means ``\(n\) is prime.'' But this is not quite right.
+ 
+\pause 
+
+For one thing, this sentence has a \terminology{free variable} (that is, a variable that we have not specified anything about), so it is not a statement.  A sentence that contains variables is called a \terminology{predicate}.
+ 
+\pause 
+
+If we plug in a specific value for \(n\), we do get a statement. What we really want to say is that \emph{for all} values of \(n\), if \(n\) is prime, then \(n+7\) is not. We need to \emph{quantify} the variable.
+\end{frame}
+ 
+\begin{frame}
+\frametitle{Universal and Existential Quantifiers}
+ The existential quantifier is \(\exists\) and is read ``there exists'' or ``there is.'' For example,%
+\begin{equation*}
+\exists x (x \lt 0)
+\end{equation*}
+asserts that there is a number less than 0.
+ 
+\pause 
+
+The universal quantifier is \(\forall\) and is read ``for all'' or ``every.'' For example,%
+\begin{equation*}
+\forall x (x \ge 0)
+\end{equation*}
+asserts that every number is greater than or equal to 0.
+\end{frame}
+ 
+\begin{frame}
+\frametitle{Quantifiers and Negation}
+ When is a quantified statement false?
+ \(\neg \forall x P(x)\) is equivalent to \(\exists x \neg P(x)\).
+ \(\neg \exists x P(x)\) is equivalent to \(\forall x \neg P(x)\).
+\end{frame}
+ 
+
+\end{document}

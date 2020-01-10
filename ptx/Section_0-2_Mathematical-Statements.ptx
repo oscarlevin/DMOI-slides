@@ -2,10 +2,10 @@
 <pretext xmlns:xi="http://www.w3.org/2001/XInclude">
   <xi:include href="slidesinfo.ptx"/>
   <slideshow>
-    <frontmatter>
+    <!-- <frontmatter> -->
     <title>Mathematical Statements</title>
-    <subtitle>Section 0.2</subtitle>
-    </frontmatter>
+    <subtitle>(Section 0.2)</subtitle>
+    <!-- </frontmatter> -->
     <section xml:id="sec-warm-up">
       <title>Warm-up</title>
     <slide>
@@ -241,7 +241,7 @@
               </li>
               <li>
                 <p>
-                  Is it true or false?  What would it take for the statement to be <em>fasle</em>?
+                  Is it true or false?  What would it take for the statement to be <em>false</em>?
                 </p>
               </li>
               <li>

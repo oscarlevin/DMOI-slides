@@ -1,0 +1,4 @@
+\beamer@sectionintoc {1}{Warm-up}{3}{0}{1}
+\beamer@sectionintoc {2}{Atomic and Molecular Statements}{4}{0}{2}
+\beamer@sectionintoc {3}{Implications}{20}{0}{3}
+\beamer@sectionintoc {4}{Predicates and Quantifiers}{49}{0}{4}
