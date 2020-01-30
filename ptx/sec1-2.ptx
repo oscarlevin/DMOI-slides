@@ -1,0 +1,457 @@
+<?xml version="1.0"?>
+<pretext xmlns:xi="http://www.w3.org/2001/XInclude">
+  <xi:include href="slidesinfo.ptx"/>
+  <slideshow>
+    <title>Binomial Coefficients</title>
+    <subtitle>(Section 1.2)</subtitle>
+    <section>
+      <title>Investigate</title>
+      
+    
+    <slide>
+      <title>Investigate!</title>
+        <p permid="Btf">
+        In chess, a rook can move only in straight lines
+        (not diagonally).
+        Fill in each square of the chess board below with the number of different shortest paths the rook,
+        in the upper left corner, can take to get to that square.
+        For example, one square is already filled in.
+        There are six different paths from the rook to the square: DDRR
+        (down down right right),
+        DRDR, DRRD, RDDR, RDRD and RRDD.
+      </p>
+        <sidebyside width="50%" permid="dVO">
+          <image xml:id="chessboard" permid="AXG">
+            <latex-image>
+
+      \begin{tikzpicture}[scale=.6]
+      \foreach \row in {0, 2, 4,6}{
+        \foreach \col in {0,2,4,6}{
+        \draw[fill=gray!30] (\row,\col) rectangle (\row+1, \col+1) rectangle (\row+2, \col+2);
+        }
+      }
+      \draw[thick] (0,0) rectangle (8,8);
+      \node at (0.5,7.5) {\Large \symrook};
+      \node at (2.5,5.5) {$6$};
+      \end{tikzpicture}
+
+        </latex-image>
+          </image>
+        </sidebyside>
+    </slide>
+    </section>
+    <section>
+      <title>Subsets</title>
+      <slide>
+      <p>
+        Let <m>A = \{1,2,3,4,5\}</m>.  How many subsets are there of <m>A</m>?
+      </p>
+
+      <p pause="yes">
+        How many subsets of <m>A</m> have 3 elements?  
+      </p>
+      <p>
+        First, decide how many subsets have 0 elements, how many have 1 element, and how many have 4 or 5 elements.
+      </p>
+      <p pause="yes">
+        The number of subsets with 3 elements will be the same as the number of subsets with 2 elements.  How many are there?
+      </p>
+      </slide>
+      <slide>
+        <title>Number of subsets by cardinality</title>
+        
+        <p>
+          Let <m>A = \{1,2,3,4,5\}</m>.  How many subsets are there of <m>A</m>?
+        </p>
+        <sidebyside permid="CwY">
+
+          <tabular permid="qxb">
+            <row bottom="minor" halign="center">
+              <cell>Number of elements:</cell>
+              <cell>0</cell>
+              <cell>1</cell>
+              <cell>2</cell>
+              <cell>3</cell>
+              <cell>4</cell>
+              <cell>5</cell>
+            </row>
+            <row halign="center">
+              <cell>Number of subsets:</cell>
+              <cell>1</cell>
+              <cell>5</cell>
+              <cell>10</cell>
+              <cell>10</cell>
+              <cell>5</cell>
+              <cell>1</cell>
+            </row>
+          </tabular>
+
+        </sidebyside>
+      </slide>
+    </section>
+    <section>
+      <title>Bit Strings</title>
+      <slide>
+      <title>Bit Strings</title>
+      
+      
+        <p permid="bJC">
+          <q>Bit</q> is short for <q>binary digit,</q>
+      so a <term>bit string</term>
+      is a string of binary digits.
+      The <term>binary digits</term> are simply the numbers 0 and 1.
+      All of the following are bit strings:
+          <me permid="IAF">
+        1001 \quad 0 \quad 1111 \quad 1010101010
+          </me>.
+        </p>
+      </slide>
+      
+      <slide>
+          <title>Bit Strings</title>
+          <p permid="NHx">
+
+        <ul pause="yes">
+        <li permid="OMQ">
+            <p permid="QCd">
+              An <term><m>n</m>-bit string</term>
+              is a bit string of length <m>n</m>.
+              That is, it is a string containing <m>n</m> symbols,
+              each of which is a bit, either 0 or 1.
+            </p>
+          </li><li permid="uTZ">
+            <p permid="wJm">
+              The <term>weight</term>
+                <idx><h>weight, of a string</h></idx>
+              of a bit string is the number of 1's in it.
+            </p>
+          </li>
+          <li permid="bbi">
+            <m>\B^n</m> is the <em>set</em> of all <m>n</m>-bit strings.
+          </li>
+          <li permid="Hir">
+            <m>\B^n_k</m> is the set of all <m>n</m>-bit strings of weight <m>k</m>.
+          </li></ul>
+      </p>
+      <p pause="yes">
+      For example,
+      the elements of the set <m>\B^3_2</m> are the bit strings 011, 101, and 110.
+      Those are the only strings containing three bits exactly two of which are 1's.
+      </p>
+      </slide>
+
+      <slide>
+        <title>Counting bit strings</title>
+        
+        
+        <p permid="Amm">
+      The counting questions: How many bit strings have length 5?
+      How many of those have weight 3?
+      In other words,
+      we are asking for the cardinalities <m>|\B^5|</m> and <m>|\B^5_3|</m>.
+        </p>
+        <p pause="yes">
+          <m>\card{\B^5} = 32</m>
+        </p>
+        <p pause="yes">
+          <m>\card{\B^5_3}</m>... harder.
+        </p>
+      </slide>
+
+      <slide>
+        <title>A recurrence relation</title>
+        <p>
+          Each string in <m>\B^5_3</m> starts with either a 0 or a 1.  
+        </p>
+        <p pause="yes">
+          If it starts with a 0, the remaining bits form a string in <m>\B^4_3</m>.
+        </p>
+        <p>
+          If it starts with a 1, the remaining bits form a string in          <m>\B^4_2</m>.
+        </p>
+        <p pause="yes">
+          Thus we have,
+          <me permid="oHO">
+        |\B^5_3| = |\B^4_2| + |\B^4_3|
+          </me>.
+          Now find <m>|\B^5_3|</m> (work backwards more if needed).
+        </p>
+      </slide>
+
+      <slide>
+        <title>32 and 10?</title>
+        <p>
+          Our answers to the bit string questions were the same as the answers to the subsets question.  Why?
+        </p>
+
+        <p pause="yes">
+          Compare: <m>11001</m> to <m>\{1, 2, 5\}</m>. 
+        </p>
+        <p>
+          Does <m>01011</m> correspond to a subset?  
+        </p>
+        <p>
+          Does <m>\{2,3,4\}</m> correspond to a bit sting?
+        </p>
+        
+      </slide>
+    </section>
+    <section>
+      <title>Lattice Paths</title>
+        <slide>
+          <title>Lattice Paths</title>
+          <p permid="xrG">
+      The <term>integer lattice</term> is the set of all points in the Cartesian plane for which both the <m>x</m> and <m>y</m> coordinates are integers.
+          </p>
+
+          <p permid="dyP">
+      A <term>lattice path</term>
+      is one of the shortest possible paths connecting two points on the lattice,
+      moving only horizontally and vertically.
+      </p>
+      <p>
+      For example,
+      here are three possible lattice paths from the points <m>(0,0)</m> to <m>(3,2)</m>:
+          </p>
+
+          <sidebyside permid="iEh" width="30%" margins="auto">
+
+            <image permid="WEk" xml:id="lattice-path-1">
+
+              <latex-image>
+            \begin{tikzpicture}
+        \draw[very thin, color=gray!50] (-.5,-.5) grid (3.5, 2.5);
+        \foreach \x in {0,...,3}
+        \foreach \y in {0,...,2}
+        \fill (\x,\y) circle (1.5pt);
+        \draw (0,0) node[below left] { (0,0)} (3,2) node[above right] { (3,2)};
+        \draw[very thick] (0,0) -- (2,0) -- (2,2) -- (3,2);
+      \end{tikzpicture}
+              </latex-image>
+            </image>
+
+            <image permid="CLt" xml:id="lattice-path-2">
+
+              <latex-image>
+            \begin{tikzpicture}
+        \draw[very thin, color=gray!50] (-.5,-.5) grid (3.5, 2.5);
+        \foreach \x in {0,...,3}
+        \foreach \y in {0,...,2}
+        \fill (\x,\y) circle (1.5pt);
+        \draw (0,0) node[below left] { (0,0)} (3,2) node[above right] { (3,2)};
+        \draw[very thick] (0,0) -- (0,2) -- (3,2);
+      \end{tikzpicture}
+              </latex-image>
+            </image>
+
+            <image permid="iSC" xml:id="lattice-path-3">
+
+              <latex-image>
+            \begin{tikzpicture}
+        \draw[very thin, color=gray!50] (-.5,-.5) grid (3.5, 2.5);
+        \foreach \x in {0,...,3}
+        \foreach \y in {0,...,2}
+        \fill (\x,\y) circle (1.5pt);
+        \draw (0,0) node[below left] { (0,0)} (3,2) node[above right] { (3,2)};
+        \draw[very thick] (0,0) -- (1,0) -- (1,1) -- (3,1) -- (3,2);
+      \end{tikzpicture}
+              </latex-image>
+            </image>
+
+          </sidebyside>
+          
+        </slide>
+        <slide>
+          <title>Counting Lattice Paths</title>
+          <p permid="pNh">
+      The counting question:
+      how many lattice paths are there between <m>(0,0)</m> and <m>(3,2)</m>?
+      </p>
+      <p pause="yes">
+        
+      We could try to draw all of these,
+      or instead of drawing them,
+      maybe just list which direction we travel on each of the 5 steps.
+      </p>
+      <p>
+        
+      One path might be RRUUR, or maybe UURRR, or perhaps RURRU
+      (those correspond to the three paths drawn above).
+      So how many such strings of R's and U's are there?
+          </p>
+          
+        </slide>
+
+        <slide>
+          <p permid="Cbz">
+      Here is another way to count lattice paths.
+      Consider the lattice shown below:
+          </p>
+
+          <sidebyside permid="OLq" width="40%">
+
+            <image permid="OZL" xml:id="lattice-ab">
+
+              <latex-image>
+            \begin{tikzpicture}
+        \draw[very thin, color=gray!50] (-.5,-.5) grid (3.5, 2.5);
+        \foreach \x in {0,...,3}
+        \foreach \y in {0,...,2}
+        \fill (\x,\y) circle (1.5pt);
+        \draw (0,0) node[below left] { (0,0)} (3,2) node[above right] { (3,2)};
+        \draw (3,1) node[above right] { \(B\)} (2,2) node[above right]{ \(A\)};
+      \end{tikzpicture}
+              </latex-image>
+            </image>
+
+          </sidebyside>
+
+          <p permid="iiI">
+      Any lattice path from (0,0) to (3,2) must pass through exactly one of <m>A</m> and <m>B</m>.
+      The point <m>A</m> is 4 steps away from (0,0) and two of them are towards the right.
+     </p>
+
+     <p pause="yes">
+      The point: the exact same recurrence relation exists for bit strings and for lattice paths.
+          </p>
+        </slide>
+
+    </section>
+    <section>
+      <title>Binomial Coefficients</title>
+      <slide>
+        <title>Binomial Coefficients</title>
+        <p permid="OpR">
+          <term>Binomial coefficients</term>
+      are the coefficients in the expanded version of a binomial,
+      such as <m>(x+y)^5</m>.
+      </p>
+      <p pause="yes">
+      What happens when we multiply such a binomial out?
+      We will expand <m>(x+y)^n</m> for various values of <m>n</m>.
+
+          <me permid="AWg">
+        (x+y)^1 = x + y
+          </me>
+          <me permid="hdp">
+        (x+y)^2 = x^2 + 2xy + y^2
+          </me>
+          <me permid="Nky">
+        (x+y)^3 = x^3 + 3x^2y + 3xy^2 + y^3
+          </me>
+          <me permid="trH">
+        (x+y)^4 = x^4 + 4x^3y + 6x^2y^2 + 4xy^3 + y^4
+          </me>.
+        </p>
+        
+      </slide>
+
+      <slide>
+        <p permid="uxa">
+      There is a quicker way to expand these binomials.
+      Consider the next one, <m>(x+y)^5</m>.
+      What we are really doing is multiplying out,
+          <me permid="ZyQ">
+        (x+y)(x+y)(x+y)(x+y)(x+y)
+          </me>.
+        </p>
+
+        <p pause="yes">
+   
+      Just find the coefficient of <m>x^3y^2</m>.
+      We must pick exactly 3 of the 5 binomials to contribute an <m>x</m>,
+      the other two to contribute a <m>y</m>.
+        
+      </p>
+      <p pause="yes">
+      We have 5 things, each can be one of two things,
+      and we need a total of 3 of one of them.
+      That's just like taking 5 bits and making sure exactly 3 of them are 1's.
+      So the coefficient of <m>x^3y^2</m>
+      (and also <m>x^2y^3</m>)
+      will be exactly the same as the number of bit strings of length 5 and weight 3, which we found earlier to be 10.
+        
+      </p>
+      <p pause="yes">
+      We have:
+          <me permid="lNi">
+        (x+y)^5 = x^5 + 5x^4y + 10x^3y^2 + 10x^2y^3 + 5 xy^4 + y^5
+          </me>.
+        </p>
+      </slide>
+
+      <slide>
+          <title>Binomial Coefficients</title>
+          <p permid="tOG">
+        For each integer <m>n \ge 0</m> and integer <m>k</m> with <m>0 \le k \le n</m> there is a number
+        <me permid="ICf">
+          {n\choose k}
+        </me>,
+        read <q><m>n</m> choose <m>k</m>.</q> We have:
+
+        <ul permid="Cyy"><li permid="npA">
+            <m>{n\choose k} = |\B^n_k|</m>,
+            the number of <m>n</m>-bit strings of weight <m>k</m>.
+          </li><li permid="TwJ">
+            <m>{n \choose k}</m> is the number of subsets of a set of size <m>n</m> each with cardinality <m>k</m>.
+          </li><li permid="zDS">
+            <m>{n \choose k}</m> is the number of lattice paths of length <m>n</m> containing <m>k</m> steps to the right.
+          </li><li permid="fLb">
+            <m>{n \choose k}</m> is the coefficient of
+            <m>x^ky^{n-k}</m> in the expansion of <m>(x+y)^n</m>.
+          </li><li permid="LSk">
+            <m>{n \choose k}</m> is the number of ways to select <m>k</m> objects from a total of <m>n</m> objects.
+          </li></ul>
+      </p>
+      </slide>
+      <slide>
+          <title>Recurrence relation for <m>{n \choose k}</m></title>
+          <p permid="ZVP">
+        <me permid="UQx">
+          {n \choose k} = {n-1 \choose k-1} + {n-1 \choose k}
+        </me>.
+      </p>
+      </slide>
+    </section>
+    <section>
+      <title>Pascal's Triangle</title>
+      <slide>
+        <sidebyside permid="aZI" width="100%">
+
+          <image permid="bod" xml:id="pascal-large">
+            <latex-image>
+              \begin{tikzpicture}
+            \def\r{.55}
+            \foreach \row in {0,...,16} {
+              \hexbox{\row}{0}{\large 1}
+            }
+            %fill in the rest of the triangle:
+            \foreach \row in {1,...,16} {
+              \pgfmathsetmacro{\entry}{1};
+              \foreach \col in {1,...,\row} {
+                % iterative formula : val = precval * (row-col+1)/col
+                % (+ 0.5 to bypass rounding errors)
+                \pgfmathtruncatemacro{\entry}{\entry*((\row-\col+1)/\col)+0.5}; \global\let\entry=\entry
+                \ifnum \entry&lt;100
+            \hexbox{\row}{\col}{\large \entry}
+                \else \ifnum \entry&lt;1000
+            \hexbox{\row}{\col}{\entry}
+                \else \ifnum \entry&lt;10000
+            \hexbox{\row}{\col}{\footnotesize \entry}
+            \else
+            \hexbox{\row}{\col}{\scriptsize \entry}
+            \fi
+                \fi
+                \fi
+              }
+            }
+            \node[above] at (0,1) {\Large Pascal's Triangle};
+            \end{tikzpicture}
+            </latex-image>
+          </image>
+
+        </sidebyside>
+      </slide>
+    </section>
+  </slideshow>
+</pretext>

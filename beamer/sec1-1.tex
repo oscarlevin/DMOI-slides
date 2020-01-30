@@ -1,0 +1,384 @@
+\documentclass[11pt, compress]{beamer}
+\usepackage{amsmath}
+\usetheme{Boadilla}
+\usefonttheme[onlymath]{serif}
+%get rid of navigation:
+\setbeamertemplate{navigation symbols}{}
+
+
+ %%%% Start PreTeXt generated preamble: %%%%% 
+
+%% Some aspects of the preamble are conditional,
+%% the LaTeX engine is one such determinant
+\usepackage{ifthen}
+\newcommand{\tabularfont}{}
+\usepackage[xparse, raster]{tcolorbox}
+\tcbset{colback=white, colframe=white}
+\NewTColorBox{image}{mmm}{boxrule=0.25pt, colframe=gray, left skip=#1\linewidth,width=#2\linewidth}
+\RenewTColorBox{definition}{m}{colback=teal!30!white, colbacktitle=teal!30!white, coltitle=black, colframe=gray, boxrule=0.5pt, sharp corners=downhill, titlerule = 0.25pt, title={#1}}
+\RenewTColorBox{theorem}{m}{colback=pink!30!white, colbacktitle=pink!30!white, coltitle=black, colframe=gray, boxrule=0.5pt, sharp corners=downhill, titlerule = 0.25pt, title={#1}}
+\RenewTColorBox{proof}{}{boxrule=0.25pt, colframe=gray, colback=white, before upper={Proof:}, after upper={\qed}}
+%% tcolorbox styles for sidebyside layout
+\tcbset{ bwminimalstyle/.style={size=minimal, boxrule=-0.3pt, frame empty,
+colback=white, colbacktitle=white, coltitle=black, opacityfill=0.0} }
+\tcbset{ sbsstyle/.style={raster before skip=2.0ex, raster equal height=rows, raster force size=false} }
+\tcbset{ sbspanelstyle/.style={bwminimalstyle} }
+%% Enviroments for side-by-side and components
+%% Necessary to use \NewTColorBox for boxes of the panels
+%% "newfloat" environment to squash page-breaks within a single sidebyside
+%% "xparse" environment for entire sidebyside
+\NewDocumentEnvironment{sidebyside}{mmmm}
+  {\begin{tcbraster}
+    [sbsstyle,raster columns=#1,
+    raster left skip=#2\linewidth,raster right skip=#3\linewidth,raster column skip=#4\linewidth]}
+  {\end{tcbraster}}
+%% "tcolorbox" environment for a panel of sidebyside
+\NewTColorBox{sbspanel}{mO{top}}{sbspanelstyle,width=#1\linewidth,valign=#2}
+%% For improved tables
+\usepackage{array}
+%% Some extra height on each row is desirable, especially with horizontal rules
+%% Increment determined experimentally
+\setlength{\extrarowheight}{0.2ex}
+%% Define variable thickness horizontal rules, full and partial
+%% Thicknesses are 0.03, 0.05, 0.08 in the  booktabs  package
+\newcommand{\hrulethin}  {\noalign{\hrule height 0.04em}}
+\newcommand{\hrulemedium}{\noalign{\hrule height 0.07em}}
+\newcommand{\hrulethick} {\noalign{\hrule height 0.11em}}
+%% We preserve a copy of the \setlength package before other
+%% packages (extpfeil) get a chance to load packages that redefine it
+\let\oldsetlength\setlength
+\newlength{\Oldarrayrulewidth}
+\newcommand{\crulethin}[1]%
+{\noalign{\global\oldsetlength{\Oldarrayrulewidth}{\arrayrulewidth}}%
+\noalign{\global\oldsetlength{\arrayrulewidth}{0.04em}}\cline{#1}%
+\noalign{\global\oldsetlength{\arrayrulewidth}{\Oldarrayrulewidth}}}%
+\newcommand{\crulemedium}[1]%
+{\noalign{\global\oldsetlength{\Oldarrayrulewidth}{\arrayrulewidth}}%
+\noalign{\global\oldsetlength{\arrayrulewidth}{0.07em}}\cline{#1}%
+\noalign{\global\oldsetlength{\arrayrulewidth}{\Oldarrayrulewidth}}}
+\newcommand{\crulethick}[1]%
+{\noalign{\global\oldsetlength{\Oldarrayrulewidth}{\arrayrulewidth}}%
+\noalign{\global\oldsetlength{\arrayrulewidth}{0.11em}}\cline{#1}%
+\noalign{\global\oldsetlength{\arrayrulewidth}{\Oldarrayrulewidth}}}
+%% Single letter column specifiers defined via array package
+\newcolumntype{A}{!{\vrule width 0.04em}}
+\newcolumntype{B}{!{\vrule width 0.07em}}
+\newcolumntype{C}{!{\vrule width 0.11em}}
+\newcommand{\lt}{<}
+\newcommand{\gt}{>}
+\newcommand{\amp}{&}
+
+%% Begin: Semantic Macros
+%% To preserve meaning in a LaTeX file
+%%
+%% \mono macro for content of "c", "cd", "tag", etc elements
+%% Also used automatically in other constructions
+%% Simply an alias for \texttt
+%% Always defined, even if there is no need, or if a specific tt font is not loaded
+\newcommand{\mono}[1]{\texttt{#1}}
+%%
+%% Following semantic macros are only defined here if their
+%% use is required only in this specific document
+%%
+%% Used for inline definitions of terms
+\newcommand{\terminology}[1]{\textbf{#1}}
+%% End: Semantic Macros
+
+\renewcommand{\d}{\displaystyle}
+\newcommand{\N}{\mathbb N}
+\newcommand{\B}{\mathbf B}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\def\C{\mathbb C}
+\def\U{\mathcal U}
+\newcommand{\pow}{\mathcal P}
+\newcommand{\inv}{^{-1}}
+\newcommand{\st}{:}
+\renewcommand{\iff}{\leftrightarrow}
+\newcommand{\Iff}{\Leftrightarrow}
+\newcommand{\imp}{\rightarrow}
+\newcommand{\Imp}{\Rightarrow}
+\newcommand{\isom}{\cong}
+
+\renewcommand{\bar}{\overline}
+\newcommand{\card}[1]{\left| #1 \right|}
+\newcommand{\twoline}[2]{\begin{pmatrix}#1 \\ #2 \end{pmatrix}}
+
+\newcommand{\vtx}[2]{node[fill,circle,inner sep=0pt, minimum size=4pt,label=#1:#2]{}}
+\newcommand{\va}[1]{\vtx{above}{#1}}
+\newcommand{\vb}[1]{\vtx{below}{#1}}
+\newcommand{\vr}[1]{\vtx{right}{#1}}
+\newcommand{\vl}[1]{\vtx{left}{#1}}
+\renewcommand{\v}{\vtx{above}{}}
+
+%% Graphics Preamble Entries
+\usepackage{tikz, pgfplots}
+
+\usetikzlibrary{positioning,matrix,arrows}
+
+\usetikzlibrary{shapes,decorations,shadows,fadings,patterns}
+\usetikzlibrary{decorations.markings}
+
+\usepackage{skak} %for chessboards etc.
+
+\def\circleA{(-.5,0) circle (1)}
+\def\circleAlabel{(-1.5,.6) node[above]{$A$}}
+\def\circleB{(.5,0) circle (1)}
+\def\circleBlabel{(1.5,.6) node[above]{$B$}}
+\def\circleC{(0,-1) circle (1)}
+\def\circleClabel{(.5,-2) node[right]{$C$}}
+\def\twosetbox{(-2,-1.4) rectangle (2,1.4)}
+\def\threesetbox{(-2.5,-2.4) rectangle (2.5,1.4)}
+\newcommand{\hexbox}[3]{
+  \def\x{-cos{30}*\r*#1+cos{30}*#2*\r*2}
+  \def\y{-\r*#1-sin{30}*\r*#1}
+  \draw (\x,\y) +(90:\r) -- +(30:\r) -- +(-30:\r) -- +(-90:\r) -- +(-150:\r) -- +(150:\r) -- cycle;
+  \draw (\x,\y) node{#3};
+}
+
+\tikzset{->-/.style={decoration={
+  markings,
+  mark=at position .5 with {\arrow{>}}},postaction={decorate}}}
+
+  \newcommand{\onedot}{
+    +(.5,.5) \v
+  }
+  \newcommand{\twodots}{
+    +(.25,.25) \v +(.75,.75) \v
+  }
+  \newcommand{\threedots}{
+  +(.25,.25) \v +(.5, .5) \v +(.75,.75) \v
+  }
+  \newcommand{\fourdots}{
+    +(.25,.25) \v +(.25,.75) \v +(.75,.25) \v +(.75,.75) \v
+  }
+  \newcommand{\fivedots}{
+    +(.5,.5) \v +(.25,.25) \v +(.25,.75) \v +(.75,.25) \v +(.75,.75) \v
+  }
+  \newcommand{\sixdots}{
+    +(.25,.5) \v +(.75,.5) \v +(.25,.25) \v +(.25,.75) \v +(.75,.25) \v +(.75,.75) \v
+  }
+  \newcommand{\dominoborder}{
+    \draw[thick, rounded corners] (0,0) rectangle (1,2);
+    \draw[thin] (0,1) -- (1,1);
+  }
+
+
+%%%% End of PreTeXt generated preamble %%%%% 
+
+\title{Additive and Multiplicative Principles}
+\subtitle{(Section 1.1)}
+\author{}
+\date[]{}
+
+\begin{document}
+\begin{frame}
+\maketitle 
+\end{frame}
+ 
+\begin{frame}
+\frametitle{Overview}
+\tableofcontents 
+\end{frame}
+ 
+
+\section{Counting Events}
+\begin{frame}
+\frametitle{Investigate!}
+ \begin{enumerate}
+\item{} A restaurant offers 8 appetizers and 14 entrées. How many choices do you have if:\begin{enumerate}
+\item{} you will eat one dish, either an appetizer or an entrée?
+
+\item{} you are extra hungry and want to eat both an appetizer and an entrée?
+\end{enumerate}
+
+
+
+\item{} Think about the methods you used to solve question 1. Write down the rules for these methods.
+
+
+\item{} Do your rules work? A standard deck of playing cards has 26 red cards and 12 face cards.\begin{enumerate}
+\item{} How many ways can you select a card which is either red or a face card?
+
+\item{} How many ways can you select a card which is both red and a face card?
+
+\item{} How many ways can you select two cards so that the first one is red and the second one is a face card?
+\end{enumerate}
+
+
+\end{enumerate}
+
+\end{frame}
+ 
+\begin{frame}
+\frametitle{Additive Principle}
+ The \terminology{additive principle} \index{additive principle} states that if event \(A\) can occur in \(m\) ways, and event \(B\) can occur in \(n\) \emph{disjoint} ways, then the event ``\(A\) or \(B\)'' can occur in \(m + n\) ways.
+\end{frame}
+ 
+\begin{frame}
+\frametitle{}
+\begin{example}[1.1.1]How many two letter ``words'' \index{word} start with either A or B? (A \terminology{word} is just a string of letters; it doesn't have to be English, or even pronounceable.)
+\end{example}
+\end{frame}
+ 
+\begin{frame}
+\frametitle{}
+\begin{example}[1.1.2]How many two letter words start with one of the 5 vowels?
+\end{example}
+\end{frame}
+ 
+\begin{frame}
+\frametitle{}
+\begin{example}[1.1.3]Suppose you are going for some fro-yo. You can pick one of 6 yogurt choices, and one of 4 toppings. How many choices do you have?
+\end{example}
+\end{frame}
+ 
+\begin{frame}
+\frametitle{Multiplicative Principle}
+ The \terminology{multiplicative principle} \index{multiplicative principle} states that if event \(A\) can occur in \(m\) ways, and each possibility for \(A\) allows for exactly \(n\) ways for event \(B\), then the event ``\(A\) and \(B\)'' can occur in \(m \cdot n\) ways.
+\end{frame}
+ 
+\begin{frame}
+\frametitle{}
+\begin{example}[1.1.4]How many license plates can you make out of three letters followed by three numerical digits?
+\end{example}
+ 
+\pause \vfill 
+
+Careful: ``and'' doesn't mean ``times''.  How many planying cards are both red \emph{and} a face card?
+\end{frame}
+ 
+\begin{frame}
+\frametitle{}
+\begin{example}[1.1.5Counting functions.]How many functions \(f:\{1,2,3,4,5\} \to \{a,b,c,d\}\) are there?
+\end{example}
+\end{frame}
+ 
+
+
+\section{Counting With Sets}
+\begin{frame}
+\frametitle{}
+\begin{example}[1.1.6]Suppose you own 9 shirts and 5 pairs of pants.\begin{enumerate}
+\item{} How many outfits can you make?
+
+
+\item{} If today is half-naked-day, and you will wear only a shirt or only a pair of pants, how many choices do you have?
+
+\end{enumerate}
+
+\end{example}
+\end{frame}
+ 
+\begin{frame}
+\frametitle{Additive Principle (with sets)}
+ \index{additive principle} Given two sets \(A\) and \(B\), if \(A \cap B = \emptyset\) (that is, if there is no element in common to both \(A\) and \(B\)), then%
+\begin{equation*}
+\card{A \cup B} = \card{A} + \card{B}\text{.}
+\end{equation*}
+
+\end{frame}
+ 
+\begin{frame}
+\frametitle{Cartesian Product}
+ How do we make sense of the multiplicative principle using sets? It is not using \emph{intersections}.
+ 
+\pause \vfill 
+
+Given sets \(A\) and \(B\), we can form the \emph{set}%
+\begin{equation*}
+A \times B = \{(x,y) \st x \in A \wedge y \in B\}
+\end{equation*}
+to be the set of all ordered pairs \((x,y)\) where \(x\) is an element of \(A\) and \(y\) is an element of \(B\). We call \(A \times B\) the \terminology{Cartesian product} of \(A\) and \(B\).
+\end{frame}
+ 
+\begin{frame}
+\frametitle{}
+\begin{example}[1.1.7]Let \(A = \{1,2\}\) and \(B=\{3,4,5\}\). Find \(A \times B\).
+\end{example}
+\end{frame}
+ 
+\begin{frame}
+\frametitle{}
+What is \(\card{A \times B}\) in general?
+ 
+\pause \vfill 
+
+Write out \(A \times B\). Let \(A = \{a_1,a_2, a_3, \ldots,
+a_m\}\) and \(B = \{b_1,b_2, b_3, \ldots, b_n\}\) (so \(\card{A} = m\) and \(\card{B} = n\)). The set \(A \times B\) contains all pairs with the first half of the pair being some \(a_i \in A\) and the second being one of the \(b_j \in B\). In other words:%
+\begin{align*}
+A \times B = \{ \amp (a_1, b_1), (a_1, b_2), (a_1, b_3), \ldots (a_1, b_n),\\
+\amp (a_2, b_1), (a_2, b_2), (a_2, b_3), \ldots, (a_2, b_n),\\
+\amp (a_3, b_1), (a_3, b_2), (a_3, b_3), \ldots, (a_3, b_n),\\
+\amp \vdots\\
+\amp (a_m, b_1), (a_m, b_2), (a_m, b_3), \ldots, (a_m, b_n)\}\text{.}
+\end{align*}
+
+\end{frame}
+ 
+\begin{frame}
+\frametitle{Multiplicative Principle (with sets)}
+ \index{multiplicative principle} Given two sets \(A\) and \(B\), we have \(\card{A \times B} = \card{A} \cdot \card{B}\).
+\end{frame}
+ 
+
+
+\section{Principle of Inclusion\slash{}Exclusion}
+\begin{frame}
+\frametitle{Investigate!}
+ A recent buzz marketing campaign for \emph{Village Inn} surveyed patrons on their pie preferences. People were asked whether they enjoyed (A) Apple, (B) Blueberry or (C) Cherry pie (respondents answered yes or no to each type of pie, and could say yes to more than one type). The following table shows the results of the survey.
+ \begin{sidebyside}{1}{0}{0}{0}%
+\begin{sbspanel}{1}%
+{\centering%
+{\tabularfont%
+\begin{tabular}{cccccccc}
+\multicolumn{1}{rA}{Pies enjoyed:}&A&B&C&AB&AC&BC&ABC\tabularnewline\hrulethin
+\multicolumn{1}{rA}{Number of people:}&20&13&26&9&15&7&5
+\end{tabular}
+}%
+\par}
+\end{sbspanel}%
+\end{sidebyside}%
+ How many of those asked enjoy at least one of the kinds of pie? Also, explain why the answer is not 95.
+\end{frame}
+ 
+\begin{frame}
+\frametitle{Cardinality of a union (2 sets)}
+ For any finite sets \(A\) and \(B\),%
+\begin{equation*}
+\card{A \cup B} = \card{A} + \card{B} - \card{A \cap B}\text{.}
+\end{equation*}
+
+\end{frame}
+ 
+\begin{frame}
+\frametitle{Cardinality of a union (3 sets)}
+ For any finite sets \(A\), \(B\), and \(C\),%
+\begin{equation*}
+\card{A \cup B \cup C} = \card{A} + \card{B} + \card{C} - \card{A \cap B} - \card{A \cap C} - \card{B \cap C} + \card{A \cap B \cap C}\text{.}
+\end{equation*}
+
+\end{frame}
+ 
+\begin{frame}
+\frametitle{}
+\begin{example}[1.1.8]An examination in three subjects, Algebra, Biology, and Chemistry, was taken by 41 students. The following table shows how many students failed in each single subject and in their various combinations:
+\begin{sidebyside}{1}{0}{0}{0}%
+\begin{sbspanel}{1}%
+{\centering%
+{\tabularfont%
+\begin{tabular}{cccccccc}
+\multicolumn{1}{rA}{Subject:}&A&B&C&AB&AC&BC&ABC\tabularnewline\hrulethin
+\multicolumn{1}{rA}{Failed:}&12&5&8&2&6&3&1
+\end{tabular}
+}%
+\par}
+\end{sbspanel}%
+\end{sidebyside}%
+How many students failed at least one subject?
+\end{example}
+\end{frame}
+ 
+
+\end{document}

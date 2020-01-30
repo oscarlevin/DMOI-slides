@@ -3,8 +3,11 @@
   <xi:include href="slidesinfo.ptx"/>
   <slideshow>
     <title>Combinations and Permutations</title>
+    <subtitle>(Section 1.3)</subtitle>
     <slide>
-      <investigation>
+      <title>Investigate!</title>
+      
+      
         <p permid="ltj">
         You have a bunch of chips which come in five different colors:
         red, blue, green, purple and yellow.
@@ -34,7 +37,22 @@
             </p>
           </li></ol>
       </p>
-      </investigation>
+    </slide>
+    <slide>
+      <p permid="GZN">
+      A <term>permutation</term> is a (possible) rearrangement of objects.
+      For example,
+      there are 6 permutations of the letters <em>a, b, c</em>:
+        <me permid="BkB">
+        abc, ~~ acb, ~~ bac, ~~bca, ~~ cab, ~~ cba
+        </me>.
+      </p>
+
+      <p pause="yes">
+      We know that we have them all: there are 3 choices for which letter we put first, then 2 choices for which letter comes next,
+      which leaves only 1 choice for the last letter.
+      The multiplicative principle says we multiply <m>3\cdot 2 \cdot 1</m>.
+      </p>
     </slide>
     <slide>
       <example source-number="1.3.1">
@@ -47,12 +65,12 @@
       </example>
     </slide>
     <slide>
-      <assemblage>
+
         <title>Permutations of <m>n</m> elements</title>
         <p permid="RAs">
         There are <m>n! = n\cdot (n-1)\cdot (n-2)\cdot \cdots \cdot 2\cdot 1</m> permutations of <m>n</m> (distinct) elements.
       </p>
-      </assemblage>
+
     </slide>
     <slide>
       <example source-number="1.3.2">
@@ -75,8 +93,27 @@
         </statement>
       </example>
     </slide>
+
     <slide>
-      <assemblage>
+      <p permid="LJG">
+      How many permutations exist of <m>k</m> objects choosing those objects from a larger collection of <m>n</m> objects?
+        
+      </p>
+      <p pause="yes">
+      We write this number <m>P(n,k)</m> and sometimes call it a
+        <term>
+          <m>k</m>-permutation of <m>n</m> elements</term>.
+      To compute <m>P(n,k)</m> we must apply the multiplicative principle to <m>k</m> numbers,
+      starting with <m>n</m> and counting backwards.
+      For example
+        <me permid="NyT">
+        P(10, 4) = 10\cdot 9 \cdot 8 \cdot 7
+        </me>.
+      </p>
+    </slide>
+
+
+    <slide>
         <title><m>k</m>-permutations of <m>n</m> elements</title>
         <p permid="xHB">
             <idx><h><em>k</em>-permutation</h></idx>
@@ -88,7 +125,6 @@
           P(n,k) = \frac{n!}{(n-k)!} = n(n-1)(n-2)\cdots (n-(k-1))
         </me>.
       </p>
-      </assemblage>
     </slide>
     <slide>
       <example source-number="1.3.4">
@@ -101,14 +137,39 @@
       </example>
     </slide>
     <slide>
-      <assemblage>
+      <p permid="Qtz">
+      Another way to find the number of <m>k</m>-permutations of <m>n</m> elements:
+      <ul>
+        <li>
+          <p>
+            First <em>choose</em> which <m>k</m> elements will be in the permutation.
+          </p>
+        </li>
+        <li>
+          <p>
+            Then arrange them (permute them).
+          </p>
+        </li>
+      </ul>
+      Using the multiplicative principle,
+      we get another formula for <m>P(n,k)</m>:
+        <me permid="FUu">
+        P(n,k) = {n \choose k}\cdot k!
+        </me>.
+      </p>
+      <p pause="yes">
+        Divide by <m>k!</m> to get a formula for <m>\binom{n}{k}</m>.
+      </p>
+    </slide>
+
+
+    <slide>
         <title>Closed formula for <m>{n \choose k}</m></title>
         <p permid="dOK">
         <me permid="cJr">
           {n \choose k} = \frac{n!}{(n-k)!k!} = \frac{n(n-1)(n-2)\cdots(n-(k-1))}{k(k-1)(k-2)\cdots 1}
         </me>.
       </p>
-      </assemblage>
     </slide>
     <slide>
       <example source-number="1.3.5">

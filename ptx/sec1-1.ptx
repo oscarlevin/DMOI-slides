@@ -3,8 +3,13 @@
   <xi:include href="slidesinfo.ptx"/>
   <slideshow>
     <title>Additive and Multiplicative Principles</title>
+    <subtitle>(Section 1.1)</subtitle>
+<section>
+  <title>Counting Events</title>
     <slide>
-      <investigation>
+      <title>Investigate!</title>
+      
+      
         <p permid="DwA">
         <ol permid="FHm"><li permid="RVE">
             <p permid="Ppt">
@@ -37,10 +42,9 @@
             </p>
           </li></ol>
       </p>
-      </investigation>
     </slide>
+
     <slide>
-      <assemblage>
         <title>Additive Principle</title>
         <p permid="vSb">
         The
@@ -52,8 +56,8 @@
         <q><m>A</m> or <m>B</m></q>
         can occur in <m>m + n</m> ways.
       </p>
-      </assemblage>
     </slide>
+
     <slide>
       <example source-number="1.1.1">
         <statement>
@@ -88,7 +92,6 @@
       </example>
     </slide>
     <slide>
-      <assemblage>
         <title>Multiplicative Principle</title>
         <p permid="UuL">
         The
@@ -99,7 +102,6 @@
         then the event <q><m>A</m> and <m>B</m></q>
         can occur in <m>m \cdot n</m> ways.
       </p>
-      </assemblage>
     </slide>
     <slide>
       <example source-number="1.1.4">
@@ -109,6 +111,9 @@
         </p>
         </statement>
       </example>
+      <p pause="yes">
+        Careful: <q>and</q> doesn't mean <q>times</q>.  How many planying cards are both red <em>and</em> a face card?
+      </p>
     </slide>
     <slide>
       <example source-number="1.1.5">
@@ -120,7 +125,10 @@
         </statement>
       </example>
     </slide>
-    <subsection>
+
+      
+    </section>
+    <section>
       <title>Counting With Sets</title>
       <slide>
         <example source-number="1.1.6">
@@ -144,7 +152,7 @@
         </example>
       </slide>
       <slide>
-        <assemblage>
+
           <title>Additive Principle (with sets)</title>
           <p permid="FlN">
             <idx><h>additive principle</h></idx>
@@ -155,21 +163,22 @@
           \card{A \cup B} = \card{A} + \card{B}
         </me>.
       </p>
-        </assemblage>
       </slide>
       <slide>
-        <assemblage>
+
           <title>Cartesian Product</title>
-          <p permid="lsW">
+          <p>
+            How do we make sense of the multiplicative principle using sets? It is not using <em>intersections</em>.
+          </p>
+          <p pause="yes">
         Given sets <m>A</m> and <m>B</m>, we can form the
         <em>set</em> <me permid="hsX">A \times B = \{(x,y) \st x \in A \wedge y \in B\}</me> to be the set of all ordered pairs
         <m>(x,y)</m> where <m>x</m> is an element of <m>A</m> and <m>y</m> is an element of <m>B</m>.
         We call <m>A \times B</m> the
         <term>Cartesian product</term>
-            <idx><h>Cartesian product</h></idx>
         of <m>A</m> and <m>B</m>.
       </p>
-        </assemblage>
+
       </slide>
       <slide>
         <example source-number="1.1.7">
@@ -181,21 +190,46 @@
           </statement>
         </example>
       </slide>
+
       <slide>
-        <assemblage>
+        <p permid="LJt">
+      What is <m>\card{A \times B}</m> in general?
+      </p>
+
+      <p pause="yes">
+      Write out <m>A \times B</m>.
+      Let <m>A = \{a_1,a_2, a_3, \ldots,
+      a_m\}</m> and <m>B = \{b_1,b_2, b_3, \ldots, b_n\}</m>
+      (so <m>\card{A} = m</m> and <m>\card{B} = n</m>).
+      The set <m>A \times B</m> contains all pairs with the first half of the pair being some
+          <m>a_i \in A</m> and the second being one of the <m>b_j \in B</m>.
+      In other words:
+          <md permid="WSs">
+            <mrow>A \times B = \{ \amp (a_1, b_1), (a_1, b_2), (a_1, b_3), \ldots (a_1, b_n),</mrow>
+            <mrow>\amp (a_2, b_1), (a_2, b_2), (a_2, b_3), \ldots, (a_2, b_n),</mrow>
+            <mrow>\amp (a_3, b_1), (a_3, b_2), (a_3, b_3), \ldots, (a_3, b_n),</mrow>
+            <mrow>\amp \vdots</mrow>
+            <mrow>\amp (a_m, b_1), (a_m, b_2), (a_m, b_3), \ldots, (a_m, b_n)\}</mrow>
+          </md>.
+        </p>
+      </slide>
+
+      <slide>
           <title>Multiplicative Principle (with sets)</title>
           <p permid="RAf">
             <idx><h>multiplicative principle</h></idx>
         Given two sets <m>A</m> and <m>B</m>,
         we have <m>\card{A \times B} = \card{A} \cdot \card{B}</m>.
       </p>
-        </assemblage>
+
       </slide>
-    </subsection>
-    <subsection>
+
+
+    </section>
+    <section>
       <title>Principle of Inclusion/Exclusion</title>
       <slide>
-        <investigation>
+        <title>Investigate!</title>
           <p permid="sXv">
         A recent buzz marketing campaign for <em>Village Inn</em>
         surveyed patrons on their pie preferences.
@@ -232,10 +266,9 @@
         How many of those asked enjoy at least one of the kinds of pie?
         Also, explain why the answer is not 95.
       </p>
-        </investigation>
       </slide>
       <slide>
-        <assemblage>
+
           <title>Cardinality of a union (2 sets)</title>
           <p permid="xHo">
         For any finite sets <m>A</m> and <m>B</m>,
@@ -243,7 +276,16 @@
           \card{A \cup B} = \card{A} + \card{B} - \card{A \cap B}
         </me>.
       </p>
-        </assemblage>
+
+      </slide>
+      <slide>
+          <title>Cardinality of a union (3 sets)</title>
+          <p permid="dOx">
+        For any finite sets <m>A</m>, <m>B</m>, and <m>C</m>,
+        <me permid="mcQ">
+          \card{A \cup B \cup C} = \card{A} + \card{B} + \card{C} - \card{A \cap B} - \card{A \cap C} - \card{B \cap C} + \card{A \cap B \cap C}
+        </me>.
+      </p>
       </slide>
       <slide>
         <example source-number="1.1.8">
@@ -283,17 +325,6 @@
           </statement>
         </example>
       </slide>
-      <slide>
-        <assemblage>
-          <title>Cardinality of a union (3 sets)</title>
-          <p permid="dOx">
-        For any finite sets <m>A</m>, <m>B</m>, and <m>C</m>,
-        <me permid="mcQ">
-          \card{A \cup B \cup C} = \card{A} + \card{B} + \card{C} - \card{A \cap B} - \card{A \cap C} - \card{B \cap C} + \card{A \cap B \cap C}
-        </me>.
-      </p>
-        </assemblage>
-      </slide>
-    </subsection>
+    </section>
   </slideshow>
 </pretext>
