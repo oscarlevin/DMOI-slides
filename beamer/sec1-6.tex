@@ -1,0 +1,286 @@
+\documentclass[11pt, compress]{beamer}
+\usepackage{amsmath}
+\usetheme{Boadilla}
+\usefonttheme[onlymath]{serif}
+%get rid of navigation:
+\setbeamertemplate{navigation symbols}{}
+
+
+ %%%% Start PreTeXt generated preamble: %%%%% 
+
+%% Some aspects of the preamble are conditional,
+%% the LaTeX engine is one such determinant
+\usepackage{ifthen}
+\newcommand{\tabularfont}{}
+\usepackage[xparse, raster]{tcolorbox}
+\tcbset{colback=white, colframe=white}
+\NewTColorBox{image}{mmm}{boxrule=0.25pt, colframe=gray, left skip=#1\linewidth,width=#2\linewidth}
+\RenewTColorBox{definition}{m}{colback=teal!30!white, colbacktitle=teal!30!white, coltitle=black, colframe=gray, boxrule=0.5pt, sharp corners=downhill, titlerule = 0.25pt, title={#1}}
+\RenewTColorBox{theorem}{m}{colback=pink!30!white, colbacktitle=pink!30!white, coltitle=black, colframe=gray, boxrule=0.5pt, sharp corners=downhill, titlerule = 0.25pt, title={#1}}
+\RenewTColorBox{proof}{}{boxrule=0.25pt, colframe=gray, colback=white, before upper={Proof:}, after upper={\qed}}
+\newcommand{\lt}{<}
+\newcommand{\gt}{>}
+\newcommand{\amp}{&}
+
+%% Begin: Semantic Macros
+%% To preserve meaning in a LaTeX file
+%%
+%% \mono macro for content of "c", "cd", "tag", etc elements
+%% Also used automatically in other constructions
+%% Simply an alias for \texttt
+%% Always defined, even if there is no need, or if a specific tt font is not loaded
+\newcommand{\mono}[1]{\texttt{#1}}
+%%
+%% Following semantic macros are only defined here if their
+%% use is required only in this specific document
+%%
+%% Used for inline definitions of terms
+\newcommand{\terminology}[1]{\textbf{#1}}
+%% End: Semantic Macros
+
+\renewcommand{\d}{\displaystyle}
+\newcommand{\N}{\mathbb N}
+\newcommand{\B}{\mathbf B}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\def\C{\mathbb C}
+\def\U{\mathcal U}
+\newcommand{\pow}{\mathcal P}
+\newcommand{\inv}{^{-1}}
+\newcommand{\st}{:}
+\renewcommand{\iff}{\leftrightarrow}
+\newcommand{\Iff}{\Leftrightarrow}
+\newcommand{\imp}{\rightarrow}
+\newcommand{\Imp}{\Rightarrow}
+\newcommand{\isom}{\cong}
+
+\renewcommand{\bar}{\overline}
+\newcommand{\card}[1]{\left| #1 \right|}
+\newcommand{\twoline}[2]{\begin{pmatrix}#1 \\ #2 \end{pmatrix}}
+
+\newcommand{\vtx}[2]{node[fill,circle,inner sep=0pt, minimum size=4pt,label=#1:#2]{}}
+\newcommand{\va}[1]{\vtx{above}{#1}}
+\newcommand{\vb}[1]{\vtx{below}{#1}}
+\newcommand{\vr}[1]{\vtx{right}{#1}}
+\newcommand{\vl}[1]{\vtx{left}{#1}}
+\renewcommand{\v}{\vtx{above}{}}
+
+%% Graphics Preamble Entries
+\usepackage{tikz, pgfplots}
+
+\usetikzlibrary{positioning,matrix,arrows}
+
+\usetikzlibrary{shapes,decorations,shadows,fadings,patterns}
+\usetikzlibrary{decorations.markings}
+
+\usepackage{skak} %for chessboards etc.
+
+\def\circleA{(-.5,0) circle (1)}
+\def\circleAlabel{(-1.5,.6) node[above]{$A$}}
+\def\circleB{(.5,0) circle (1)}
+\def\circleBlabel{(1.5,.6) node[above]{$B$}}
+\def\circleC{(0,-1) circle (1)}
+\def\circleClabel{(.5,-2) node[right]{$C$}}
+\def\twosetbox{(-2,-1.4) rectangle (2,1.4)}
+\def\threesetbox{(-2.5,-2.4) rectangle (2.5,1.4)}
+\newcommand{\hexbox}[3]{
+  \def\x{-cos{30}*\r*#1+cos{30}*#2*\r*2}
+  \def\y{-\r*#1-sin{30}*\r*#1}
+  \draw (\x,\y) +(90:\r) -- +(30:\r) -- +(-30:\r) -- +(-90:\r) -- +(-150:\r) -- +(150:\r) -- cycle;
+  \draw (\x,\y) node{#3};
+}
+
+\tikzset{->-/.style={decoration={
+  markings,
+  mark=at position .5 with {\arrow{>}}},postaction={decorate}}}
+
+  \newcommand{\onedot}{
+    +(.5,.5) \v
+  }
+  \newcommand{\twodots}{
+    +(.25,.25) \v +(.75,.75) \v
+  }
+  \newcommand{\threedots}{
+  +(.25,.25) \v +(.5, .5) \v +(.75,.75) \v
+  }
+  \newcommand{\fourdots}{
+    +(.25,.25) \v +(.25,.75) \v +(.75,.25) \v +(.75,.75) \v
+  }
+  \newcommand{\fivedots}{
+    +(.5,.5) \v +(.25,.25) \v +(.25,.75) \v +(.75,.25) \v +(.75,.75) \v
+  }
+  \newcommand{\sixdots}{
+    +(.25,.5) \v +(.75,.5) \v +(.25,.25) \v +(.25,.75) \v +(.75,.25) \v +(.75,.75) \v
+  }
+  \newcommand{\dominoborder}{
+    \draw[thick, rounded corners] (0,0) rectangle (1,2);
+    \draw[thin] (0,1) -- (1,1);
+  }
+
+
+%%%% End of PreTeXt generated preamble %%%%% 
+
+\title{Advanced Counting Using PIE}
+\subtitle{(Section 1.6)}
+\author{}
+\date[]{}
+
+\begin{document}
+\begin{frame}
+\maketitle 
+\end{frame}
+ 
+\begin{frame}
+\frametitle{Overview}
+\tableofcontents 
+\end{frame}
+ 
+
+\section{Limited Stars and Bars}
+\begin{frame}
+\frametitle{Investigate!}
+ You have 11 identical mini key-lime pies to give to 4 children. However, you don't want any kid to get more than 3 pies. How many ways can you distribute the pies?\begin{enumerate}
+\item{} How many ways are there to distribute the pies without any restriction?
+
+
+\item{} Let's get rid of the ways that one or more kid gets too many pies. How many ways are there to distribute the pies if Al gets too many pies? What if Bruce gets too many? Or Cat? Or Dent?
+
+
+\item{} What if two kids get too many pies? How many ways can this happen? Does it matter which two kids you pick to overfeed?
+
+
+\item{} Is it possible that three kids get too many pies? If so, how many ways can this happen?
+
+
+\item{} How should you combine all the numbers you found above to answer the original question?
+
+\end{enumerate}
+
+ Suppose now you have 13 pies and 7 children. No child can have more than 2 pies. How many ways can you distribute the pies?
+\end{frame}
+ 
+\begin{frame}
+\frametitle{Principle of Inclusion and Exclusion}
+ Given three finite sets \(A\), \(B\), and \(C\):%
+\begin{equation*}
+|A \cup B \cup C| = |A| + |B| + |C| - |A \cap B| - |A \cap C| - |B \cap C| + |A\cap B \cap C|\text{.}
+\end{equation*}
+
+\end{frame}
+ 
+\begin{frame}
+\frametitle{}
+\begin{example}[1.6.1]Three kids, Alberto, Bernadette, and Carlos, decide to share 11 cookies. They wonder how many ways they could split the cookies up provided that none of them receive more than 4 cookies (someone receiving no cookies is for some reason acceptable to these kids).
+\end{example}
+\end{frame}
+ 
+\begin{frame}
+\frametitle{}
+\begin{example}[1.6.2]How many ways can you distribute 10 cookies to 4 kids so that no kid gets more than 2 cookies?
+\end{example}
+\end{frame}
+ 
+\begin{frame}
+\frametitle{}
+\begin{example}[1.6.3]Earlier we counted the number of solutions to the equation%
+\begin{equation*}
+x_1 + x_2 + x_3 + x_4 + x_5 = 13\text{,}
+\end{equation*}
+where \(x_i \ge 0\) for each \(x_i\).
+How many of those solutions have \(0 \le x_i \le 3\) for each \(x_i\)?
+\end{example}
+\end{frame}
+ 
+
+
+\section{Counting Derangements}
+\begin{frame}
+\frametitle{Investigate!}
+ For your senior prank, you decide to switch the nameplates on your favorite 5 professors' doors. So that none of them feel left out, you want to make sure that all of the nameplates end up on the wrong door. How many ways can this be accomplished?
+ 
+\pause \vfill 
+
+A \terminology{derangement} of \(n\) elements \(\{1, 2, 3, \ldots, n\}\) is a permutation in which no element is ``fixed''.  For example, there are two derangements of \(\{1,2,3\}\):%
+\begin{equation*}
+231 \text{ and } 312.
+\end{equation*}
+
+\end{frame}
+ 
+\begin{frame}
+\frametitle{}
+\begin{example}[1.6.4]How many derangements are there of 4 elements?
+\end{example}
+\end{frame}
+ 
+\begin{frame}
+\frametitle{}
+\begin{example}[1.6.5]Five gentlemen attend a party, leaving their hats at the door. At the end of the party, they hastily grab hats on their way out. How many different ways could this happen so that none of the gentlemen leave with his own hat?
+\end{example}
+\end{frame}
+ 
+
+
+\section{Counting Functions}
+\begin{frame}
+\frametitle{Investigate!}
+ \begin{enumerate}
+\item{} Consider all functions \(f: \{1,2,3,4,5\} \to \{1,2,3,4,5\}\). How many functions are there all together? How many of those are injective? Remember, a function is an injection if every input goes to a different output.
+
+
+\item{} Consider all functions \(f: \{1,2,3,4,5\} \to \{1,2,3,4,5\}\). How many of the \emph{injections} have the property that \(f(x) \ne x\) for any \(x \in \{1,2,3,4,5\}\)?
+Your friend claims that the answer is:%
+\begin{equation*}
+5! - \left[ {5\choose 1}4! - {5 \choose 2}3! + {5\choose 3}2! - {5 \choose 4}1! + {5\choose 5}0! \right]\text{.}
+\end{equation*}
+
+Explain why this is correct.
+
+
+\item{} Recall that a \emph{surjection} is a function for which every element of the codomain is in the range. How many of the functions \(f: \{1,2,3,4,5\} \to \{1,2,3,4,5\}\) are surjective? Use PIE!
+
+\end{enumerate}
+
+\end{frame}
+ 
+\begin{frame}
+\frametitle{}
+\begin{example}[1.6.6]You decide to give away your video game collection so as to better spend your time studying advanced mathematics. How many ways can you do this, provided:\begin{enumerate}
+\item{} You want to distribute your 3 different PS4 games among 5 friends, so that no friend gets more than one game?
+
+\item{} You want to distribute your 8 different 3DS games among 5 friends?
+
+\item{} You want to distribute your 8 different SNES games among 5 friends, so that each friend gets at least one game?
+\end{enumerate}
+In each case, model the counting question as a function counting question.
+\end{example}
+\end{frame}
+ 
+\begin{frame}
+\frametitle{}
+\begin{example}[1.6.7]How many functions \(f: \{1,2,3,4,5\} \to \{a,b\}\) are surjective?
+\end{example}
+\end{frame}
+ 
+\begin{frame}
+\frametitle{}
+\begin{example}[1.6.8]How many functions \(f: \{1,2,3,4,5\} \to \{a,b,c\}\) are surjective?
+\end{example}
+\end{frame}
+ 
+\begin{frame}
+\frametitle{}
+\begin{example}[1.6.9]\begin{enumerate}
+\item{} How many functions \(f: \{1,2,3,4,5\} \to \{a,b,c,d\}\) are surjective?
+
+
+\item{} How many functions \(f: \{1,2,3,4,5\} \to \{a,b,c,d,e\}\) are surjective?
+
+\end{enumerate}
+
+\end{example}
+\end{frame}
+ 
+
+\end{document}
