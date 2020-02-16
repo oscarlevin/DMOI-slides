@@ -1,0 +1,242 @@
+<?xml version="1.0"?>
+<pretext xmlns:xi="http://www.w3.org/2001/XInclude">
+  <xi:include href="slidesinfo.ptx"/>
+  <slideshow>
+    <title>Advanced Counting Using PIE</title>
+    <subtitle>(Section 1.6)</subtitle>
+    <section>
+      <title>Limited Stars and Bars</title>
+      
+    <slide>
+      <title>Investigate!</title>
+           
+        <p permid="lVM">
+        You have 11 identical mini key-lime pies to give to 4 children.
+        However, you don't want any kid to get more than 3 pies.
+        How many ways can you distribute the pies?
+
+        <ol permid="oBX"><li permid="Wyt">
+            <p permid="cXz">
+              How many ways are there to distribute the pies without any restriction?
+            </p>
+          </li><li permid="CFC">
+            <p permid="JeI">
+              Let's get rid of the ways that one or more kid gets too many pies.
+              How many ways are there to distribute the pies if Al gets too many pies?
+              What if Bruce gets too many?
+              Or Cat?
+              Or Dent?
+            </p>
+          </li><li permid="iML">
+            <p permid="plR">
+              What if two kids get too many pies?
+              How many ways can this happen?
+              Does it matter which two kids you pick to overfeed?
+            </p>
+          </li><li permid="OTU">
+            <p permid="Vta">
+              Is it possible that three kids get too many pies?
+              If so, how many ways can this happen?
+            </p>
+          </li><li permid="vbd">
+            <p permid="BAj">
+              How should you combine all the numbers you found above to answer the original question?
+            </p>
+          </li></ol>
+      </p>
+        <p permid="ScV">
+        Suppose now you have 13 pies and 7 children.
+        No child can have more than 2 pies.
+        How many ways can you distribute the pies?
+      </p>
+    </slide>
+    <slide>
+      <title>Principle of Inclusion and Exclusion</title>
+      <p>
+        Given three finite sets <m>A</m>, <m>B</m>, and <m>C</m>:
+      <me permid="xeL">
+        |A \cup B \cup C| = |A| + |B| + |C| - |A \cap B| - |A \cap C| - |B \cap C| + |A\cap B \cap C|
+      </me>.
+      </p>
+    </slide>
+    <slide>
+      <example source-number="1.6.1">
+        <statement>
+          <p permid="QnI">
+          Three kids, Alberto, Bernadette,
+          and Carlos, decide to share 11 cookies.
+          They wonder how many ways they could split the cookies up provided that none of them receive more than 4 cookies
+          (someone receiving no cookies is for some reason acceptable to these kids).
+        </p>
+        </statement>
+      </example>
+    </slide>
+    <slide>
+      <example source-number="1.6.2">
+        <statement>
+          <p permid="wuR">
+          How many ways can you distribute 10 cookies to 4 kids so that no kid gets more than 2 cookies?
+        </p>
+        </statement>
+      </example>
+    </slide>
+    <slide>
+      <example source-number="1.6.3">
+        <statement>
+          <p permid="cCa">
+          Earlier we counted the number of solutions to the equation
+          <me permid="BOE">
+            x_1 + x_2 + x_3 + x_4 + x_5 = 13
+          </me>,
+          where <m>x_i \ge 0</m> for each <m>x_i</m>.
+        </p>
+          <p permid="IJj">
+          How many of those solutions have <m>0 \le x_i \le 3</m> for each <m>x_i</m>?
+        </p>
+        </statement>
+      </example>
+    </slide>
+    </section>
+    <section>
+      <title>Counting Derangements</title>
+      <slide>
+        <title>Investigate!</title>
+        
+        
+          <p permid="CTX">
+        For your senior prank,
+        you decide to switch the nameplates on your favorite 5 professors' doors.
+        So that none of them feel left out,
+        you want to make sure that all of the nameplates end up on the wrong door.
+        How many ways can this be accomplished?
+      </p>
+      <p pause="yes">
+        A <term>derangement</term> of <m>n</m> elements <m>\{1, 2, 3, \ldots, n\}</m> is a permutation in which no element is <q>fixed</q>.  For example, there are two derangements of <m>\{1,2,3\}</m>:
+        <me>231 \text{ and } 312.</me>
+      </p>
+      </slide>
+      <slide>
+        <example source-number="1.6.4">
+          <statement>
+            <p permid="oQs">
+          How many derangements are there of 4 elements?
+        </p>
+          </statement>
+        </example>
+      </slide>
+      <slide>
+        <example source-number="1.6.5">
+          <statement>
+            <p permid="UXB">
+          Five gentlemen attend a party,
+          leaving their hats at the door.
+          At the end of the party, they hastily grab hats on their way out.
+          How many different ways could this happen so that none of the gentlemen leave with his own hat?
+        </p>
+          </statement>
+        </example>
+      </slide>
+    </section>
+    <section>
+      <title>Counting Functions</title>
+      <slide>
+        <title>Investigate!</title>
+        
+        
+          <p permid="jbg">
+        <ol permid="UJg"><li permid="bim">
+            <p permid="mrl">
+              Consider all functions <m>f: \{1,2,3,4,5\} \to \{1,2,3,4,5\}</m>.
+              How many functions are there all together?
+              How many of those are injective?
+              Remember, a function is an injection if every input goes to a different output.
+            </p>
+          </li><li permid="Hpv">
+            <p permid="Syu">
+              Consider all functions <m>f: \{1,2,3,4,5\} \to \{1,2,3,4,5\}</m>.
+              How many of the <em>injections</em>
+              have the property that <m>f(x) \ne x</m> for any <m>x \in \{1,2,3,4,5\}</m>?
+            </p>
+
+            <p permid="yFD">
+              Your friend claims that the answer is:
+              <me permid="mFG">
+                5! - \left[ {5\choose 1}4! - {5 \choose 2}3! + {5\choose 3}2! - {5 \choose 4}1! + {5\choose 5}0! \right]
+              </me>.
+            </p>
+
+            <p permid="eMM">
+              Explain why this is correct.
+            </p>
+          </li><li permid="nwE">
+            <p permid="KTV">
+              Recall that a <em>surjection</em>
+              is a function for which every element of the codomain is in the range.
+              How many of the functions <m>f: \{1,2,3,4,5\} \to \{1,2,3,4,5\}</m> are surjective?
+              Use PIE!
+            </p>
+          </li></ol>
+      </p>
+
+      </slide>
+      <slide>
+        <example source-number="1.6.6">
+          <statement>
+            <p permid="BeK">
+          You decide to give away your video game collection so as to better spend your time studying advanced mathematics.
+          How many ways can you do this, provided:
+
+          <ol permid="cnF"><li permid="TDN">
+              You want to distribute your 3 different PS4 games among 5 friends,
+              so that no friend gets more than one game?
+            </li><li permid="zKW">
+              You want to distribute your 8 different 3DS games among 5 friends?
+            </li><li permid="fSf">
+              You want to distribute your 8 different SNES games among 5 friends,
+              so that each friend gets at least one game?
+            </li></ol>
+
+          In each case,
+          model the counting question as a function counting question.
+        </p>
+          </statement>
+        </example>
+      </slide>
+      <slide>
+        <example source-number="1.6.7">
+          <statement>
+            <p permid="hlT">
+          How many functions <m>f: \{1,2,3,4,5\} \to \{a,b\}</m> are surjective?
+        </p>
+          </statement>
+        </example>
+      </slide>
+      <slide>
+        <example source-number="1.6.8">
+          <statement>
+            <p permid="Ntc">
+          How many functions <m>f: \{1,2,3,4,5\} \to \{a,b,c\}</m> are surjective?
+        </p>
+          </statement>
+        </example>
+      </slide>
+      <slide>
+        <example source-number="1.6.9">
+          <statement>
+            <p permid="tAl">
+          <ol permid="IuO"><li permid="EuP">
+              <p permid="PDO">
+                How many functions <m>f: \{1,2,3,4,5\} \to \{a,b,c,d\}</m> are surjective?
+              </p>
+            </li><li permid="kBY">
+              <p permid="vKX">
+                How many functions <m>f: \{1,2,3,4,5\} \to \{a,b,c,d,e\}</m> are surjective?
+              </p>
+            </li></ol>
+        </p>
+          </statement>
+        </example>
+      </slide>
+    </section>
+  </slideshow>
+</pretext>

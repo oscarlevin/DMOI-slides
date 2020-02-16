@@ -1,0 +1,225 @@
+<?xml version="1.0"?>
+<pretext xmlns:xi="http://www.w3.org/2001/XInclude">
+  <xi:include href="slidesinfo.ptx"/>
+  <slideshow>
+    <title>Stars and Bars</title>
+    <subtitle>(Section 1.5)</subtitle>
+    <slide>
+      <title>Investigate!</title>
+        <p permid="pOU">
+        Suppose you have some number of identical Rubik's cubes to distribute to your friends.
+        Imagine you start with a single row of the cubes.
+
+        <ol permid="rZG"><li permid="YgP">
+            <p permid="Gdl">
+              Find the number of different ways you can distribute the cubes provided:
+            </p>
+
+            <p permid="mku">
+              <ol permid="KrF"><li permid="ekw">
+                  <p permid="ydn">
+                    You have 3 cubes to give to 2 people.
+                  </p>
+                </li><li permid="EnY">
+                  <p permid="SrD">
+                    You have 4 cubes to give to 2 people.
+                  </p>
+                </li><li permid="kvh">
+                  <p permid="yyM">
+                    You have 5 cubes to give to 2 people.
+                  </p>
+                </li><li permid="QCq">
+                  <p permid="eFV">
+                    You have 3 cubes to give to 3 people.
+                  </p>
+                </li><li permid="wJz">
+                  <p permid="KNe">
+                    You have 4 cubes to give to 3 people.
+                  </p>
+                </li><li permid="cQI">
+                  <p permid="qUn">
+                    You have 5 cubes to give to 3 people.
+                  </p>
+                </li></ol>
+            </p>
+          </li><li permid="tOT">
+            <p permid="Xbw">
+              Make a conjecture about how many different ways you could distribute 7 cubes to 4 people.
+              Explain.
+            </p>
+          </li><li permid="ZWc">
+            <p permid="DiF">
+              What if each person were required to get
+              <em>at least one</em>
+              cube?
+              How would your answers change?
+            </p>
+          </li></ol>
+      </p>
+    </slide>
+
+    <slide>
+      <title>Cookies and Kids</title>
+      
+        <p permid="EXS">
+        You have 7 cookies to give to 4 kids.
+        How many ways can you do this?
+        </p>
+
+      <p pause="yes">
+      Take a moment to think about how you might solve this problem.
+      You may assume that it is acceptable to give a kid no cookies.
+      Also, the cookies are all identical and the order in which you give out the cookies does not matter.  
+      </p>
+
+      <p pause="yes">
+        How can we represent outcomes of this counting process?
+      </p>
+    </slide>
+
+    <slide>
+      <title>Outcome Representations</title>
+      <p>
+        One outcome: Three cookies to kid A, one cookie to each of kids B and C, and two cookies to kid D. 
+      </p>
+      <p pause="yes">
+        We could represent this outcome as:
+        <ul pause="yes">
+          <li>
+            <p>
+              3112
+            </p>
+          </li>
+          <li>
+            <p>
+              ABAADCD
+            </p>
+          </li>
+          <li>
+            <p>
+              AAABCDD
+            </p>
+          </li>
+          <li>
+            <p>
+              ***|*|*|**
+            </p>
+          </li>
+        </ul>
+      </p>
+    </slide>
+
+    <slide>
+      <title>Stars and Bars</title>
+      <p>
+        What outcome do each of the following <term>stars and bars diagrams</term> represent?
+        <me>
+          |***||****
+        </me>
+        <me>
+          ******|*||  
+        </me>
+        <me>
+          *|*|*|*|*
+        </me>
+      </p>
+      <p pause="yes">
+        Which stars and bars diagrams represent outcomes?  Each exactly once?  How many are there?
+      </p>
+      <p pause="yes">
+        There are <m>\binom{10}{3}</m> ways to distribute 7 cookies to 4 kids.
+      </p>
+    </slide>
+
+    <slide>
+      <example source-number="1.5.1">
+        <statement>
+          <p permid="lfb">
+          Your favorite mathematical ice-cream parlor offers 10 flavors.
+          How many milkshakes could you create using exactly 6, not necessarily distinct scoops?
+          The order you add the flavors does not matter (they will be blended up anyway) but you are allowed repeats.
+          So one possible shake is triple chocolate, double cherry,
+          and mint chocolate chip.
+        </p>
+        </statement>
+      </example>
+    </slide>
+    <slide>
+      <example source-number="1.5.2">
+        <statement>
+          <p permid="Rmk">
+          How many 7 digit phone numbers are there in which the digits are non-increasing?
+          That is, every digit is less than or equal to the previous one.
+        </p>
+        </statement>
+      </example>
+    </slide>
+    <slide>
+      <example source-number="1.5.3">
+        <statement>
+          <p permid="xtt">
+          How many integer solutions are there to the equation
+          <me permid="lOV">
+            x_1 + x_2 + x_3 + x_4 + x_5 = 13
+          </me>.
+        </p>
+          <p permid="dAC">
+          (An <term>integer solution</term>
+          to an equation is a solution in which the unknown must have an integer value.)
+        </p>
+          <p permid="JHL">
+          <ol permid="LSx"><li permid="IXR">
+              <p permid="jpO">
+                where
+                <m>x_i \ge 0</m>
+                for each
+                <m>x_i</m>?
+              </p>
+            </li><li permid="pfa">
+              <p permid="PwX">
+                where
+                <m>x_i &gt; 0</m>
+                for each
+                <m>x_i</m>?
+              </p>
+            </li><li permid="Vmj">
+              <p permid="vEg">
+                where
+                <m>x_i \ge 2</m>
+                for each
+                <m>x_i</m>?
+              </p>
+            </li></ol>
+        </p>
+        </statement>
+      </example>
+    </slide>
+    <slide>
+      <title>Counting with Functions</title>
+      <p>
+        How is distributing 7 cookies to 4 kids like a function?
+      </p>
+      <p pause="yes">
+        The number of functions
+        <m>f: \{1,2,3,4,5,6,7\} \to \{a,b,c,d\}</m>
+        is <m>4^7 = 16384</m>.
+        </p>
+        <p pause="yes">
+        The number of
+        ways to assign 7 cookies to 4 kids is
+        <m>{10 \choose 3} = 120</m>.
+        What is going on here?
+      </p>
+      <p pause="yes">
+        When we count functions,
+        we consider the following two functions to be different:
+        <me permid="RWe">
+          f = \twoline{1 \amp 2 \amp 3 \amp 4\amp 5 \amp 6 \amp 7}{a \amp b \amp c \amp c \amp c \amp c \amp c} \qquad g = \twoline{1 \amp 2 \amp 3 \amp 4\amp 5 \amp 6 \amp 7}{b \amp a \amp c \amp c \amp c \amp c \amp c}
+        </me>.
+        But these two functions would correspond to the
+        <em>same</em>
+        cookie distribution.
+      </p>
+    </slide>
+  </slideshow>
+</pretext>

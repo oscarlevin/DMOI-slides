@@ -1,0 +1,332 @@
+<?xml version="1.0"?>
+<pretext xmlns:xi="http://www.w3.org/2001/XInclude">
+  <xi:include href="slidesinfo.ptx"/>
+  <slideshow>
+    <title>Combinatorial Proofs</title>
+    <subtitle>(Section 1.4)</subtitle>
+    <section>
+      <title>Warm-up</title>
+    <slide>
+      <title>Investigate!</title>
+      
+      
+        <p permid="bwU">
+        <ol permid="CFP"><li permid="fSs">
+            <p permid="adg">
+              The Stanley Cup is decided in a best of 7 tournament between two teams.
+              In how many ways can your team win?
+              Let's answer this question two ways:
+
+              <ol permid="Kdk"><li permid="dWb">
+                  <p permid="xOS">
+                    How many of the 7 games does your team need to win?
+                    How many ways can this happen?
+                  </p>
+                </li><li permid="LZB">
+                  <p permid="Gkp">
+                    What if the tournament goes all 7 games?
+                    So you win the last game.
+                    How many ways can the first 6 games go down?
+                  </p>
+                </li><li permid="sgK">
+                  <p permid="mry">
+                    What if the tournament goes just 6 games?
+                    How many ways can this happen?
+                    What about 5 games? 4 games?
+                  </p>
+                </li><li permid="YnT">
+                  <p permid="SyH">
+                    What are the two different ways to compute the number of ways your team can win?
+                    Write down an equation involving binomial coefficients
+                    (that is, <m>{n \choose k}</m>'s).
+                    What pattern in Pascal's triangle is this an example of?
+                  </p>
+                </li></ol>
+            </p>
+          </li><li permid="tVX">
+            <p permid="yFQ">
+              Generalize.
+              What if the rules changed and you played a best of <m>9</m> tournament (5 wins required)?
+              What if you played an <m>n</m> game tournament with <m>k</m> wins required to be named champion?
+            </p>
+          </li></ol>
+      </p>
+
+    </slide>
+    </section>
+
+    <section>
+      <title>Patterns in Pascal's Triangle</title>
+
+      <slide>
+        <title>Patterns in Pascal's Triangle</title>
+        <p permid="HEd">
+      Have a look again at Pascal's triangle.
+      Forget for a moment where it comes from.
+      Just look at it as a mathematical object.
+      What do you notice?
+        </p>
+
+        <sidebyside width="50%" permid="PZA">
+
+          <image xml:id="pascal-small" permid="lAA">
+
+            <latex-image>
+          \begin{tikzpicture}
+  \def\r{.5}
+
+  % Pascal's triangle
+  %put row of 1's down left side:
+    \foreach \row in {0,...,7} {
+      \hexbox{\row}{0}{ 1}
+    }
+  %fill in the rest of the triangle:
+    \foreach \row in {1,...,7} {
+      \pgfmathsetmacro{\entry}{1};
+      \foreach \col in {1,...,\row} {
+        % iterative formula : val = precval * (row-col+1)/col
+        % (+ 0.5 to bypass rounding errors)
+       \pgfmathtruncatemacro{\entry}{\entry*((\row-\col+1)/\col)+0.5}; \global\let\entry=\entry
+        \ifnum \entry&lt;100
+  	\hexbox{\row}{\col}{\entry}
+        \else \ifnum \entry&lt;1000
+  	\hexbox{\row}{\col}{\footnotesize \entry}
+        \else \ifnum \entry&lt;10000
+  	\hexbox{\row}{\col}{\footnotesize \entry}
+  	\else
+  	\hexbox{\row}{\col}{\scriptsize \entry}
+  	\fi
+        \fi
+        \fi
+      }
+    }
+  \end{tikzpicture}
+            </latex-image>
+          </image>
+
+        </sidebyside>
+        
+      </slide>
+
+      <slide>
+        <title>A few patterns</title>
+        <p permid="nLm">
+
+          <ol permid="iMY">
+            <li permid="Evc">
+              <p permid="eMZ">
+            The entries on the border of the triangle are all 1.
+              </p>
+            </li>
+
+            <li permid="kCl">
+              <p permid="KUi">
+            Any entry not on the border is the sum of the two entries above it.
+              </p>
+            </li>
+
+            <li permid="QJu">
+              <p permid="rbr">
+            The triangle is symmetric.
+            In any row, entries on the left side are mirrored on the right side.
+              </p>
+            </li>
+
+            <li permid="wQD">
+              <p permid="XiA">
+            The sum of all entries on a given row is a power of 2. (You should check this!)
+              </p>
+            </li>
+          </ol>
+        </p>
+        
+      </slide>
+
+      <slide>
+        <title>Binomial Identities</title>
+        <p permid="zZE">
+      The previous observations can be rewritten:
+
+          <ol permid="OUh">
+            <li permid="cXM">
+              <m>{n \choose 0} = 1</m> and <m>{n \choose n} = 1</m>.
+            </li>
+
+            <li permid="JeV">
+              <m>{n \choose k} = {n-1 \choose k-1} + {n-1 \choose k}</m>.
+            </li>
+
+            <li permid="pme">
+              <m>{n \choose k} = {n \choose n-k}</m>.
+            </li>
+
+            <li permid="Vtn">
+              <m>{n\choose 0} + {n \choose 1} + {n \choose 2} + \cdots + {n \choose n} = 2^n</m>.
+            </li>
+          </ol>
+        </p>
+        <p pause="yes">
+      Each of these is an example of a
+          <term>binomial identity</term>: an identity (i.e., equation) involving binomial coefficients.
+        </p>
+      </slide>
+
+      <slide>
+        <example source-number="1.4.1">
+          <statement>
+            <p permid="KyJ">
+          Give an algebraic proof for the binomial identity
+          <me permid="yUl">
+            {n \choose k} = {n-1\choose k-1} + {n-1 \choose k}
+          </me>.
+        </p>
+
+        <p pause="yes">
+ 
+            Starting with the right-hand side of the equation:
+            <md permid="Ftr">
+              <mrow>{n-1 \choose k-1} + {n-1 \choose k} \amp = \frac{(n-1)!}{(n-k)!(k-1)!}+ \frac{(n-1)!}{(n-1-k)!\,k!}</mrow>
+              <mrow>\amp = \frac{(n-1)!k}{(n-k)!\,k!} + \frac{(n-1)!(n-k)}{(n-k)!\,k!}</mrow>
+              <mrow>\amp = \frac{(n-1)!(k+n-k)}{(n-k)!\,k!}</mrow>
+              <mrow>\amp = \frac{n!}{(n-k)!\, k!} = {n \choose k}</mrow>
+            </md>.
+   
+        </p>
+        <p pause="yes">
+          Yuck!  Our goal is to find a better style of proof for these identities.
+        </p>
+          </statement>
+        </example>
+      </slide>
+      <slide>
+        <example source-number="1.4.2">
+          <statement>
+            <p permid="qFS">
+          Explain why <m>{n \choose 0} = 1</m> and <m>{n \choose n} = 1</m>.
+        </p>
+
+        <p pause="yes">
+          Hint: What does <m>\binom{n}{0}</m> tell you in terms of subsets?
+        </p>
+          </statement>
+        </example>
+      </slide>
+      <slide>
+        <example source-number="1.4.3">
+          <statement>
+            <p permid="WNb">
+          Explain why <m>{n \choose k} = {n-1 \choose k-1} + {n-1 \choose k}</m>.
+        </p>
+        <p pause="yes">
+          Hint: what does <m>\binom{n}{k}</m> tell you in terms of bit-strings?
+        </p>
+          </statement>
+        </example>
+      </slide>
+      <slide>
+        <example source-number="1.4.4">
+          <statement>
+            <p permid="CUk">
+          Prove the binomial identity <m>{n \choose k} = {n \choose n-k}</m>.
+        </p>
+        <p pause="yes">
+          Hint: what does <m>\binom{n}{k}</m> tell you in terms of pizza toppings?
+        </p>
+          </statement>
+        </example>
+      </slide>
+      <slide>
+        <example source-number="1.4.5">
+          <statement>
+            <p permid="jbt">
+          Prove the binomial identity <m>{n\choose 0} + {n \choose 1} + {n\choose 2} + \cdots + {n \choose n} = 2^n</m>.
+        </p>
+        <p pause="yes">
+          Hint: Try subsets or pizzas!  What question about subsets is <m>2^n</m> the answer to?  Why is the answer to that question also the left-hand side?
+        </p>
+          </statement>
+        </example>
+      </slide>
+    </section>
+    <section>
+      <title>More Proofs</title>
+      <slide>
+        <title>Combinatorial Proofs</title>
+        <p permid="Jtq">
+      The explanatory proofs given in the above examples are typically called
+          <term>combinatorial proofs</term>.
+      In general, to give a combinatorial proof for a binomial identity,
+      say <m>A = B</m> you do the following:
+        </p>
+
+        <p pause="yes">
+          <ol permid="vbq">
+            <li permid="BAw">
+              <p permid="DpJ">
+            Find a counting problem you will be able to answer in two ways.
+              </p>
+            </li>
+
+            <li permid="hHF">
+              <p permid="jwS">
+            Explain why one answer to the counting problem is <m>A</m>.
+              </p>
+            </li>
+
+            <li permid="NOO">
+              <p permid="PEb">
+            Explain why the other answer to the counting problem is <m>B</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+
+        <p pause="yes">
+      Since both <m>A</m> and <m>B</m> are the answers to the same question,
+      we must have <m>A = B</m>.
+        </p>
+        
+      </slide>
+
+      <slide>
+        <title>Finding Questions</title>
+        
+          <p permid="erA">
+            How many 10-letter words use exactly four A's, three B's, two C's and one D?
+          </p>
+
+          <p pause="yes">
+            Prove:
+            <me>
+              {10 \choose 4}{6 \choose 3}{3 \choose 2}{1 \choose 1} = {10 \choose 1}{9 \choose 2}{7 \choose 3}{4 \choose 4}
+            </me>
+          </p>
+      </slide>
+
+      <slide>
+        <example source-number="1.4.6">
+          <statement>
+            <p permid="PiC">
+          Prove the identity
+          <me permid="cgO">
+            1 n + 2(n-1) + 3 (n-2) + \cdots + (n-1) 2 + n 1 = {n+2 \choose 3}
+          </me>.
+        </p>
+          </statement>
+        </example>
+      </slide>
+      <slide>
+        <example source-number="1.4.7">
+          <statement>
+            <p permid="vpL">
+          Prove the binomial identity
+          <me permid="UCp">
+            {n \choose 0}^2 + {n \choose 1}^2 + {n \choose 2}^2 + \cdots + {n \choose n}^2 = {2n \choose n}
+          </me>.
+        </p>
+          </statement>
+        </example>
+      </slide>
+    </section>
+  </slideshow>
+</pretext>
