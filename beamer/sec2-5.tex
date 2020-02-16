@@ -1,0 +1,256 @@
+\documentclass[11pt, compress]{beamer}
+\usepackage{amsmath}
+\usetheme{Boadilla}
+\usefonttheme[onlymath]{serif}
+%get rid of navigation:
+\setbeamertemplate{navigation symbols}{}
+
+
+ %%%% Start PreTeXt generated preamble: %%%%% 
+
+%% Some aspects of the preamble are conditional,
+%% the LaTeX engine is one such determinant
+\usepackage{ifthen}
+\newcommand{\tabularfont}{}
+\usepackage[xparse, raster]{tcolorbox}
+\tcbset{colback=white, colframe=white}
+\NewTColorBox{image}{mmm}{boxrule=0.25pt, colframe=gray, left skip=#1\linewidth,width=#2\linewidth}
+\RenewTColorBox{definition}{m}{colback=teal!30!white, colbacktitle=teal!30!white, coltitle=black, colframe=gray, boxrule=0.5pt, sharp corners=downhill, titlerule = 0.25pt, title={#1}}
+\RenewTColorBox{theorem}{m}{colback=pink!30!white, colbacktitle=pink!30!white, coltitle=black, colframe=gray, boxrule=0.5pt, sharp corners=downhill, titlerule = 0.25pt, title={#1}}
+\RenewTColorBox{proof}{}{boxrule=0.25pt, colframe=gray, colback=white, before upper={Proof:}, after upper={\qed}}
+\newcommand{\lt}{<}
+\newcommand{\gt}{>}
+\newcommand{\amp}{&}
+
+%% Begin: Semantic Macros
+%% To preserve meaning in a LaTeX file
+%%
+%% \mono macro for content of "c", "cd", "tag", etc elements
+%% Also used automatically in other constructions
+%% Simply an alias for \texttt
+%% Always defined, even if there is no need, or if a specific tt font is not loaded
+\newcommand{\mono}[1]{\texttt{#1}}
+%%
+%% Following semantic macros are only defined here if their
+%% use is required only in this specific document
+%%
+%% End: Semantic Macros
+
+\renewcommand{\d}{\displaystyle}
+\newcommand{\N}{\mathbb N}
+\newcommand{\B}{\mathbf B}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\def\C{\mathbb C}
+\def\U{\mathcal U}
+\newcommand{\pow}{\mathcal P}
+\newcommand{\inv}{^{-1}}
+\newcommand{\st}{:}
+\renewcommand{\iff}{\leftrightarrow}
+\newcommand{\Iff}{\Leftrightarrow}
+\newcommand{\imp}{\rightarrow}
+\newcommand{\Imp}{\Rightarrow}
+\newcommand{\isom}{\cong}
+
+\renewcommand{\bar}{\overline}
+\newcommand{\card}[1]{\left| #1 \right|}
+\newcommand{\twoline}[2]{\begin{pmatrix}#1 \\ #2 \end{pmatrix}}
+
+\newcommand{\vtx}[2]{node[fill,circle,inner sep=0pt, minimum size=4pt,label=#1:#2]{}}
+\newcommand{\va}[1]{\vtx{above}{#1}}
+\newcommand{\vb}[1]{\vtx{below}{#1}}
+\newcommand{\vr}[1]{\vtx{right}{#1}}
+\newcommand{\vl}[1]{\vtx{left}{#1}}
+\renewcommand{\v}{\vtx{above}{}}
+
+%% Graphics Preamble Entries
+\usepackage{tikz, pgfplots}
+
+\usetikzlibrary{positioning,matrix,arrows}
+
+\usetikzlibrary{shapes,decorations,shadows,fadings,patterns}
+\usetikzlibrary{decorations.markings}
+
+\usepackage{skak} %for chessboards etc.
+
+\def\circleA{(-.5,0) circle (1)}
+\def\circleAlabel{(-1.5,.6) node[above]{$A$}}
+\def\circleB{(.5,0) circle (1)}
+\def\circleBlabel{(1.5,.6) node[above]{$B$}}
+\def\circleC{(0,-1) circle (1)}
+\def\circleClabel{(.5,-2) node[right]{$C$}}
+\def\twosetbox{(-2,-1.4) rectangle (2,1.4)}
+\def\threesetbox{(-2.5,-2.4) rectangle (2.5,1.4)}
+\newcommand{\hexbox}[3]{
+  \def\x{-cos{30}*\r*#1+cos{30}*#2*\r*2}
+  \def\y{-\r*#1-sin{30}*\r*#1}
+  \draw (\x,\y) +(90:\r) -- +(30:\r) -- +(-30:\r) -- +(-90:\r) -- +(-150:\r) -- +(150:\r) -- cycle;
+  \draw (\x,\y) node{#3};
+}
+
+\tikzset{->-/.style={decoration={
+  markings,
+  mark=at position .5 with {\arrow{>}}},postaction={decorate}}}
+
+  \newcommand{\onedot}{
+    +(.5,.5) \v
+  }
+  \newcommand{\twodots}{
+    +(.25,.25) \v +(.75,.75) \v
+  }
+  \newcommand{\threedots}{
+  +(.25,.25) \v +(.5, .5) \v +(.75,.75) \v
+  }
+  \newcommand{\fourdots}{
+    +(.25,.25) \v +(.25,.75) \v +(.75,.25) \v +(.75,.75) \v
+  }
+  \newcommand{\fivedots}{
+    +(.5,.5) \v +(.25,.25) \v +(.25,.75) \v +(.75,.25) \v +(.75,.75) \v
+  }
+  \newcommand{\sixdots}{
+    +(.25,.5) \v +(.75,.5) \v +(.25,.25) \v +(.25,.75) \v +(.75,.25) \v +(.75,.75) \v
+  }
+  \newcommand{\dominoborder}{
+    \draw[thick, rounded corners] (0,0) rectangle (1,2);
+    \draw[thin] (0,1) -- (1,1);
+  }
+
+
+%%%% End of PreTeXt generated preamble %%%%% 
+
+\title{Induction}
+\subtitle{(Section 2.5)}
+\author{}
+\date[]{}
+
+\begin{document}
+\begin{frame}
+\maketitle 
+\end{frame}
+ 
+\begin{frame}
+\frametitle{Overview}
+\tableofcontents 
+\end{frame}
+ 
+
+\section{Recursive Reasoning}
+\begin{frame}
+\frametitle{Investigate!}
+ What is the last digit of \(6^n\) in terms of \(n\)?
+ 
+\pause \vfill 
+
+What if you knew the last digit of \(6^{418}\).  Could you find the last digit of \(6^{419}\)?
+ 
+\pause \vfill 
+
+How can we turn this recursive reasoning into a proof?
+\end{frame}
+ 
+
+
+\section{Formalizing Proofs}
+\begin{frame}
+\frametitle{Induction Proof Structure}
+ Start by saying what the statement is that you want to prove: ``Let \(P(n)\) be the statement\textellipsis{}'' To prove that \(P(n)\) is true for all \(n \ge 0\), you must prove two facts:\begin{enumerate}
+\item{} Base case: Prove that \(P(0)\) is true. You do this directly. This is often easy.
+
+
+\item{} Inductive case: Prove that \(P(k) \imp P(k+1)\) for all \(k \ge 0\). That is, prove that for any \(k \ge 0\) if \(P(k)\) is true, then \(P(k+1)\) is true as well. This is the proof of an if \textellipsis{} then \textellipsis{} statement, so you can assume \(P(k)\) is true (\(P(k)\) is called the \emph{inductive hypothesis}). \index{inductive hypothesis} You must then explain why \(P(k+1)\) is also true, given that assumption.
+
+\end{enumerate}
+
+ Assuming you are successful on both parts above, you can conclude, ``Therefore by the principle of mathematical induction, the statement \(P(n)\) is true for all \(n \ge 0\).''
+\end{frame}
+ 
+
+
+\section{Examples}
+\begin{frame}
+\frametitle{}
+\begin{example}[2.5.1]Prove for each natural number \(n \ge 1\) that \(1 + 2 + 3 + \cdots + n = \frac{n(n+1)}{2}\).
+\end{example}
+\end{frame}
+ 
+\begin{frame}
+\frametitle{Proof}
+ Let \(P(n)\) be the statement \(1 + 2 + 3 + \cdots + n = \frac{n(n+1)}{2}\). We will show that \(P(n)\) is true for all natural numbers \(n \ge 1\).
+ 
+\pause \vfill 
+
+Base case: \(P(1)\) is the statement \(1 = \frac{1(1+1)}{2}\) which is clearly true.
+\end{frame}
+ 
+\begin{frame}
+\frametitle{Proof Continued.}
+ Inductive case: Let \(k \ge 1\) be a natural number. Assume (for induction) that \(P(k)\) is true. That means \(1 + 2 + 3 + \cdots + k = \frac{k(k+1)}{2}\). We will prove that \(P(k+1)\) is true as well. That is, we must prove that \(1 + 2 + 3 + \cdots + k + (k+1) = \frac{(k+1)(k+2)}{2}\). To prove this equation, start by adding \(k+1\) to both sides of the inductive hypothesis:%
+\begin{equation*}
+1 + 2 + 3 + \cdots + k + (k+1) = \frac{k(k+1)}{2} + (k+1)\text{.}
+\end{equation*}
+
+ 
+\pause \vfill 
+
+Now, simplifying the right side we get:%
+\begin{align*}
+\frac{k(k+1)}{2} + k+1 \amp = \frac{k(k+1)}{2} + \frac{2(k+1)}{2}\\
+\amp = \frac{k(k+1) + 2(k+1)}{2}\\
+\amp = \frac{(k+2)(k+1)}{2}\text{.}
+\end{align*}
+
+ 
+\pause \vfill 
+
+Thus \(P(k+1)\) is true, so by the principle of mathematical induction \(P(n)\) is true for all natural numbers \(n \ge 1\).
+\end{frame}
+ 
+\begin{frame}
+\frametitle{}
+\begin{example}[2.5.2]Prove that for all \(n \in \N\), \(6^n - 1\) is a multiple of 5.
+\end{example}
+\end{frame}
+ 
+\begin{frame}
+\frametitle{}
+\begin{example}[2.5.3]Prove that \(n^2 \lt 2^n\) for all integers \(n \ge 5\).
+\end{example}
+\end{frame}
+ 
+
+
+\section{Strong Induction}
+\begin{frame}
+\frametitle{Chocolate!}
+ How many times do you need to break a 4 by 6 chocolate bar to reduce it to single squares?
+ 
+\pause \vfill 
+
+Conjecture: Given a \(n\)-square rectangular chocolate bar, it always takes \(n-1\) breaks to reduce the bar to single squares.
+ 
+\pause \vfill 
+
+Idea: if you break an \(n\)-square bar into two smaller rectangles, of size \(j\) and \(k\), then it takes \(1 + (j-1) + (k-1)\) total breaks.  But this is \(n-1\) breaks!
+\end{frame}
+ 
+\begin{frame}
+\frametitle{Strong Induction Proof Structure}
+ Again, start by saying what you want to prove: ``Let \(P(n)\) be the statement\textellipsis{}'' Then establish two facts:\begin{enumerate}
+\item{} Base case: Prove that \(P(0)\) is true.
+
+
+\item{} Inductive case: Assume \(P(k)\) is true for all \(k \lt n\). Prove that \(P(n)\) is true.
+
+\end{enumerate}
+Conclude, ``therefore, by strong induction, \(P(n)\) is true for all \(n \gt 0\).''
+\end{frame}
+ 
+\begin{frame}
+\frametitle{}
+\begin{example}[2.5.5]Prove that any natural number greater than 1 is either prime or can be written as the product of primes.
+\end{example}
+\end{frame}
+ 
+
+\end{document}

@@ -3,8 +3,10 @@
   <xi:include href="slidesinfo.ptx"/>
   <slideshow>
     <title>Solving Recurrence Relations</title>
+    <subtitle>(Section 2.4)</subtitle>
+    <introduction>
     <slide>
-      <investigation>
+      
         <p permid="GOF">
         Consider the recurrence relation
         <me permid="elW">
@@ -29,8 +31,8 @@
             </p>
           </li></ol>
       </p>
-      </investigation>
     </slide>
+    
     <slide>
       <example source-number="2.4.1">
         <statement>
@@ -49,7 +51,29 @@
         </statement>
       </example>
     </slide>
+    </introduction>
+    <section>
+    <title>Telescoping and Iteration</title>
+    
+    
     <slide>
+    <title>Telescoping</title>
+    
+    
+    <p permid="TiB">
+      <term>Telescoping</term>
+      refers to the phenomenon when many terms in a large sum cancel out - so the sum
+      <q>telescopes.</q> For example:
+      <me permid="ykr">
+        (2 - 1) + (3 - 2) + (4 - 3) + \cdots + (100 - 99) + (101 - 100) = -1 + 101
+      </me>
+      because every third term looks like:
+      <m>2 + -2 = 0</m>, and then <m>3 + -3 = 0</m> and so on.
+    </p>
+    </slide>
+    
+    <slide>
+      
       <example source-number="2.4.3">
         <statement>
           <p permid="CeM">
@@ -60,6 +84,11 @@
       </example>
     </slide>
     <slide>
+    <title>Iteration</title>
+    <p>
+      What do you do when the left-hand side doesn't telescope?  <term>Iterate</term>: repeatedly find the next term and simplify.
+    </p>
+    
       <example source-number="2.4.4">
         <statement>
           <p permid="ilV">
@@ -78,13 +107,53 @@
         </statement>
       </example>
     </slide>
-    <subsection>
+    </section>
+
+    <section>
       <title>The Characteristic Root Technique</title>
+
       <slide>
-        <assemblage>
+        <p permid="QnV">
+      Suppose we want to solve  <m>a_n = a_{n-1} + 6a_{n-2}</m>.
+      
+      Iteration is too complicated,
+      but think just for a second what would happen if we <em>did</em> iterate.
+      Perhaps the solution will take the form <m>r^n</m> for some constant <m>r</m>.
+        </p>
+
+        <p pause="yes">
+      What happens if we plug in <m>r^n</m> into the recursion above?
+      We get
+          <me permid="TSv">
+        r^n - r^{n-1} - 6r^{n-2} = 0
+          </me>.
+        </p>
+
+        <p pause="yes">
+      Now solve for <m>r</m>:
+          <me permid="zZE">
+        r^{n-2}(r^2 - r - 6) = 0
+          </me>,
+      so by factoring, <m>r = -2</m> or <m>r = 3</m>
+     
+      This tells us that <m>a_n = (-2)^n</m> is a solution to the recurrence relation,
+      as is <m>a_n = 3^n</m>.
+      </p>
+      <p pause="yes">
+        
+      In fact, for any <m>a</m> and <m>b</m>,
+          <m>a_n = a(-2)^n + b 3^n</m> is a solution.
+
+      To find the values of <m>a</m> and <m>b</m>,
+      use the initial conditions.
+        </p>
+      </slide>
+
+
+      <slide>
+
           <title>Characteristic Roots</title>
           <p permid="cwJ">
-            <idx><h>characteristic roots</h></idx>
         Given a recurrence relation <m>a_n + \alpha a_{n-1} + \beta a_{n-2} = 0</m>, the
         <term>characteristic polynomial</term> is
         <me permid="zUa">
@@ -96,7 +165,7 @@
           x^2 + \alpha x + \beta = 0
         </me>.
       </p>
-          <p permid="IDS">
+          <p pause="yes">
         If <m>r_1</m> and <m>r_2</m> are two distinct roots of the characteristic polynomial (i.e, solutions to the characteristic equation),
         then the solution to the recurrence relation is
         <me permid="Mis">
@@ -104,8 +173,8 @@
         </me>,
         where <m>a</m> and <m>b</m> are constants determined by the initial conditions.
       </p>
-        </assemblage>
       </slide>
+
       <slide>
         <example source-number="2.4.6">
           <statement>
@@ -117,7 +186,7 @@
         </example>
       </slide>
       <slide>
-        <assemblage>
+
           <title>Characteristic Root Technique for Repeated Roots</title>
           <p permid="oLb">
         Suppose the recurrence relation
@@ -128,7 +197,7 @@
         </me>
         where <m>a</m> and <m>b</m> are constants determined by the initial conditions.
       </p>
-        </assemblage>
+        
       </slide>
       <slide>
         <example source-number="2.4.7">
@@ -140,6 +209,6 @@
           </statement>
         </example>
       </slide>
-    </subsection>
+    </section>
   </slideshow>
 </pretext>

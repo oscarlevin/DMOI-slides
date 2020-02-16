@@ -3,26 +3,27 @@
   <xi:include href="slidesinfo.ptx"/>
   <slideshow>
     <title>Induction</title>
-    <subsection>
-      <title>Stamps</title>
+    <subtitle>(Section 2.5)</subtitle>
+    <section>
+      <title>Recursive Reasoning</title>
       <slide>
-        <investigation>
+        <title>Investigate!</title>       
           <p permid="Xka">
-        You need to mail a package, but don't yet know how much postage you will need.
-        You have a large supply of 8-cent stamps and 5-cent stamps.
-        Which amounts of postage can you make exactly using these stamps?
-        Which amounts are impossible to make?
+        What is the last digit of <m>6^n</m> in terms of <m>n</m>?
       </p>
-        </investigation>
+      <p pause="yes">
+        What if you knew the last digit of <m>6^{418}</m>.  Could you find the last digit of <m>6^{419}</m>?
+      </p>
+      <p pause="yes">
+        How can we turn this recursive reasoning into a proof?
+      </p>
       </slide>
-    </subsection>
-    <subsection>
+    </section>
+    <section>
       <title>Formalizing Proofs</title>
       <slide>
-        <assemblage>
           <title>Induction Proof Structure</title>
           <p permid="bTT">
-            <idx><h>induction</h></idx>
         Start by saying what the statement is that you want to prove: <q>Let <m>P(n)</m> be the statement<ellipsis/></q> To prove that <m>P(n)</m> is true for all <m>n \ge 0</m>, you must prove two facts:
 
         <ol permid="zcP"><li permid="DMI">
@@ -53,10 +54,9 @@
         <q>Therefore by the principle of mathematical induction,
         the statement <m>P(n)</m> is true for all <m>n \ge 0</m>.</q>
       </p>
-        </assemblage>
       </slide>
-    </subsection>
-    <subsection>
+    </section>
+    <section>
       <title>Examples</title>
       <slide>
         <example source-number="2.5.1">
@@ -66,6 +66,51 @@
         </p>
           </statement>
         </example>
+      </slide>
+      <slide>
+        <title>Proof</title>
+        
+        
+          <p permid="tth">
+            Let <m>P(n)</m> be the statement <m>1 + 2 + 3 + \cdots + n = \frac{n(n+1)}{2}</m>.
+            We will show that <m>P(n)</m> is true for all natural numbers <m>n \ge 1</m>.
+          </p>
+
+          <p pause="yes">
+            Base case: <m>P(1)</m> is the statement
+            <m>1 = \frac{1(1+1)}{2}</m> which is clearly true.
+          </p>
+      </slide>
+      <slide>
+        <title>Proof Continued.</title>
+        
+        
+          <p>
+            Inductive case: Let <m>k \ge 1</m> be a natural number.
+            Assume (for induction) that <m>P(k)</m> is true.
+            That means <m>1 + 2 + 3 + \cdots + k = \frac{k(k+1)}{2}</m>.
+            We will prove that <m>P(k+1)</m> is true as well.
+            That is, we must prove that <m>1 + 2 + 3 + \cdots + k + (k+1) = \frac{(k+1)(k+2)}{2}</m>.
+            To prove this equation,
+            start by adding <m>k+1</m> to both sides of the inductive hypothesis:
+            <me permid="htk">
+              1 + 2 + 3 + \cdots + k + (k+1) = \frac{k(k+1)}{2} + (k+1)
+            </me>.
+          </p>
+
+          <p pause="yes">
+            Now, simplifying the right side we get:
+            <md permid="NAt">
+              <mrow>\frac{k(k+1)}{2} + k+1 \amp = \frac{k(k+1)}{2} + \frac{2(k+1)}{2}</mrow>
+              <mrow>\amp = \frac{k(k+1) + 2(k+1)}{2}</mrow>
+              <mrow>\amp = \frac{(k+2)(k+1)}{2}</mrow>
+            </md>.
+          </p>
+
+          <p pause="yes">
+            Thus <m>P(k+1)</m> is true,
+            so by the principle of mathematical induction <m>P(n)</m> is true for all natural numbers <m>n \ge 1</m>.
+          </p>
       </slide>
       <slide>
         <example source-number="2.5.2">
@@ -86,35 +131,28 @@
           </statement>
         </example>
       </slide>
-    </subsection>
-    <subsection>
+    </section>
+    <section>
       <title>Strong Induction</title>
       <slide>
-        <investigation>
+        <title>Chocolate!</title>
+        
+        
           <p permid="Drj">
-        Start with a square piece of paper.
-        You want to cut this square into smaller squares, leaving no waste
-        (every piece of paper you end up with must be a square).
-        Obviously it is possible to cut the square into 4 squares.
-        You can also cut it into 9 squares.
-        It turns out you can cut the square into 7 squares
-        (although not all the same size).
-        What other numbers of squares could you end up with?
+        How many times do you need to break a 4 by 6 chocolate bar to reduce it to single squares?
       </p>
-        </investigation>
-      </slide>
-      <slide>
-        <conjecture>
-          <statement>
-            <p permid="msY">
-          Given a <m>n</m>-square rectangular chocolate bar,
+      
+
+            <p pause="yes">
+          Conjecture: Given a <m>n</m>-square rectangular chocolate bar,
           it always takes <m>n-1</m> breaks to reduce the bar to single squares.
         </p>
-          </statement>
-        </conjecture>
+        <p pause="yes">
+          Idea: if you break an <m>n</m>-square bar into two smaller rectangles, of size <m>j</m> and <m>k</m>, then it takes <m>1 + (j-1) + (k-1)</m> total breaks.  But this is <m>n-1</m> breaks!
+        </p>
       </slide>
+
       <slide>
-        <assemblage>
           <title>Strong Induction Proof Structure</title>
           <p permid="oil">
         Again, start by saying what you want to prove:
@@ -135,19 +173,17 @@
         Conclude, <q>therefore, by strong induction,
         <m>P(n)</m> is true for all <m>n \gt 0</m>.</q>
       </p>
-        </assemblage>
       </slide>
       <slide>
         <example source-number="2.5.5">
           <statement>
             <p permid="KVI">
           Prove that any natural number greater than 1 is either prime
-              <idx><h>prime numbers</h></idx>
           or can be written as the product of primes.
         </p>
           </statement>
         </example>
       </slide>
-    </subsection>
+    </section>
   </slideshow>
 </pretext>

@@ -1,0 +1,330 @@
+\documentclass[11pt, compress]{beamer}
+\usepackage{amsmath}
+\usetheme{Boadilla}
+\usefonttheme[onlymath]{serif}
+%get rid of navigation:
+\setbeamertemplate{navigation symbols}{}
+
+
+ %%%% Start PreTeXt generated preamble: %%%%% 
+
+%% Some aspects of the preamble are conditional,
+%% the LaTeX engine is one such determinant
+\usepackage{ifthen}
+\newcommand{\tabularfont}{}
+\usepackage[xparse, raster]{tcolorbox}
+\tcbset{colback=white, colframe=white}
+\NewTColorBox{image}{mmm}{boxrule=0.25pt, colframe=gray, left skip=#1\linewidth,width=#2\linewidth}
+\RenewTColorBox{definition}{m}{colback=teal!30!white, colbacktitle=teal!30!white, coltitle=black, colframe=gray, boxrule=0.5pt, sharp corners=downhill, titlerule = 0.25pt, title={#1}}
+\RenewTColorBox{theorem}{m}{colback=pink!30!white, colbacktitle=pink!30!white, coltitle=black, colframe=gray, boxrule=0.5pt, sharp corners=downhill, titlerule = 0.25pt, title={#1}}
+\RenewTColorBox{proof}{}{boxrule=0.25pt, colframe=gray, colback=white, before upper={Proof:}, after upper={\qed}}
+\newcommand{\lt}{<}
+\newcommand{\gt}{>}
+\newcommand{\amp}{&}
+
+%% Begin: Semantic Macros
+%% To preserve meaning in a LaTeX file
+%%
+%% \mono macro for content of "c", "cd", "tag", etc elements
+%% Also used automatically in other constructions
+%% Simply an alias for \texttt
+%% Always defined, even if there is no need, or if a specific tt font is not loaded
+\newcommand{\mono}[1]{\texttt{#1}}
+%%
+%% Following semantic macros are only defined here if their
+%% use is required only in this specific document
+%%
+%% Used for inline definitions of terms
+\newcommand{\terminology}[1]{\textbf{#1}}
+%% End: Semantic Macros
+
+\renewcommand{\d}{\displaystyle}
+\newcommand{\N}{\mathbb N}
+\newcommand{\B}{\mathbf B}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\def\C{\mathbb C}
+\def\U{\mathcal U}
+\newcommand{\pow}{\mathcal P}
+\newcommand{\inv}{^{-1}}
+\newcommand{\st}{:}
+\renewcommand{\iff}{\leftrightarrow}
+\newcommand{\Iff}{\Leftrightarrow}
+\newcommand{\imp}{\rightarrow}
+\newcommand{\Imp}{\Rightarrow}
+\newcommand{\isom}{\cong}
+
+\renewcommand{\bar}{\overline}
+\newcommand{\card}[1]{\left| #1 \right|}
+\newcommand{\twoline}[2]{\begin{pmatrix}#1 \\ #2 \end{pmatrix}}
+
+\newcommand{\vtx}[2]{node[fill,circle,inner sep=0pt, minimum size=4pt,label=#1:#2]{}}
+\newcommand{\va}[1]{\vtx{above}{#1}}
+\newcommand{\vb}[1]{\vtx{below}{#1}}
+\newcommand{\vr}[1]{\vtx{right}{#1}}
+\newcommand{\vl}[1]{\vtx{left}{#1}}
+\renewcommand{\v}{\vtx{above}{}}
+
+%% Graphics Preamble Entries
+\usepackage{tikz, pgfplots}
+
+\usetikzlibrary{positioning,matrix,arrows}
+
+\usetikzlibrary{shapes,decorations,shadows,fadings,patterns}
+\usetikzlibrary{decorations.markings}
+
+\usepackage{skak} %for chessboards etc.
+
+\def\circleA{(-.5,0) circle (1)}
+\def\circleAlabel{(-1.5,.6) node[above]{$A$}}
+\def\circleB{(.5,0) circle (1)}
+\def\circleBlabel{(1.5,.6) node[above]{$B$}}
+\def\circleC{(0,-1) circle (1)}
+\def\circleClabel{(.5,-2) node[right]{$C$}}
+\def\twosetbox{(-2,-1.4) rectangle (2,1.4)}
+\def\threesetbox{(-2.5,-2.4) rectangle (2.5,1.4)}
+\newcommand{\hexbox}[3]{
+  \def\x{-cos{30}*\r*#1+cos{30}*#2*\r*2}
+  \def\y{-\r*#1-sin{30}*\r*#1}
+  \draw (\x,\y) +(90:\r) -- +(30:\r) -- +(-30:\r) -- +(-90:\r) -- +(-150:\r) -- +(150:\r) -- cycle;
+  \draw (\x,\y) node{#3};
+}
+
+\tikzset{->-/.style={decoration={
+  markings,
+  mark=at position .5 with {\arrow{>}}},postaction={decorate}}}
+
+  \newcommand{\onedot}{
+    +(.5,.5) \v
+  }
+  \newcommand{\twodots}{
+    +(.25,.25) \v +(.75,.75) \v
+  }
+  \newcommand{\threedots}{
+  +(.25,.25) \v +(.5, .5) \v +(.75,.75) \v
+  }
+  \newcommand{\fourdots}{
+    +(.25,.25) \v +(.25,.75) \v +(.75,.25) \v +(.75,.75) \v
+  }
+  \newcommand{\fivedots}{
+    +(.5,.5) \v +(.25,.25) \v +(.25,.75) \v +(.75,.25) \v +(.75,.75) \v
+  }
+  \newcommand{\sixdots}{
+    +(.25,.5) \v +(.75,.5) \v +(.25,.25) \v +(.25,.75) \v +(.75,.25) \v +(.75,.75) \v
+  }
+  \newcommand{\dominoborder}{
+    \draw[thick, rounded corners] (0,0) rectangle (1,2);
+    \draw[thin] (0,1) -- (1,1);
+  }
+
+
+%%%% End of PreTeXt generated preamble %%%%% 
+
+\title{Describing Sequences}
+\subtitle{(Section 2.1)}
+\author{}
+\date[]{}
+
+\begin{document}
+\begin{frame}
+\maketitle 
+\end{frame}
+ 
+\begin{frame}
+\frametitle{Overview}
+\tableofcontents 
+\end{frame}
+ 
+\begin{frame}
+\frametitle{Investigate!}
+ You have a large collection of \(1\times 1\) squares and \(1\times 2\) dominoes. You want to arrange these to make a \(1 \times 15\) strip. How many ways can you do this?\begin{enumerate}
+\item{} Start by collecting data. How many length \(1\times 1\) strips can you make? How many \(1\times 2\) strips? How many \(1\times 3\) strips? And so on.
+
+
+\item{} How are the \(1\times 3\) and \(1 \times 4\) strips related to the \(1\times 5\) strips?
+
+
+\item{} How many \(1\times 15\) strips can you make?
+
+
+\item{} What if I asked you to find the number of \(1\times 1000\) strips? Would the method you used to calculate the number fo \(1 \times 15\) strips be helpful?
+
+\end{enumerate}
+
+\end{frame}
+ 
+\begin{frame}
+\frametitle{}
+A \terminology{sequence} is an ordered list of numbers.
+ 
+\pause \vfill 
+
+We refer to a sequence as \((a_n)_{n \in \N}\) or \((a_n)_{n \ge 0}\), which mean the sequence%
+\begin{equation*}
+a_0, a_1, a_2, \ldots\text{.}
+\end{equation*}
+
+ 
+\pause \vfill 
+
+If we consider the sequence \((a_n)_{n \ge 0}\) that starts%
+\begin{equation*}
+2, 5, 10, 17, 26,\ldots
+\end{equation*}
+then \(a_3 = 17\).  Note the two numbers 3 and 17 here.  17 is the term in the sequence, while 3 is the \terminology{index} of the term.
+\end{frame}
+ 
+\begin{frame}
+\frametitle{}
+\begin{example}[2.1.1]Can you find the next term in the following sequences?
+\begin{enumerate}
+\item{} \(\displaystyle 7,7,7,7,7, \ldots\)
+
+\item{} \(\displaystyle 3, -3, 3, -3, 3, \ldots\)
+
+\item{} \(\displaystyle 1, 5, 2, 10, 3, 15, \ldots\)
+
+\item{} \(\displaystyle 1, 2, 4, 8, 16, 32, \ldots\)
+
+\item{} \(\displaystyle 1, 4, 9, 16, 25, 36, \ldots\)
+
+\item{} \(\displaystyle 1, 2, 3, 5, 8, 13, 21, \ldots\)
+
+\item{} \(\displaystyle 1, 3, 6, 10, 15, 21, \ldots\)
+
+\item{} \(\displaystyle 2, 3, 5, 7, 11, 13, \ldots\)
+
+\item{} \(\displaystyle 3, 2, 1, 0, -1, \ldots\)
+
+\item{} \(\displaystyle 1, 1, 2, 6, \ldots\)
+\end{enumerate}
+
+
+\pause \vfill 
+
+No.  But we could guess.
+\end{example}
+\end{frame}
+ 
+\begin{frame}
+\frametitle{Closed formula}
+ A \terminology{closed formula} \index{closed formula} for a sequence \((a_n)_{n\in\N}\) is a formula for \(a_n\) using a fixed finite number of operations on \(n\). This is what you normally think of as a formula in \(n\), just as if you were defining a function in terms of \(n\) (because that is exactly what you are doing).
+\end{frame}
+ 
+\begin{frame}
+\frametitle{Recursive definition}
+ A \terminology{recursive definition} \index{recursive definition} (sometimes called an \terminology{inductive definition}) for a sequence \((a_n)_{n\in\N}\) consists of a \terminology{recurrence relation} \index{recurrence relation} : an equation relating a term of the sequence to previous terms (terms with smaller index) and an \terminology{initial condition}: a list of a few terms of the sequence (one less than the number of terms in the recurrence relation).
+\end{frame}
+ 
+\begin{frame}
+\frametitle{}
+\begin{example}[2.1.2]Here are a few closed formulas for sequences:\begin{itemize}
+\item{} \(a_n = n^2\).
+
+\item{} \(\d a_n = \frac{n(n+1)}{2}\).
+
+\item{} \(\d a_n = \frac{\left(\frac{1 + \sqrt 5}{2}\right)^n - \left(\frac{1 - \sqrt 5}{2}\right)^{-n}}{\sqrt{5}}\).
+\end{itemize}
+
+
+\pause \vfill 
+
+Here are a few recursive definitions for sequences:\begin{itemize}
+\item{} \(a_n = 2a_{n-1}\) with \(a_0 = 1\).
+
+\item{} \(a_n = 2a_{n-1}\) with \(a_0 = 27\).
+
+\item{} \(a_n = a_{n-1} + a_{n-2}\) with \(a_0 = 0\) and \(a_1 = 1\).
+\end{itemize}
+
+\end{example}
+\end{frame}
+ 
+\begin{frame}
+\frametitle{}
+\begin{example}[2.1.3]Find \(a_6\) in the sequence defined by \(a_n = 2a_{n-1} - a_{n-2}\) with \(a_0 = 3\) and \(a_1 = 4\).
+\end{example}
+\end{frame}
+ 
+\begin{frame}
+\frametitle{Common Sequences}
+ 
+\pause 
+
+\begin{enumerate}[<+->]
+\item{} \(1, 4, 9, 16, 25, \ldots\)
+The \terminology{square numbers}.  The sequence \((s_n)_{n \ge 1}\) has closed formula \(s_n = n^2\)
+
+
+\item{} \(1, 3, 6, 10, 15, 21, \ldots\)
+The \terminology{triangular numbers}.  The sequence \((T_n)_{n \ge 1}\) has closed formula \(T_n = \frac{n(n+1)}{2}\).
+\label{g:notation:idm148}
+
+\item{} \(1, 2, 4, 8, 16, 32,\ldots\)
+The \terminology{powers of 2}.  The sequence \((a_n)_{n \ge 0}\) with closed formula \(a_n = 2^n\).
+
+
+\item{} \(1, 1, 2, 3, 5, 8, 13, \ldots\)
+The \terminology{Fibonacci numbers} (or Fibonacci sequence), defined recursively by \(F_n = F_{n-1} + F_{n-2}\) with \(F_1 = F_2 = 1\)
+
+\end{enumerate}
+
+\end{frame}
+ 
+\begin{frame}
+\frametitle{}
+\begin{example}[2.1.4]Use the formulas \(T_n = \frac{n(n+1)}{2}\) and \(a_n = 2^n\) to find closed formulas that agree with the following sequences.  Assume each first term corresponds to \(n=0\).\begin{enumerate}
+\item{} \((b_n)\): \(1, 2, 4, 7, 11, 16, 22, \ldots \).
+
+
+\item{} \((c_n)\): \(3, 5, 9, 17, 33,\ldots \).
+
+
+\item{} \((d_n)\): \(0, 2, 6, 12, 20, 30, 42,\ldots \).
+
+
+\item{} \((e_n)\): \(3, 6, 10, 15, 21, 28, \ldots\).
+
+
+\item{} \((f_n)\): \(0, 1, 3, 7, 15, 31, \ldots \).
+
+
+\item{} \((g_n)\) \(3, 6, 12, 24, 48, \ldots \).
+
+
+\item{} \((h_n)\): \(6, 10, 18, 34, 66, \ldots \).
+
+
+\item{} \((j_n)\): \(15, 33, 57, 87, 123, \ldots\).
+
+\end{enumerate}
+
+\end{example}
+\end{frame}
+ 
+\begin{frame}
+\frametitle{Partial Sums}
+ \begin{example}[2.1.5]Sam keeps track of how many push-ups she does each day of her ``do lots of push-ups challenge.''  Let \((a_n)_{n \ge 1}\) be the sequence that describes the number of push-ups done on the \(n\)th day of the challenge.  The sequence starts%
+\begin{equation*}
+3, 5, 6, 10, 9, 0, 12, \ldots\text{.}
+\end{equation*}
+Describe a sequence \((b_n)_{n \ge 1}\) that describes the total number of push-ups done by Sam after the \(n\)th day.
+\end{example}
+\end{frame}
+ 
+\begin{frame}
+\frametitle{}
+\begin{example}[2.1.6]Use \(\sum\) notation to rewrite the sums:
+\begin{enumerate}
+\item{} \(\displaystyle 1 + 2 + 3 + 4 + \cdots + 100\)
+
+\item{} \(\displaystyle 1 + 2 + 4 + 8 + \cdots + 2^{50}\)
+
+\item{} \(6 + 10 + 14 + \cdots + (4n - 2)\).
+\end{enumerate}
+
+\end{example}
+\end{frame}
+ 
+\end{document}
